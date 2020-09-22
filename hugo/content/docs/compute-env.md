@@ -1,5 +1,5 @@
 ---
-title: Configuration
+title: Connecting to a Compute Environment
 aliases:
 - "/docs/compute-environments"
 weight: 1
@@ -27,43 +27,15 @@ menu:
     weight: 1
 ---
 
+Tower uses a concept of a compute environments to define the target execution platform to run a workflow.
 
-## Overview
-Tower uses a concept of a compute environments to define the target execution platform for the workflow. 
+Currently, Tower supports the use of **AWS Batch**, **Google Cloud**, **LSF**, and **Slurm** as compute environments.
 
-## AWS Batch
-To create a new compute environment for AWS, the user will:
+{{% pretty_screenshot img="/uploads/2020/09/platforms.png" %}}
 
-1. Navigate to "Compute environments" to view the existing environments.
-2. Select "New Environment"
-3. Choose a descriptive name for this environment. For example "AWS Batch Spot (eu-west-1)"
-4. Select a target platform. For example "Amazon Batch".
-5. Add credentials from either the dropdown of the "+" button.
-6. If adding new credentials for AWS, choose a name, add the Access key and Secret key. 
-7. Select a region. For example "eu-west-1 - Europe (Ireland"
-8. Choose an S3 bucket path. This bucket should be in the same region as above. For example ("s3://nextflow-ci").
-9. Type 64 in Max CPUs.
-10. Select "Create" to finalise the creation of the resources.
+### Detailed Quick Setup Guides
 
-This will take approximately 60 seconds for the resources to be created. After this, the compute environment will be ready to launch pipelines.
-
-## Google Cloud Lifesciences
-To create a new compute environment for AWS, the user will:
-
-1. Navigate to "Compute environments" to view the existing environments.
-2. Select "New Environment"
-3. Choose a descriptive name for this environment. For example "AWS Batch Spot (eu-west-1)"
-4. Select a target platform. For example "Amazon Batch".
-5. Add credentials from either the dropdown of the "+" button.
-6. If adding new credentials for AWS, choose a name, add the Access key and Secret key. 
-7. Select a region. For example "eu-west-1 - Europe (Ireland"
-8. Choose an S3 bucket path. This bucket should be in the same region as above. For example ("s3://nextflow-ci").
-9. Type 64 in Max CPUs.
-10. Select "Create" to finalise the creation of the resources.
-
-This will take approximately 60 seconds for the resources to be created. After this, the compute environment will be ready to launch pipelines.
-
-## Slurm
-
-## LSF
-
+* [AWS Batch](/docs/compute-environments/aws-batch/)
+* [Google Cloud](/docs/compute-environments/google-cloud/)
+* [LSF](/docs/compute-environments/lsf/)
+* [Slurm](/docs/compute-environments/slurm/)
