@@ -9,8 +9,8 @@ images:
 - "/uploads/2018/01/OGimage-01-docs-3x.jpg"
 menu:
   docs:
-  parent: Compute Environments
-  weight: 4
+    parent: Compute Environments
+    weight: 4
 
 ---
 {{% tip "Disclaimer" %}}
