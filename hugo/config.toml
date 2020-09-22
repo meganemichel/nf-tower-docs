@@ -28,10 +28,10 @@ weight = 2
 name = "Welcome"
 weight = 1
 [[menu.docs]]
-name = "Launching Pipelines"
+name = "Compute Environments"
 weight = 3
 [[menu.docs]]
-name = "Compute Environments"
+name = "Launching Pipelines"
 weight = 4
 [[menu.docs]]
 name = "Pipeline Monitoring"
@@ -168,3 +168,8 @@ twitter = "forestryio"
 author = "authors"
 category = "categories"
 tag = "tags"
+#the following lines enable hrefTargetBlank where all external links shall be generated with target='_blank'.
+# https://gohugo.io/getting-started/configuration/#configure-blackfriday
+[blackfriday]
+  plainIDAnchors = true
+  hrefTargetBlank = true
