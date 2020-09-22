@@ -1,6 +1,6 @@
 ---
 title: AWS Batch
-weight: 2
+weight: 1
 publishdate: 2017-12-31T04:00:00.000+00:00
 expirydate: 2030-01-01T04:00:00.000+00:00
 date: '2017-04-06T04:00:00.000+00:00'
