@@ -13,13 +13,64 @@ menu:
     weight: 3
 
 ---
+---
 {{% tip "Disclaimer" %}}
-This guide assumes you already have an existing [GitLab account](https://gitlab.com/users/sign_in) and repository with a Jekyll or Hugo project. If you don't have an existing project, check out our [Quick start guide](/docs/quickstart/tour/), which contains guides and resources for building your first static site.
+<!-- If you already have Batch environment pre-configured skip Froge and go to Launch -->
+This guide assumes you already have an existing [Google Cloud Account](https://console.cloud.google.com). The first section guides you through setting up your Google Cloud account and enable Google Life Sciences API. The second section guides you through creating a new Google Cloud environment in Tower.
 {{% /tip %}}
 
-Forestry's allows you to import your static site through public and private GitLab repositories. This allows Forestry to sync any changes made by editors in Forestry to be comitted back to GitLab. This also allows developers to work on your website on their local machine, and have all changes by synced back to Forestry.
+## Setting up Google Cloud
 
-## Google Cloud Lifesciences
+First Step is to create a a Google Cloud project. Navigate to the [Google Project Selector page](https://console.cloud.google.com/projectselector2) and select **CREATE PROJECT**
+
+{{% pretty_screenshot img="/uploads/2020/09/google_create_project.png" %}}
+
+Choose a name for your project e.g: "tower-nf", the organisation and location will be set by default to your current account setup.
+
+Before enabling the **Google Life Sciences** API make sure that billing is enabled for the project you just created. In the project page select the Navigation menu from the top left of the page and select **Billing**. You can follow the instructions [here](https://cloud.google.com/billing/docs/how-to/modify-project).
+
+To enable **Google Life Sciences API** open this [link](https://console.cloud.google.com/flows/enableapi?apiid=lifesciences.googleapis.com%2Ccompute.googleapis.com%2Cstorage-api.googleapis.com), select the project we just created and click **Continue**.
+
+Next, create a bucket in the project (make sure you the right project is selected on top of the page left to the search bar). Click on the Navigation menu and click on **Storage** and the on **Create Bucket**
+
+{{% pretty_screenshot img="/uploads/2020/09/google_storage.png" %}}
+
+{{% warning %}}
+Google Life Sciences is available in limited number of [locations](https://cloud.google.com/life-sciences/docs/concepts/locations). It's probably best to choose your bucket location in one of these (e.g europe-west2 (London)).
+{{% /warning %}}
+
+{{% pretty_screenshot img="/uploads/2020/09/google_location.png" %}}
+
+Select the **location type** to Region and the **Location** to one of the regions shown bellow. Note this list can evolve, the latest list is available [here](https://cloud.google.com/life-sciences/docs/concepts/locations)
+
+{{% pretty_screenshot img="/uploads/2020/09/google_life_sciences_regions.png" %}}
+
+Now, we have created a project, enabled Google Life Sciences API and created a bucket we are ready to set up a new environment en Tower.
+
+## Create a new Google Life Sciences compute environment
+
+To create a new compute environment for AWS, follow these steps:
+
+{{% pretty_screenshot img="/uploads/2020/09/new_env.png" %}}
+
+In the navigation bar on the upper right, choose your account name then choose "Compute environments". Click on the *New Environment* button.
+
+{{% pretty_screenshot img="/uploads/2020/09/new_launch_env.png" %}}
+
+Choose a descriptive name for this environment. For example "AWS Batch Launch (eu-west-1)" and Select *Amazon Batch* as the target platform
+
+{{% pretty_screenshot img="/uploads/2020/09/aws_keys.png" %}}
+
+Add new credentials by clicking the the "+" button. Choose a name, add the **Access key** and **Secret key** from your AIM user.
+
+{{% tip "Multiple credentials" %}}
+Note You can create multiple credentials. These will be available from the dropdown menu.
+{{% /tip %}}
+
+
+{{% pretty_screenshot img="/uploads/2020/09/new_env_manual_config.png" %}}
+
+
 To create a new compute environment for AWS, the user will:
 
 1. Navigate to "Compute environments" to view the existing environments.
