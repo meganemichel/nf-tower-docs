@@ -154,11 +154,11 @@ To create a new compute environment for AWS, follow these steps:
 
 {{% pretty_screenshot img="/uploads/2020/09/new_env.png" %}}
 
-In the navigation bar on the upper right, choose your account name then choose "Compute environments". Click on the *New Environment* button.
+In the navigation bar on the upper right, choose your account name then choose "Compute environments". Click on the **New Environment** button.
 
 {{% pretty_screenshot img="/uploads/2020/09/new_launch_env.png" %}}
 
-Choose a descriptive name for this environment. For example "AWS Batch Launch (eu-west-1)" and Select *Amazon Batch* as the target platform
+Choose a descriptive name for this environment. For example "AWS Batch Launch (eu-west-1)" and Select **Amazon Batch** as the target platform
 
 {{% pretty_screenshot img="/uploads/2020/09/aws_keys.png" %}}
 

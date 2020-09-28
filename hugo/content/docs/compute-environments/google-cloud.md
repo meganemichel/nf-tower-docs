@@ -31,7 +31,14 @@ Before enabling the **Google Life Sciences** API make sure that billing is enabl
 
 To enable **Google Life Sciences API** open this [link](https://console.cloud.google.com/flows/enableapi?apiid=lifesciences.googleapis.com%2Ccompute.googleapis.com%2Cstorage-api.googleapis.com), select the project we just created and click **Continue**.
 
-Next, create a bucket in the project (make sure you the right project is selected on top of the page left to the search bar). Click on the Navigation menu and click on **Storage** and the on **Create Bucket**
+Next, create a bucket in the project (make sure you the right project is selected on top of the page left to the search bar). Click on the Navigation menu and click on **Storage** and the on **Create Bucket**.
+
+{{% pretty_screenshot img="/uploads/2020/09/google_name_bucket.png" %}}
+
+{{% warning %}}
+DO NOT USE underscores in your bucket name. Join words with hyphens instead.   
+{{% /warning %}}
+
 
 {{% pretty_screenshot img="/uploads/2020/09/google_storage.png" %}}
 
@@ -45,7 +52,30 @@ Select the **location type** to Region and the **Location** to one of the region
 
 {{% pretty_screenshot img="/uploads/2020/09/google_life_sciences_regions.png" %}}
 
-Now, we have created a project, enabled Google Life Sciences API and created a bucket we are ready to set up a new environment en Tower.
+Next you need to download credentials to give Tower access to your Google project.
+
+{{% pretty_screenshot img="/uploads/2020/09/google_select_service_accounts.png" %}}
+
+In the Navigation bar, Click **IAM** and **Service Account**
+
+{{% pretty_screenshot img="/uploads/2020/09/google_service_account_name.png" %}}
+
+Click **+ CREATE SERVICE ACCOUNT**. Choose a name and a description.
+
+{{% pretty_screenshot img="/uploads/2020/09/google_service_account_role.png" %}}
+
+Set the role to Editor, leave the **Grant users access to this service account (optional)** options empty and click **CREATE**.
+
+{{% pretty_screenshot img="/uploads/2020/09/google_create_key.png" %}}
+
+On the newly created **Service ccount** click **Actions** and **Create key**.
+
+{{% pretty_screenshot img="/uploads/2020/09/google_key_json.png" %}}
+
+Select the JSON format and click **CREATE**. This will download a JSON file with your credentials.
+
+
+Now, we have created a project, enabled Google Life Sciences API, created a bucket and a JSON file containing our credentials, we are ready to set up a new environment en Tower.
 
 ## Create a new Google Life Sciences compute environment
 
@@ -55,33 +85,14 @@ To create a new compute environment for AWS, follow these steps:
 
 In the navigation bar on the upper right, choose your account name then choose "Compute environments". Click on the *New Environment* button.
 
-{{% pretty_screenshot img="/uploads/2020/09/new_launch_env.png" %}}
+{{% pretty_screenshot img="/uploads/2020/09/google_new_env.png" %}}
 
-Choose a descriptive name for this environment. For example "AWS Batch Launch (eu-west-1)" and Select *Amazon Batch* as the target platform
+Choose a descriptive name for this environment. For example "Google (europe-west2)" and Select **Google Life Sciences** as the target platform
 
-{{% pretty_screenshot img="/uploads/2020/09/aws_keys.png" %}}
+{{% pretty_screenshot img="/uploads/2020/09/google_tower_credentials.png" %}}
 
-Add new credentials by clicking the the "+" button. Choose a name, add the **Access key** and **Secret key** from your AIM user.
+Name your credentials and copy-paste the contents from the JSON file downloaded in the previous section.
 
-{{% tip "Multiple credentials" %}}
-Note You can create multiple credentials. These will be available from the dropdown menu.
-{{% /tip %}}
+{{% pretty_screenshot img="/uploads/2020/09/google_tower_location.png" %}}
 
-
-{{% pretty_screenshot img="/uploads/2020/09/new_env_manual_config.png" %}}
-
-
-To create a new compute environment for AWS, the user will:
-
-1. Navigate to "Compute environments" to view the existing environments.
-2. Select "New Environment"
-3. Choose a descriptive name for this environment. For example "AWS Batch Spot (eu-west-1)"
-4. Select a target platform. For example "Amazon Batch".
-5. Add credentials from either the dropdown of the "+" button.
-6. If adding new credentials for AWS, choose a name, add the Access key and Secret key.
-7. Select a region. For example "eu-west-1 - Europe (Ireland"
-8. Choose an S3 bucket path. This bucket should be in the same region as above. For example ("s3://nextflow-ci").
-9. Type 64 in Max CPUs.
-10. Select "Create" to finalise the creation of the resources.
-
-This will take approximately 60 seconds for the resources to be created. After this, the compute environment will be ready to launch pipelines.
+Select the same **Region** we used for the bucket in the previous section (e.g Europe-west2). You can leave the **Location** empty (google will run the life sciences service where your bucket is located). The **Pipeline work directory** should be your bucket path e.g *gs://nf-tower-bucket*. You can leave the other options empty and click **Create**.
