@@ -31,7 +31,7 @@ Tower uses a concept of a compute environments to define the target execution pl
 
 Currently, Tower supports the use of **AWS Batch**, **Google Cloud**, **LSF**, and **Slurm** as compute environments.
 
-{{% pretty_screenshot img="/uploads/2020/09/platforms.png" %}}
+{{% pretty_screenshot img="/uploads/2020/09/compute_env_platforms.png" %}}
 
 ### Detailed Quick Setup Guides
 
