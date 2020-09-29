@@ -13,24 +13,46 @@ menu:
     weight: 4
 
 ---
-{{% tip "Disclaimer" %}}
-This guide assumes you already have an existing [GitLab account](https://gitlab.com/users/sign_in) and repository with a Jekyll or Hugo project. If you don't have an existing project, check out our [Quick start guide](/docs/quickstart/tour/), which contains guides and resources for building your first static site.
+[*Slurm is an open source, fault-tolerant, and highly scalable cluster management and job scheduling system for large and small Linux clusters.*](https://slurm.schedmd.com/overview.html)
+
+{{% warning %}}
+Note: support for remote batch schedulers is an incubating feature
+This feature allows Tower to connect to your local cluster and launch the execution of the requested pipeline. The following requirements need to be fulfilled:
+
+1. The cluster should be reachable via an SSH connection using an SSH key
+2. The cluster should allow outbound connections to the Tower web service
+3. The cluster queue used to run the Nextflow head job must be able submit cluster jobs
+4. Nextflow runtime version 20.08.1-edge (or later) should be pre-installed in the cluster
+{{% /warning %}}
+
+
+
+## Slurm workload manager
+
+To create a new compute environment for AWS, follow these steps:
+
+{{% pretty_screenshot img="/uploads/2020/09/new_env.png" %}}
+
+In the navigation bar on the upper right, choose your account name then choose "Compute environments". Click on the *New Environment* button.
+
+{{% pretty_screenshot img="/uploads/2020/09/slurm_new_env.png" %}}
+
+Choose a descriptive name for this environment. For example "Slurm env" and Select **Slurm Workload MAnager** as the target platform
+
+{{% pretty_screenshot img="/uploads/2020/09/slurm_tower_credentials.png" %}}
+
+
+Click the **+** sign to add new Credentials. Name your credentials and enter your **SSH private key** and associated **Passphrase**. Then Click **Create**
+
+{{% tip %}}
+Note the SSH passphrase can be optional.
 {{% /tip %}}
 
-Forestry's allows you to import your static site through public and private GitLab repositories. This allows Forestry to sync any changes made by editors in Forestry to be comitted back to GitLab. This also allows developers to work on your website on their local machine, and have all changes by synced back to Forestry.
+{{% pretty_screenshot img="/uploads/2020/09/slurm_tower_options.png" %}}
 
-## Google Cloud Lifesciences
-To create a new compute environment for AWS, the user will:
 
-1. Navigate to "Compute environments" to view the existing environments.
-2. Select "New Environment"
-3. Choose a descriptive name for this environment. For example "AWS Batch Spot (eu-west-1)"
-4. Select a target platform. For example "Amazon Batch".
-5. Add credentials from either the dropdown of the "+" button.
-6. If adding new credentials for AWS, choose a name, add the Access key and Secret key.
-7. Select a region. For example "eu-west-1 - Europe (Ireland"
-8. Choose an S3 bucket path. This bucket should be in the same region as above. For example ("s3://nextflow-ci").
-9. Type 64 in Max CPUs.
-10. Select "Create" to finalise the creation of the resources.
+Enter the absolute path of the **Work** and **Launch directories**, the **Username** on the cluster used to launch the pipeline execution, the **Login hostname** (which is usually is the cluster login node), the **Head queue name** which is the name of the queue on the cluster used to launch the execution of the Nextflow pipeline, and the **Compute queue name** which is the name of queue on the cluster to which pipeline jobs are submitted. Then click **Create**.
 
-This will take approximately 60 seconds for the resources to be created. After this, the compute environment will be ready to launch pipelines.
+{{% tip %}}
+This queue can be overridden by the pipeline configuration.
+{{% /tip %}}

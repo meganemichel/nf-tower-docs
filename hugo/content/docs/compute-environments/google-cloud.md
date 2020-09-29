@@ -91,7 +91,7 @@ Choose a descriptive name for this environment. For example "Google (europe-west
 
 {{% pretty_screenshot img="/uploads/2020/09/google_tower_credentials.png" %}}
 
-Name your credentials and copy-paste the contents from the JSON file downloaded in the previous section.
+Click the **+** sign to add new Credentials. Name your credentials and copy-paste the contents from the JSON file downloaded in the previous section.
 
 {{% pretty_screenshot img="/uploads/2020/09/google_tower_location.png" %}}
 
