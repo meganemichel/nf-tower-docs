@@ -166,7 +166,7 @@ You can create multiple credentials in your Tower environment. See the section *
 {{% pretty_screenshot img="/uploads/2020/09/aws_s3_bucket_region.png" %}}
 
 {{% warning %}}
-The bucket should be in the same region you selected above!
+The bucket should be in the same **Region** as selected above.
 {{% /warning %}}
 
 <br>
@@ -211,24 +211,24 @@ Jump to the documentation section for Launching Pipelines.
 ## Launch for AWS Batch
 
 <!-- Add explanation for what is Launch and disclaimer -->
-Follow this guide if your AWS environment is already setup and you have been allocated AWS queues for you jobs.
+This section is for users with a pre-configured AWS environment. You will need a Batch queue, Batch compute environment, an IAM user and an S3 bucket already set up.
 
-To enable Tower in your existing deployment you need granting at least the following IAM permission:
+To enable Tower within your existing AWS configuration, you need to have an IAM user with the following IAM permissions:
 
 - `AmazonS3ReadOnlyAccess`
 - `AmazonEC2ContainerRegistryReadOnly`
 - `CloudWatchLogsReadOnlyAccess`
 - The following [custom policy](launch-policy.json) to grant the ability to submit and control Batch jobs.
-- Grant write access to any S3 bucket used a pipeline work directory using the following [policy template](s3-bucket-write.json).
+- Write access to any S3 bucket used pipeline work directories with the following [policy template](s3-bucket-write.json). See [below for details](#Access to S3 Buckets)
 
-Now that **Tower Launch** has been set up we can add a new **AWS Batch Launch** environment in the [Nextflow Tower UI](#create-a-new-aws-batch-launch-compute-environment)
+Now that **Tower Launch** has been set up we can add a new **AWS Batch** environment in the [Tower UI](#launch-compute-environment)
 
 ## Launch Compute Environment
 To create a new compute environment for AWS, follow these steps:
 
 {{% pretty_screenshot img="/uploads/2020/09/aws_new_env.png" %}}
 
-In the navigation bar on the upper right, choose your account name then choose "Compute environments". Click on the **New Environment** button.
+In the navigation bar on the upper right, choose your account name then choose "Compute environments" and select on **New Environment**.
 
 {{% pretty_screenshot img="/uploads/2020/09/aws_new_launch_env.png" %}}
 
@@ -245,14 +245,14 @@ Note You can create multiple credentials. These will be available from the dropd
 
 {{% pretty_screenshot img="/uploads/2020/09/aws_new_env_manual_config.png" %}}
 
-Select a region, for example "eu-west-1 - Europe (Ireland)", and choose an S3 bucket path, For example "s3://tower-bucket" and choose the **manual** config mode. Select a Head queue (this is where the Nextflow application will run) and a compute queue (where Nextflow will submit job executions), and click **create**.
+Select a region, for example "eu-west-1 - Europe (Ireland)", and choose an S3 bucket path, For example "s3://tower-bucket" and choose the **Manual** config mode. Select a Head queue (this is where the Nextflow runtime application will run) and a compute queue (where Nextflow will submit job executions), and click **Create**.
 
 It will take approximately 60 seconds for the resources to be created. After this, the compute environment will be ready to launch pipelines.
 
 
-### Adding 
+### Access to S3 Buckets 
 
-Now that we have created an S3 Bucket we need to set a policy for our user. Go back to the users table in the [AIM service](https://console.aws.amazon.com/iam/home), and click on the user previously created.
+Now that we have created an S3 Bucket we need to set a policy for our user. Go back to the users table in the [IAM service](https://console.aws.amazon.com/iam/home), and click on the user previously created.
 
 {{% pretty_screenshot img="/uploads/2020/09/aws_user_s3_inline_policy.png" %}}
 
