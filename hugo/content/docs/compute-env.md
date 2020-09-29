@@ -1,5 +1,5 @@
 ---
-title: Connecting to a Compute Environment
+title: Creating a Compute Environment
 aliases:
 - "/docs/compute-environments"
 weight: 1
@@ -27,15 +27,17 @@ menu:
     weight: 1
 ---
 
-Tower uses a concept of a compute environments to define the target execution platform to run a workflow.
+Tower uses a concept of **Compute Environments** to define the execution platform where a pipeline will run.
 
-Currently, Tower supports the use of **AWS Batch**, **Google Cloud**, **LSF**, and **Slurm** as compute environments.
+Tower supports launching of pipelines into **AWS Batch**, **Google Cloud**, **IBM LSF**, and **Slurm** with many more in development.
 
 {{% pretty_screenshot img="/uploads/2020/09/compute_env_platforms.png" %}}
 
-### Detailed Quick Setup Guides
+Each compute environment must be configured to enable Tower to submit tasks. You can read more on how to set up each environment using the links below.
+
+### Quick Setup Guides
 
 * [AWS Batch](/docs/compute-environments/aws-batch/)
 * [Google Cloud](/docs/compute-environments/google-cloud/)
-* [LSF](/docs/compute-environments/lsf/)
+* [IBM LSF](/docs/compute-environments/lsf/)
 * [Slurm](/docs/compute-environments/slurm/)

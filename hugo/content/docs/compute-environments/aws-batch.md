@@ -14,127 +14,203 @@ menu:
 
 ---
 {{% tip "Disclaimer" %}}
-<!-- If you already have Batch environment pre-configured skip Froge and go to Launch -->
+<!-- If you already have Batch environment pre-configured skip Forge and go to Launch -->
 This guide assumes you already have an existing [AWS Account](https://aws.amazon.com/).
 {{% /tip %}}
 
-There are two ways of running AWS Batch workflows with Tower. An automated approach **Tower Froge** in which Tower will automatically create AWS queues for your workflows, and a manual approach **Tower Launch** where you can tell Tower which queues to use.
+There are two ways of creating a **Compute Environment** for **AWS Batch** with Tower. 
 
-If you don't yet have a AWS Batch environment fully set-up follow the [Tower forge guide](#tower-forge-for-aws-batch)
+1. **Tower Forge** for AWS Batch automatically creates AWS Batch resources in your AWS account.
 
-If you have been allocated AWS queues in your AWS account follow the [Tower launch section](#tower-launch-for-aws-batch)
+2. **Tower Launch** allows you to create a compute environment using existing AWS Batch resources.
 
-## Tower Forge for AWS Batch
+If you don't yet have an AWS Batch environment fully set-up, the [Tower Forge](#tower-forge-for-aws-batch) guide is suggested. If have been provided with an AWS Batch queue from your account administrator, or if you have setup AWS Batch previously, follow the [Tower Launch](#tower-launch-for-aws-batch) guide.
 
-<!-- Add explenation for what is Forge and disclaimer -->
+## Forge for AWS Batch
+
+<!-- Add explanation for what is Forge and disclaimer -->
 {{% warning %}}
-You need to follow these instructions if you have not pre-configured an AWS batch environment. If you had please skip this section and jump to the [Tower launch section](#tower-launch-for-aws-batch)
+Follow these instructions if you do not have not pre-configured an AWS Batch environment. This will create resources in your AWS account that you may be charged for by AWS.
 {{% /warning %}}
 
-Tower Forge automates the configuration of [AWS Batch](https://aws.amazon.com/batch/) compute environments and queues required for the deployment of Nextflow pipelines.
+Tower Forge automates the configuration of the [AWS Batch](https://aws.amazon.com/batch/) compute environments and queues required for the deployment of Nextflow pipelines.
 
-To enable this feature Tower requires the permissions listed in this [policy file](https://github.com/seqeralabs/nf-tower-aws/blob/master/forge/forge-policy.json).
+## Forge AWS Resources
 
-The steps bellow will guide you to create a new user and attach a policy to the newly created user:
+### IAM User Permissions
 
-Open the [AWS IAM console](https://console.aws.amazon.com/iam), select Users on the left menu and click the *Add User* button on top.
+To use the Tower Forge feature, Tower requires an IAM user with the permissions listed in this [policy file](https://github.com/seqeralabs/nf-tower-aws/blob/master/forge/forge-policy.json). These permissions are more permissive that are required to only launch a pipeline as Tower will create the AWS resources on your behalf.
+
+The steps below will guide you through the creation a new IAM user for Tower and attach the required policy for the newly created user.
+
+**1.** Open the [AWS IAM console](https://console.aws.amazon.com/iam), select **Users** on the left menu and click the **Add User** button on top.
 
 {{% pretty_screenshot img="/uploads/2020/09/aws_aim_new_user.png" %}}
 
-Name your user and choose the **programmatic access** type. Then click on the **next: Permissions** button.
-In step 2, 3 and 4 click on the **Next: Tags** button, **Next: Review** and **Create User**.
-Note this user has not been given permissions.
+<br>
+
+**2.** Enter a name for your user (e.g. `tower`) and choose the **Programmatic access** type. Then select the **Next: Permissions** button.
+
+**3.** In the following steps, click on the **Next: Tags** button, **Next: Review** and **Create User**.
+
+**4.** Save the **Access key ID** and **Secret access key** in a secure location. We will use these in the [next section](#create-a-new-compute-environment). Press the **Close** button.
 
 {{% pretty_screenshot img="/uploads/2020/09/aws_user_created.png" %}}
 
-Save your keys, we will need the access key and the secret key in the [next section](#create-a-new-compute-environment). Press the **Close** button.
+<br>
+
+{{% tip %}}
+Note the user has now been created but has not yet been granted any permissions.
+{{% /tip %}}
+
+</br>
+
+**5.** Back in the users table, select the newly created user and click **+ Add inline policy**.
 
 {{% pretty_screenshot img="/uploads/2020/09/aws_add_inline_policy.png" %}}
 
-Back in the users table, click on the newly created user and click on **+ add inline policy**.
+</br>
+
+**6.** Choose JSON and copy the content of the [policy linked above](https://github.com/seqeralabs/nf-tower-aws/blob/master/forge/forge-policy.json).
 
 {{% pretty_screenshot img="/uploads/2020/09/aws_review_policy.png" %}}
 
-Choose JSON and copy the content of the [policy linked above](https://github.com/seqeralabs/nf-tower-aws/blob/master/forge/forge-policy.json).
+</br>
 
-Click on the **Review policy** button, name your policy, and confirm the operation clicking on the **Create policy** button. Your user should now have attached inline policy.
+**7.** Select the **Review policy** button, create name your policy (e.g. `tower-forge-policy`), and confirm the operation by clicking on the **Create policy** button. Your user should now have required attached inline policy.
 
-{{% tip "Policy" %}}
-This policy also includes the minimal permissions required to allow the user to submit Batch jobs, gather containers execution metadata, read CloudWatch logs and access the S3 bucket in your AWS account in read-only mode.
+{{% tip "What permissions are required?" %}}
+This policy includes the minimal permissions required to allow the user to submit jobs to AWS Batch, gather the container execution metadata, read CloudWatch logs and access data from the S3 bucket in your AWS account in read-only mode.
 {{% /tip %}}
 
-Next we need to create an **S3 Bucket** to access files and store results and grant our new user access to this bucket. In AWS navigate to the S3 service and select **Create New Bucket**
+
+### Creating an S3 Bucket for Storage
+
+Next up we need to create an **S3 Bucket** to access files and store results for our pipelines. S3 stands for Simple Storage Service and is a type of **object storage**.
+
+We must grant our new Tower IAM user access to this bucket.
+
+**1.** Navigate to the [S3 service](https://console.aws.amazon.com/s3/home) and select **Create New Bucket**.
+
+**2.** Enter a unique name for your Bucket and select a region.
 
 {{% pretty_screenshot img="/uploads/2020/09/aws_create_bucket.png" %}}
 
-Name your Bucket and select the region. Note the region of the bucket needs to be in the same region as the compute environment we will set in the next session.
+{{% tip "Which AWS region should I use?" %}}
+The region of the bucket should be in the same region as the compute environment which we will set in the next section. Typically users select a region closest to their physical location but Tower Forge supports creating resources in any of the available AWS regions.
+{{% /tip %}}
+
+<br>
+
+**3.** Select the default options for **Configure options**.
 
 {{% pretty_screenshot img="/uploads/2020/09/aws_new_bucket_configure_options.png" %}}
 
+<br>
+
+**5.** Select the default options for **Set permissions**.
+
 {{% pretty_screenshot img="/uploads/2020/09/aws_new_bucket_set_permissions.png" %}}
+
+<br>
+
+**6.** Review the bucket and select **Create bucket**.
 
 {{% pretty_screenshot img="/uploads/2020/09/aws_new_bucket_review.png" %}}
 
-Choose the default options and create your new bucket.
+<br>
 
-Now that we have created an S3 Bucket we need to set a policy for our user. Go back to the users table in the [AIM service](https://console.aws.amazon.com/iam/home), and click on the user previously created.
+{{% warning "S3 Storage Costs" %}}
+S3 is used by Nextflow for the storage of intermediary files. For production
+pipelines, this can amount to a large quantity of data. To reduce costs, when configuring a bucket, users should consider management options such as the ability to automatically delete these files after 30 days.
+{{% /tip %}}
 
-{{% pretty_screenshot img="/uploads/2020/09/aws_user_s3_inline_policy.png" %}}
+<br>
 
- click on **+ add inline policy**.
 
-{{% pretty_screenshot img="/uploads/2020/09/aws_s3_policy.png" %}}
+## Forge Compute Environment
 
- Choose JSON and copy the content of [this policy](https://github.com/seqeralabs/nf-tower-aws/blob/master/launch/s3-bucket-write.json). Replace line 10 and 21 with the bucket name you previously created.
+{{% star "Congratulations!" %}}
+You have completed the AWS environment setup for Tower.
+{{% /tip %}}
 
- {{% pretty_screenshot img="/uploads/2020/09/aws_name_policy.png" %}}
 
-Name your policy and create it.
+Now we can add a new **AWS Batch** environment in the Tower UI. To create a new compute environment, follow these steps:
 
-Now that **Tower forge** has been set up we can add a new **AWS Batch Forge** environment in the [Nextflow Tower UI](#create-a-new-aws-batch-forge-compute-environment)
-
-## Create a new AWS Batch Forge compute environment
-To create a new compute environment for AWS, follow these steps:
+**1.** In the navigation bar on the upper right, choose your account name then choose **Compute environments** and select **New Environment**.
 
 {{% pretty_screenshot img="/uploads/2020/09/aws_new_env.png" %}}
 
-In the navigation bar on the upper right, choose your account name then choose "Compute environments".
-Click on the **New Environment** button.
+</br>
+
+**2.** Enter a descriptive name for this environment, for example *AWS Batch Spot (eu-west-1)* and select **Amazon Batch** as the target platform.
 
 {{% pretty_screenshot img="/uploads/2020/09/aws_new_env_name.png" %}}
 
-Choose a descriptive name for this environment.
-For example "AWS Batch Spot (eu-west-1)" and Select **Amazon Batch** as the target platform
+</br>
+
+**3.** Add new credentials by selecting the the **+** button. Choose a name, e.g. *AWS Credentials* and add the Access key and Secret key. These are the keys we saved in the previous steps when creating the AWS IAM user.
 
 {{% pretty_screenshot img="/uploads/2020/09/aws_keys.png" %}}
 
-Add new credentials by clicking the the "+" button. Choose a name, add the Access key and Secret key. These are the keys we saved in the previous step when creating the new user in AWS.
-
 {{% tip "Multiple credentials" %}}
-
-Note You can create multiple credentials. These will be available from the dropdown menu.
+You can create multiple credentials in your Tower environment. See the section **Credentials Management**.
 {{% /tip %}}
 
-{{% pretty_screenshot img="/uploads/2020/09/aws_s3_bucket_region.png" %}}
+<br>
 
-Select a region, for example "eu-west-1 - Europe (Ireland)", and choose an S3 bucket we created in the previous section e.g: "s3://tower-bucket". Choose **Batch Froge** as config mode.
+**4.** Select a **Region**, for example *eu-west-1 - Europe (Ireland)*, and in the **Pipeline work directory** enter the S3 bucket we created in the previous section e.g: `s3://unique-tower-bucket`. 
+
+**5.** Select **Batch Forge** as the **Config Mode**.
+
+{{% pretty_screenshot img="/uploads/2020/09/aws_s3_bucket_region.png" %}}
 
 {{% warning %}}
 The bucket should be in the same region you selected above!
 {{% /warning %}}
 
+<br>
+
+**6.** Choose a **Provisioning model**. In most cases this will be *Spot*.
+
+**7.** Enter the **Min CPUs**. When this is set to greater than `0`, EC2 instances will remain active and you will be billed regardless of if you are running workloads. The advantages of setting a minimum number of CPUs greater than `0` is that a pipeline execution will initialize faster.
+
+**8.** Enter the **Max CPUs** e.g. `64`.
+
+**9.** Choose **EBS Auto scale** to allow the EC2 virtual machines to expand the amount of available disk space during the task execution.
+
+**10.** Choose **Enable GPUs** to allow the deployment of GPU enabled EC2 virtual machines.
+
+**11.** Enter any additional **Allowed S3 buckets** that your workflows require to access input data or to write output files. The **Pipeline work directory** bucket above is added by default to the list of **Allowed S3 buckets**.
+
+**12.** Choose to use **FSx for Lustre** which attaches a file system to each EC2 instance. This eliminates the need to transfer data between S3 and the instance and can provide significant performance advantages. 
+
+**13.** Choose the **Dispose resources** option.
+
 {{% pretty_screenshot img="/uploads/2020/09/aws_cpus.png" %}}
 
-Type 64 in Max CPUs. You can leave the other options with their default values and click on the "Create" button to finalize the creation of your new AWS environment. The **Allowed S3 buckets** are additional buckets your workflows might need to access input data or to write output files. The bucket in the **pipeline work directory** is added by default to the **Allowed S3 buckets**.
+{{% tip "Spot or On-demand?" %}}
+You can choose to create a compute environment that will launch either **Spot** or **On-demand** instances. Spot instances can cost as little as 20% of on-demand instances and with Nextflow ability to automatically relaunch failed tasks, Spot is almost always the recommended provisioning model. It is important to note that when selecting Spot, Tower Forge will create two queues in your AWS environment. The first or **Head queue** will be on-demand and used for the Nextflow runtime job. The second or **Compute queue** will be used for pipeline tasks.
+{{% /tip %}}
+
+<br>
+
+**14.** Select **Create** to finalize the compute environment setup. It will take approximately 60 seconds for all the resources to be created and after this you will be ready to launch pipelines. 
 
 {{% pretty_screenshot img="/uploads/2020/09/aws_60s_new_env.png" %}}
 
-It will take approximately 60 seconds for the resources to be created. After this, the compute environment will be ready to launch pipelines.
+<br>
+
+{{% star "Amazing!" %}}
+You now have everything to begin deploying massively scalable pipelines.
+{{% /tip %}}
+
+Jump to the documentation section for Launching Pipelines.
 
 
-## Tower Launch for AWS Batch
+## Launch for AWS Batch
 
-<!-- Add explenation for what is Launch and disclaimer -->
+<!-- Add explanation for what is Launch and disclaimer -->
 Follow this guide if your AWS environment is already setup and you have been allocated AWS queues for you jobs.
 
 To enable Tower in your existing deployment you need granting at least the following IAM permission:
@@ -147,7 +223,7 @@ To enable Tower in your existing deployment you need granting at least the follo
 
 Now that **Tower Launch** has been set up we can add a new **AWS Batch Launch** environment in the [Nextflow Tower UI](#create-a-new-aws-batch-launch-compute-environment)
 
-## Create a new AWS Batch Launch compute environment
+## Launch Compute Environment
 To create a new compute environment for AWS, follow these steps:
 
 {{% pretty_screenshot img="/uploads/2020/09/aws_new_env.png" %}}
@@ -169,6 +245,23 @@ Note You can create multiple credentials. These will be available from the dropd
 
 {{% pretty_screenshot img="/uploads/2020/09/aws_new_env_manual_config.png" %}}
 
-Select a region, for example "eu-west-1 - Europe (Ireland)", and choose an S3 bucket path, For example "s3://tower-bucket" and choose the **manual** config mode. Select a Head queue (this is where the Nextflow application will run) and a compute queue (where Nexflow will submit job executions), and click **create**.
+Select a region, for example "eu-west-1 - Europe (Ireland)", and choose an S3 bucket path, For example "s3://tower-bucket" and choose the **manual** config mode. Select a Head queue (this is where the Nextflow application will run) and a compute queue (where Nextflow will submit job executions), and click **create**.
 
 It will take approximately 60 seconds for the resources to be created. After this, the compute environment will be ready to launch pipelines.
+
+
+### Adding 
+
+Now that we have created an S3 Bucket we need to set a policy for our user. Go back to the users table in the [AIM service](https://console.aws.amazon.com/iam/home), and click on the user previously created.
+
+{{% pretty_screenshot img="/uploads/2020/09/aws_user_s3_inline_policy.png" %}}
+
+ click on **+ add inline policy**.
+
+{{% pretty_screenshot img="/uploads/2020/09/aws_s3_policy.png" %}}
+
+ Choose JSON and copy the content of [this policy](https://github.com/seqeralabs/nf-tower-aws/blob/master/launch/s3-bucket-write.json). Replace line 10 and 21 with the bucket name you previously created.
+
+ {{% pretty_screenshot img="/uploads/2020/09/aws_name_policy.png" %}}
+
+Name your policy and create it.
