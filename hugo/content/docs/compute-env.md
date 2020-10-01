@@ -35,6 +35,19 @@ Tower supports launching of pipelines into **AWS Batch**, **Google Cloud**, **IB
 
 Each compute environment must be configured to enable Tower to submit tasks. You can read more on how to set up each environment using the links below.
 
+## Select a default compute environment
+
+If you have more than one **Compute Environment** you can select which one will be selected by default when launching a pipeline.
+
+{{% pretty_screenshot img="/uploads/2020/09/aws_new_env.png" %}}
+
+**1.** Navigate to your [compute environments page](https://tower.nf/compute-envs).
+
+{{% pretty_screenshot img="/uploads/2020/10/compute_env_make_primary.png" %}}
+
+**2.** Select your default environment by clicking on the **Make primary** button.   
+
+
 ### Quick Setup Guides
 
 * [AWS Batch](/docs/compute-environments/aws-batch/)

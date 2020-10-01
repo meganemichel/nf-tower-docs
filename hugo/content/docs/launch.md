@@ -28,9 +28,15 @@ menu:
 ---
 
 ## Overview
-All data pipelines are executed in the users own computing environment. Nextflow Tower currently for AWS, Google, Slurm or LSF. 
+Pipelines are executed in the users own computing environment. Nextflow Tower currently has support for AWS, Google, Slurm or LSF. Visit [this page](/content/docs/compute-environments) to configure an environment.
 
-To launch a pipeline, users must first configure a compute environment (see below). 
+{{% pretty_screenshot img="/uploads/2020/10/launch_button" %}}
+**1.** Clcik on the **Launch** button in the navigation bar
+
+The **Launch Pipeline** pop up window will appear with your defualt compute enviro
+
+
+To launch a pipeline, users must first
 Once added, the user will:
 
 1. Navigate to the Launch dialog box in the menu navigation bar.
@@ -47,5 +53,3 @@ Once added, the user will:
 ## Slurm
 
 ## LSF
-
-
