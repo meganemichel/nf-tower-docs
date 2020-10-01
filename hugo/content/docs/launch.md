@@ -27,7 +27,6 @@ menu:
     weight: 1
 ---
 
-## Overview
 Pipelines are executed in the users own computing environment. Nextflow Tower currently has support for AWS, Google, Slurm or LSF. Visit [this page](/content/docs/compute-environments) to configure an environment.
 
 {{% pretty_screenshot img="/uploads/2020/10/launch_button.png" %}}
