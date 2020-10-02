@@ -102,7 +102,7 @@ Next we need to create a service account.
 You have created a project, enabled Google Life Sciences API, created a bucket and a JSON file containing required credentials. We are now ready to set up a new compute environment in Tower.
 {{% /star %}}
 
-## Life Sciences Compute Environment
+## Compute environment
 
 To create a new compute environment for Google Cloud in Tower:
 

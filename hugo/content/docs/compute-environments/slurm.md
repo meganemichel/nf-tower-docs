@@ -1,5 +1,5 @@
 ---
-title: SLURM
+title: Slurm
 weight: 3
 publishdate: 2017-12-31T04:00:00.000+00:00
 expirydate: 2030-01-01T04:00:00.000+00:00
@@ -13,46 +13,74 @@ menu:
     weight: 4
 
 ---
-[*Slurm is an open source, fault-tolerant, and highly scalable cluster management and job scheduling system for large and small Linux clusters.*](https://slurm.schedmd.com/overview.html)
+## Overview
+
+[Slurm Workload Manager](https://slurm.schedmd.com/overview.html) is an open source, fault-tolerant, and highly scalable cluster management and job scheduling system for large and small Linux clusters.
 
 {{% warning %}}
-Note: support for remote batch schedulers is an incubating feature
-This feature allows Tower to connect to your local cluster and launch the execution of the requested pipeline. The following requirements need to be fulfilled:
-
-1. The cluster should be reachable via an SSH connection using an SSH key
-2. The cluster should allow outbound connections to the Tower web service
-3. The cluster queue used to run the Nextflow head job must be able submit cluster jobs
-4. Nextflow runtime version 20.08.1-edge (or later) should be pre-installed in the cluster
+Support for remote batch schedulers is an incubating feature.
+This feature enables Tower to connect to remote cloud or on-premise clusters and launch pipelines.
 {{% /warning %}}
 
+## Requirements
+
+To launch pipelines into a Slurm cluster from Tower, the following requirements must to be fulfilled:
+
+* The cluster should be reachable via an SSH connection using an SSH key.
+* The cluster should allow outbound connections to the Tower web service.
+* The cluster queue used to run the Nextflow head job must be able submit cluster jobs.
+* The Nextflow runtime version 20.08.1-edge (or later) should be installed on the cluster.
 
 
-## Slurm workload manager
+## Compute environment
 
-To create a new compute environment for AWS, follow these steps:
+To create a new compute environment for Slurm:
 
-{{% pretty_screenshot img="/uploads/2020/09/new_env.png" %}}
+**1.** In the navigation bar on the upper right, choose your account name then choose "Compute environments". Click on the *New Environment* button.
 
-In the navigation bar on the upper right, choose your account name then choose "Compute environments". Click on the *New Environment* button.
+{{% pretty_screenshot img="/uploads/2020/09/aws_new_env.png" %}}
+
+<br>
+
+**2.** Enter a descriptive name (e.g. *Slurm On-premise*) and select **Slurm Workload Manager** as the target platform.
 
 {{% pretty_screenshot img="/uploads/2020/09/slurm_new_env.png" %}}
 
-Choose a descriptive name for this environment. For example "Slurm env" and Select **Slurm Workload MAnager** as the target platform
+<br>
+
+**3.** Select the **+** sign to add new SHH credentials.
+
+**4.** Enter a name for the credentials
+
+**5** Enter your **SSH private key** and associated **Passphrase** if required then select **Create**.
 
 {{% pretty_screenshot img="/uploads/2020/09/slurm_tower_credentials.png" %}}
 
-
-Click the **+** sign to add new Credentials. Name your credentials and enter your **SSH private key** and associated **Passphrase**. Then Click **Create**
-
 {{% tip %}}
-Note the SSH passphrase can be optional.
+An passphrase for your SSH key may be optional depending on how it was created. See [here](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) for detailed instructions for how to create a key.
 {{% /tip %}}
+
+<br>
+
+**6.** Enter the absolute path on the cluster of the **Work directory** to be used.
+
+**7.** Enter the absolute path on the cluster of the **Launch directory** to be used.
+
+**8.** Enter the **Login hostname**. This is usually is the cluster login node address.
+
+**9.** The **Head queue name** which is the name of the queue on the cluster used to launch the execution of the Nextflow runtime.
+
+**10.** The **Compute queue name** which is the name of queue on the cluster to which pipeline jobs are submitted. 
+
+**11.** Select **Create** to finalize the creation of the compute environment.
 
 {{% pretty_screenshot img="/uploads/2020/09/slurm_tower_options.png" %}}
 
-
-Enter the absolute path of the **Work** and **Launch directories**, the **Username** on the cluster used to launch the pipeline execution, the **Login hostname** (which is usually is the cluster login node), the **Head queue name** which is the name of the queue on the cluster used to launch the execution of the Nextflow pipeline, and the **Compute queue name** which is the name of queue on the cluster to which pipeline jobs are submitted. Then click **Create**.
-
 {{% tip %}}
-This queue can be overridden by the pipeline configuration.
+The Compute queue can be overridden as a configuration option in the Nextflow pipeline configuration. See Nextflow [docs](https://www.nextflow.io/docs/latest/process.html#queue) for more details.
 {{% /tip %}}
+
+{{% star "Groovy!" %}}
+You are now ready to launch pipelines.
+{{% /star %}}
+

@@ -13,6 +13,7 @@ menu:
     weight: 2
 
 ---
+## Overview
 {{% tip "Disclaimer" %}}
 <!-- If you already have Batch environment pre-configured skip Forge and go to Launch -->
 This guide assumes you have an existing [AWS Account](https://aws.amazon.com/). Sign up for free [here](https://aws.amazon.com/account/sign-up).
@@ -26,7 +27,7 @@ There are two ways of creating a **Compute Environment** for **AWS Batch** with 
 
 If you don't yet have an AWS Batch environment fully set-up, the [Tower Forge](#tower-forge-for-aws-batch) guide is suggested. If have been provided with an AWS Batch queue from your account administrator, or if you have setup AWS Batch previously, follow the [Tower Launch](#tower-launch-for-aws-batch) guide.
 
-## Forge for AWS Batch
+## Forge
 
 <!-- Add explanation for what is Forge and disclaimer -->
 {{% warning %}}
@@ -128,7 +129,7 @@ pipelines, this can amount to a large quantity of data. To reduce costs, when co
 <br>
 
 
-## Forge Compute Environment
+## Forge compute environment
 
 {{% star "Congratulations!" %}}
 You have completed the AWS environment setup for Tower.
@@ -208,7 +209,7 @@ You now have everything to begin deploying massively scalable pipelines.
 Jump to the documentation section for Launching Pipelines.
 
 
-## Launch for AWS Batch
+## Manual
 
 This section is for users with a pre-configured AWS environment. You will need a Batch queue, Batch compute environment, an IAM user and an S3 bucket already set up.
 
@@ -222,8 +223,8 @@ To enable Tower within your existing AWS configuration, you need to have an IAM 
 
 With theses permissions, we can add a new **AWS Batch** environment in the [Tower UI](#launch-compute-environment)
 
-## Launch Compute Environment
-To create a new compute environment for AWS Batch (Launch):
+## Manual compute environment
+To create a new compute environment for AWS Batch (Manual):
 
 **1.** In the navigation bar on the upper right, choose your account name then choose "Compute environments" and select on **New Environment**.
 
