@@ -15,84 +15,131 @@ menu:
 ---
 ---
 {{% tip "Disclaimer" %}}
-<!-- If you already have Batch environment pre-configured skip Froge and go to Launch -->
-This guide assumes you already have an existing [Google Cloud Account](https://console.cloud.google.com). The first section guides you through setting up your Google Cloud account and enable Google Life Sciences API. The second section guides you through creating a new Google Cloud environment in Tower.
+This guide assumes you have an existing [Google Cloud Account](https://console.cloud.google.com). Sign-up for a free account [here](https://cloud.google.com/).
 {{% /tip %}}
 
-## Setting up Google Cloud
+## Cloud Life Sciences
 
-First Step is to create a a Google Cloud project. Navigate to the [Google Project Selector page](https://console.cloud.google.com/projectselector2) and select **CREATE PROJECT**
+Tower provides integration to Google Cloud via the [Cloud Life Sciences API](https://cloud.google.com/life-sciences/docs/reference/rest).
+
+The guide will begin with configuring your Google Cloud account and enabling the Google Life Sciences API then guide you through creating a new Google Cloud compute environment in Tower.
+
+## Project configuration
+
+If you do not already have one, the first Step is to create a a Google Cloud project.
+
+**1.** Navigate to the [Google Project Selector page](https://console.cloud.google.com/projectselector2) and select **CREATE PROJECT**.
 
 {{% pretty_screenshot img="/uploads/2020/09/google_create_project.png" %}}
 
-Choose a name for your project e.g: "tower-nf", the organisation and location will be set by default to your current account setup.
+<br>
 
-Before enabling the **Google Life Sciences** API make sure that billing is enabled for the project you just created. In the project page select the Navigation menu from the top left of the page and select **Billing**. You can follow the instructions [here](https://cloud.google.com/billing/docs/how-to/modify-project).
+**2.** Enter a name for your project e.g: "tower-nf", the organization and location will be set by default to your current account setup.
 
-To enable **Google Life Sciences API** open this [link](https://console.cloud.google.com/flows/enableapi?apiid=lifesciences.googleapis.com%2Ccompute.googleapis.com%2Cstorage-api.googleapis.com), select the project we just created and click **Continue**.
+**3.** Before enabling the **Google Life Sciences** API, make sure that billing is enabled for the project. In the project page select the Navigation menu from the top left of the page and select **Billing**. You can follow the instructions [here](https://cloud.google.com/billing/docs/how-to/modify-project) to enable billing.
 
-Next, create a bucket in the project (make sure you the right project is selected on top of the page left to the search bar). Click on the Navigation menu and click on **Storage** and the on **Create Bucket**.
+**4.** To enable the **Google Life Sciences API**, open this [link](https://console.cloud.google.com/flows/enableapi?apiid=lifesciences.googleapis.com%2Ccompute.googleapis.com%2Cstorage-api.googleapis.com), select the project and press **Continue**.
 
-{{% pretty_screenshot img="/uploads/2020/09/google_name_bucket.png" %}}
-
-{{% warning %}}
-DO NOT USE underscores in your bucket name. Join words with hyphens instead.   
-{{% /warning %}}
-
+**5.** Create a Google Storage bucket in the project by opening the navigation menu and selecting **Storage** followed by **Create Bucket**.
 
 {{% pretty_screenshot img="/uploads/2020/09/google_storage.png" %}}
 
-{{% warning %}}
-Google Life Sciences is available in limited number of [locations](https://cloud.google.com/life-sciences/docs/concepts/locations). It's probably best to choose your bucket location in one of these (e.g europe-west2 (London)).
+<br>
+
+**6.** Enter a name for your bucket. 
+
+{{% pretty_screenshot img="/uploads/2020/09/google_name_bucket.png" %}}
+
+{{% warning "Bucket Naming"%}}
+Avoid underscores in your bucket name and use hyphens instead.   
 {{% /warning %}}
+
+<br>
+
+**6.** Select a **Location type** (Region) and the **Location** where you want to create the bucket.
 
 {{% pretty_screenshot img="/uploads/2020/09/google_location.png" %}}
 
-Select the **location type** to Region and the **Location** to one of the regions shown bellow. Note this list can evolve, the latest list is available [here](https://cloud.google.com/life-sciences/docs/concepts/locations)
+{{% tip %}}
+The Google Cloud Life Sciences API is available in limited number of [locations](https://cloud.google.com/life-sciences/docs/concepts/locations), however, these locations are only used to store metadata about the pipeline operations. The location of the storage bucket and compute resources can be in any region.
+{{% /tip %}}
 
-{{% pretty_screenshot img="/uploads/2020/09/google_life_sciences_regions.png" %}}
+## Service account
 
-Next you need to download credentials to give Tower access to your Google project.
+Next we need to create a service account.
+
+**1.** In the Navigation bar, Click **IAM** and **Service Account**.
 
 {{% pretty_screenshot img="/uploads/2020/09/google_select_service_accounts.png" %}}
 
-In the Navigation bar, Click **IAM** and **Service Account**
+<br>
+
+**2.** Select **+ CREATE SERVICE ACCOUNT**. Choose a name and a description and select something.
 
 {{% pretty_screenshot img="/uploads/2020/09/google_service_account_name.png" %}}
 
-Click **+ CREATE SERVICE ACCOUNT**. Choose a name and a description.
+<br>
+
+**3.** Set the role to Editor, leave the **Grant users access to this service account (optional)** options empty and select **CREATE**.
 
 {{% pretty_screenshot img="/uploads/2020/09/google_service_account_role.png" %}}
 
-Set the role to Editor, leave the **Grant users access to this service account (optional)** options empty and click **CREATE**.
+<br>
+
+**4.** Select the newly created **Service account**, click **Actions** and **Create key**. 
 
 {{% pretty_screenshot img="/uploads/2020/09/google_create_key.png" %}}
 
-On the newly created **Service ccount** click **Actions** and **Create key**.
+<br>
+
+**5.** Select the JSON format and click **CREATE**. This will download a JSON file with your credentials.
 
 {{% pretty_screenshot img="/uploads/2020/09/google_key_json.png" %}}
 
-Select the JSON format and click **CREATE**. This will download a JSON file with your credentials.
+<br>
 
+{{% star "Sweet!" %}}
+You have created a project, enabled Google Life Sciences API, created a bucket and a JSON file containing required credentials. We are now ready to set up a new compute environment in Tower.
+{{% /star %}}
 
-Now, we have created a project, enabled Google Life Sciences API, created a bucket and a JSON file containing our credentials, we are ready to set up a new environment en Tower.
+## Life Sciences Compute Environment
 
-## Create a new Google Life Sciences compute environment
+To create a new compute environment for Google Cloud in Tower:
 
-To create a new compute environment for AWS, follow these steps:
+**1.** In the navigation bar on the upper right, choose your profile then choose **Compute environments**. Select **New Environment**.
 
-{{% pretty_screenshot img="/uploads/2020/09/new_env.png" %}}
+{{% pretty_screenshot img="/uploads/2020/09/aws_new_env.png" %}}
 
-In the navigation bar on the upper right, choose your account name then choose "Compute environments". Click on the *New Environment* button.
+<br>
+
+**2.** Enter a name for this environment. For example "Google Cloud Life Sciences (europe-west2)" and select **Google Life Sciences** as the target platform.
 
 {{% pretty_screenshot img="/uploads/2020/09/google_new_env.png" %}}
 
-Choose a descriptive name for this environment. For example "Google (europe-west2)" and Select **Google Life Sciences** as the target platform
+<br>
+
+**3.** Select the **+** sign to add new credentials. Name your credentials and copy-paste the contents from the JSON file above.
 
 {{% pretty_screenshot img="/uploads/2020/09/google_tower_credentials.png" %}}
 
-Click the **+** sign to add new Credentials. Name your credentials and copy-paste the contents from the JSON file downloaded in the previous section.
+<br>
+
+**4.** Select the **Region** (e.g. *europe-west2*) that should be in the same location as the bucket created above. 
+
+**5.** You can leave the **Location** empty and Google will run the Life Sciences API Service in the closest available location. 
+
+**6.** Enter the bucket location in the **Pipeline work directory** e.g. *gs://nf-tower-bucket*. 
+
+**7.** All other options can remain empty.
+
+**8.** Select **Create** to finalize the creation of the compute environment. 
 
 {{% pretty_screenshot img="/uploads/2020/09/google_tower_location.png" %}}
 
-Select the same **Region** we used for the bucket in the previous section (e.g Europe-west2). You can leave the **Location** empty (google will run the life sciences service where your bucket is located). The **Pipeline work directory** should be your bucket path e.g *gs://nf-tower-bucket*. You can leave the other options empty and click **Create**.
+<br>
+
+{{% star "Ace!" %}}
+Time to start launching pipelines in your cloud.
+{{% /star %}}
+
+
