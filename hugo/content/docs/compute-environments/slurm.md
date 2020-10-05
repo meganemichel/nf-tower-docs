@@ -44,7 +44,7 @@ To create a new compute environment for Slurm:
 
 **2.** Enter a descriptive name (e.g. *Slurm On-premise*) and select **Slurm Workload Manager** as the target platform.
 
-{{% pretty_screenshot img="/uploads/2020/09/slurm_new_env.png" %}}
+{{% pretty_screenshot img="/uploads/2020/10/slurm_new_env.png" %}}
 
 <br>
 
@@ -70,7 +70,7 @@ An passphrase for your SSH key may be optional depending on how it was created. 
 
 **9.** The **Head queue name** which is the name of the queue on the cluster used to launch the execution of the Nextflow runtime.
 
-**10.** The **Compute queue name** which is the name of queue on the cluster to which pipeline jobs are submitted. 
+**10.** The **Compute queue name** which is the name of queue on the cluster to which pipeline jobs are submitted.
 
 **11.** Select **Create** to finalize the creation of the compute environment.
 
@@ -83,4 +83,3 @@ The Compute queue can be overridden as a configuration option in the Nextflow pi
 {{% star "Groovy!" %}}
 You are now ready to launch pipelines.
 {{% /star %}}
-
