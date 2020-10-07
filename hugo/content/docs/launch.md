@@ -55,11 +55,16 @@ To use an alternative bucket, create a new compute environment associated with i
 
 **5.** For each **Config profile** enter the name followed by the `Enter` key. Note we've added two profiles in this example.
 
-**6.** Config parameters should be should be written in the following format:
+**6.** Config parameters should be should be written in YAML or JSON format:
 
-        params.input='s3://tower-bucket/exome-data/ERR013140_{1,2}.fastq.bz2'  
-        params.email='me@mail.msg'
+        input: 's3://tower-bucket/exome-data/ERR013140_{1,2}.fastq.bz2'  
+        email: 'me@mail.msg'
+        paired_end: true
 
 {{% tip %}}
-Note the full path to the s3 bucket.
+Note the full path to the s3 bucket, quotes around strings, and no quotes around booleans or numbers.
 {{% /tip %}}
+
+**7.** The advanced options allow us to add content to the configuration file. In this example we edit the **manifest** section to overwrite the Pipeline name and it's description. We can also point to a different main nextflow script, and a different git version.
+
+{{% pretty_screenshot img="/uploads/2020/10/launch_manifest.png" %}}
