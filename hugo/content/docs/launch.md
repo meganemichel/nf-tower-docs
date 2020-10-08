@@ -86,3 +86,9 @@ Note the Resume option is selected by default when re-launching a new pipeline. 
 {{% tip %}}
 for a detailed explanation of how the resume option works please visit [part 1](https://www.nextflow.io/blog/2019/demystifying-nextflow-resume.html) and [part 2](https://www.nextflow.io/blog/2019/troubleshooting-nextflow-resume.html) in the `Demystifying Nextflow resume` story in the [Nextflow blog](https://www.nextflow.io/blog)
 {{% /tip %}}
+
+## Pipeline email notifications
+
+You can receive email notifications on workflow completion. Go to your profile page on the top right and select the `Send notification email on workflow completion` option at the bottom of the page.
+
+{{% pretty_screenshot img="/uploads/2020/10/launch_notifications.png" %}}
