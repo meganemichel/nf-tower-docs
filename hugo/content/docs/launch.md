@@ -68,3 +68,21 @@ Note the full path to the s3 bucket, quotes around strings, and no quotes around
 **7.** The advanced options allow us to add content to the configuration file. In this example we edit the **manifest** section to overwrite the Pipeline name and it's description. We can also point to a different main nextflow script, and a different git version.
 
 {{% pretty_screenshot img="/uploads/2020/10/launch_manifest.png" %}}
+
+Note the name of the pipeline is overwritten.
+
+{{% pretty_screenshot img="/uploads/2020/10/launch_pipeline_rename.png" %}}
+
+## Re-launching Pipelines
+
+The re-launching option is a great way to troubleshoot pipelines or to re-launch the same pipeline with different parameters.
+
+{{% pretty_screenshot img="/uploads/2020/10/launch_relaunch.png" %}}
+
+Note the Resume option is selected by default when re-launching a new pipeline. In short, The `-resume` option allows for the continuation of a workflow execution.
+
+{{% pretty_screenshot img="/uploads/2020/10/launch_resume.png" %}}
+
+{{% tip %}}
+for a detailed explanation of how the resume option works please visit [part 1](https://www.nextflow.io/blog/2019/demystifying-nextflow-resume.html) and [part 2](https://www.nextflow.io/blog/2019/troubleshooting-nextflow-resume.html) in the `Demystifying Nextflow resume` story in the [Nextflow blog](https://www.nextflow.io/blog)
+{{% /tip %}}
