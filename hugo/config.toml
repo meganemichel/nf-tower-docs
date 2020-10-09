@@ -37,7 +37,7 @@ weight = 4
 name = "Pipeline Monitoring"
 weight = 5
 [[menu.docs]]
-name = "Git Integration"
+name = "Version control"
 weight = 6
 [[menu.docs]]
 name = "Pipeline Actions"
