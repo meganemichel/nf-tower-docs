@@ -38,7 +38,7 @@ menu:
 ## Introduction
 
 Nextflow Tower is full-stack application for the development and deployment of data analysis
-pipelines. 
+pipelines.
 
 Nextflow Tower bridges the gap between developers and their teams, by making development fun and easy, while providing powerful content management for their teams.
 
@@ -52,16 +52,16 @@ Nextflow Tower bridges the gap between developers and their teams, by making dev
 
 The main thing to understand is that Nextflow -- unlike other workflow management systems -- is both a language and a runtime.
 
-To put it simply, Nextflow is a runtime for the executution of Nextflow pipelines.
+To put it simply, Nextflow is a runtime for the execution of Nextflow pipelines.
 
-Nextflow is the engine 
+Nextflow is the engine
 
 
 ## Why Nextflow Tower?
 
-We created Nextflow in 2013 to deliver the most seamless experience for data pipelines at scale. 
+We created Nextflow in 2013 to deliver the most seamless experience for data pipelines at scale.
 
-Nextflow Tower is the continuation of this mission encompassing the lastest technologies.
+Nextflow Tower is the continuation of this mission encompassing the latest technologies.
 
 ## Advantages
 
