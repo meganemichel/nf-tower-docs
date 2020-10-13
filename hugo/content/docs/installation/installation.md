@@ -32,7 +32,7 @@ Nextflow Tower is an open source monitoring and managing platform for Nextflow w
 
 {{% tip %}}
 
-[**Sign up**](https://tower.nf "Nextflow Tower") to try Tower for free today, or request a [**demo**](https://seqera.io/demo "Nextflow Tower Demo") for a deployment in your own on-premise or cloud environment.
+[**Sign up**](https://tower.nf "Nextflow Tower") to Tower.nf for free today, or request a [**demo**](https://seqera.io/demo "Nextflow Tower Demo") for a deployment in your own on-premise or cloud environment.
 
 {{% /tip %}}
 

@@ -43,11 +43,8 @@ weight = 6
 name = "Pipeline Actions"
 weight = 7
 [[menu.docs]]
-name = "Installation"
-weight = 8
-[[menu.docs]]
 name = "API"
-weight = 9
+weight = 8
 [[menu.faqs]]
 name = "Glossary"
 weight = 2
