@@ -46,7 +46,7 @@ weight = 7
 name = "API"
 weight = 8
 [[menu.docs]]
-name = "Nexftlow test"
+name = "Nextflow test"
 weight = 9
 [[menu.faqs]]
 name = "Glossary"
