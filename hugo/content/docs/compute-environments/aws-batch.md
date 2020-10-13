@@ -19,7 +19,7 @@ menu:
 This guide assumes you have an existing [AWS Account](https://aws.amazon.com/). Sign up for free [here](https://aws.amazon.com/account/sign-up).
 {{% /tip %}}
 
-There are two ways of creating a **Compute Environment** for **AWS Batch** with Tower. 
+There are two ways of creating a **Compute Environment** for **AWS Batch** with Tower.
 
 1. **Tower Forge** for AWS Batch automatically creates AWS Batch resources in your AWS account.
 
@@ -133,7 +133,7 @@ pipelines, this can amount to a large quantity of data. To reduce costs, when co
 
 {{% star "Congratulations!" %}}
 You have completed the AWS environment setup for Tower.
-{{% /tip %}}
+{{% /star %}}
 
 
 Now we can add a new **AWS Batch** environment in the Tower UI. To create a new compute environment, follow these steps:
@@ -160,7 +160,7 @@ You can create multiple credentials in your Tower environment. See the section *
 
 <br>
 
-**4.** Select a **Region**, for example *eu-west-1 - Europe (Ireland)*, and in the **Pipeline work directory** enter the S3 bucket we created in the previous section e.g: `s3://unique-tower-bucket`. 
+**4.** Select a **Region**, for example *eu-west-1 - Europe (Ireland)*, and in the **Pipeline work directory** enter the S3 bucket we created in the previous section e.g: `s3://unique-tower-bucket`.
 
 **5.** Select **Batch Forge** as the **Config Mode**.
 
@@ -184,7 +184,7 @@ The bucket should be in the same **Region** as selected above.
 
 **11.** Enter any additional **Allowed S3 buckets** that your workflows require to access input data or to write output files. The **Pipeline work directory** bucket above is added by default to the list of **Allowed S3 buckets**.
 
-**12.** Choose to use **FSx for Lustre** which attaches a file system to each EC2 instance. This eliminates the need to transfer data between S3 and the instance and can provide significant performance advantages. 
+**12.** Choose to use **FSx for Lustre** which attaches a file system to each EC2 instance. This eliminates the need to transfer data between S3 and the instance and can provide significant performance advantages.
 
 **13.** Choose the **Dispose resources** option.
 
@@ -196,7 +196,7 @@ You can choose to create a compute environment that will launch either **Spot** 
 
 <br>
 
-**14.** Select **Create** to finalize the compute environment setup. It will take approximately 60 seconds for all the resources to be created and after this you will be ready to launch pipelines. 
+**14.** Select **Create** to finalize the compute environment setup. It will take approximately 60 seconds for all the resources to be created and after this you will be ready to launch pipelines.
 
 {{% pretty_screenshot img="/uploads/2020/09/aws_60s_new_env.png" %}}
 
@@ -250,9 +250,9 @@ You can create multiple credentials in your Tower environment. See the section *
 
 **4.** Select a region, for example "eu-west-1 - Europe (Ireland)"
 
-**5.** Enter an S3 bucket path, For example "s3://tower-bucket" 
+**5.** Enter an S3 bucket path, For example "s3://tower-bucket"
 
-**6.** the **Manual** config mode. 
+**6.** the **Manual** config mode.
 
 **7.** Enter the **Head queue** which is the name of the AWS Batch queue that the Nextflow runtime application will run and a **Compute queue** which is the name of the AWS Batch queue that tasks will be submitted to.
 
@@ -266,10 +266,10 @@ You can create multiple credentials in your Tower environment. See the section *
 You now have created a compute environment.
 {{% /tip %}}
 
-### Access to S3 Buckets 
+### Access to S3 Buckets
 
 Tower can use S3 to access data, create work directories and write outputs. The IAM user above needs permissions to use these S3 Buckets. We can set a policy for our IAM user that provides the permission to access specific buckets.
- 
+
 **1.** Access the IAM User table in the [IAM service](https://console.aws.amazon.com/iam/home)
 
 **2.** Select the IAM user.
