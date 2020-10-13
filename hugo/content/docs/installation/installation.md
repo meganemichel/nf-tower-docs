@@ -36,6 +36,11 @@ Nextflow Tower is an open source monitoring and managing platform for Nextflow w
 
 {{% /tip %}}
 
+{{% pretty_screenshot img="/uploads/2020/10/installation_reference_architecture.png" %}}
+
+This diagram shows the Tower architecture deployed on AWS.
+
+
 # Tower Modules
 
 The application is composed of different modules that can be configured and deployed depending on user requirements.
@@ -89,7 +94,7 @@ The cron service can be configured to run as an embedded backend service or an i
 
 We created Nextflow in 2013 to deliver the most seamless experience for data pipelines at scale.
 
-Nextflow Tower is the continuation of this mission encompassing the lastest technologies.
+Nextflow Tower is the continuation of this mission encompassing the latest technologies.
 
 ## Basic deployment
 
