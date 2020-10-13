@@ -25,7 +25,7 @@ style = "monokailight"
 name = "Welcome"
 weight = 1
 [[menu.docs]]
-name = "Quick Start"
+name = "Getting Started"
 weight = 2
 [[menu.docs]]
 name = "Compute Environments"
