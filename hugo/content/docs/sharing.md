@@ -27,9 +27,6 @@ menu:
     weight: 1
 ---
 
-Pipeline sharing
-================
-
 Nextflow seamlessly integrates with
 [BitBucket](http://bitbucket.org/)[1], [GitHub](http://github.com), and
 [GitLab](http://gitlab.com) hosted code repositories and sharing
