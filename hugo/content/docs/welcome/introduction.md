@@ -10,7 +10,7 @@ authors:
   - "Alain Coletta"
   - "Seqera Labs"
 
-headline: 'Welcome to Tower.nf documentation'
+headline: 'Tower.nf documentation - Welcome!'
 description: 'Nextflow Tower is full-stack application for the development, deployment and monitoring  of Nextflow data analysis pipelines.'
 menu:
   footer:
@@ -26,9 +26,7 @@ menu:
 
 ---
 
-Nextflow Tower is full-stack application for the development, deployment and monitoring  of Nextflow data analysis pipelines.
-
-Nextflow Tower bridges the gap between developers and their teams, by making development fun and easy, while providing powerful content management for their teams.
+Nextflow Tower is a full-stack application for the development, deployment and monitoring  of [Nextflow](https://nextflow.io) data analysis pipelines.
 
 {{% tip %}}
 
@@ -42,27 +40,11 @@ The main thing to understand is that Nextflow -- unlike other workflow managemen
 
 To put it simply, Nextflow is a runtime for the execution of Nextflow pipelines.
 
-Nextflow is the engine
+Nextflow is the engine making sure workflows written in the Nextflow language are correctly executed independently of their compute environment.
 
 
 ## Why Nextflow Tower?
 
-We created Nextflow in 2013 to deliver the most seamless experience for data pipelines at scale.
+We created Nextflow in 2013 to deliver the most seamless experience for executing data pipelines at scale.
 
-Nextflow Tower is the continuation of this mission encompassing the latest technologies.
-
-### Advantages
-
-Choosing to build a static site and use a Git-backed CMS comes with a multitude of advantages over the traditional Monolithic CMS:
-
-### Speed, reliability, and security
-
-Static sites don't require a complicated server setup to allow for the dynamic rendering of pages. This means your sites download faster for visitors, can handle insane volumes of traffic, and have many fewer touch points that are vulnerable to hacking.
-
-### Continuous Deployment
-
-Unlike traditional content management systems, your codebase _is_ your website. That means developers can work on changes to the website locally, and then push to Git and automatically have them deployed to production.
-
-### Unified Workflow
-
-Gone are the days of developers and editors having completely separate workflows. Developers and editors now work in sync with Git, providing unparalleled ability to deliver quickly and easily.
+Nextflow Tower is the continuation of this mission. Encompassing the latest technologies we have built a platform to easily execute and monitor pipelines across every step. All actions are programatically accessible through our API.
