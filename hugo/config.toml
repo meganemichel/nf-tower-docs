@@ -40,7 +40,7 @@ weight = 5
 name = "Git Integration"
 weight = 6
 [[menu.docs]]
-name = "Webhooks"
+name = "Automation"
 weight = 7
 [[menu.docs]]
 name = "API"
