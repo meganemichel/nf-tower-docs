@@ -1,5 +1,18 @@
 ---
 title: Private git repositories
+aliases:
+- "/docs/git-private"
+weight: 1
+layout: single
+publishdate: 2020-10-20 04:00:00 +0000
+authors:
+  - "Evan Floden"
+  - "Alain Coletta"
+  - "Seqera Labs"
+headline: "Executing workflows hosted in a private git repository"
+description: 'Managing and connecting to workflow git repositories'
+
+
 menu:
   docs:
     parent: Git Integration

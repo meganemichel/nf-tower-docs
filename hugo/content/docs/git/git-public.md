@@ -1,5 +1,17 @@
 ---
 title: Public git repositories
+aliases:
+- "/docs/git-public"
+weight: 1
+layout: single
+publishdate: 2020-10-20 04:00:00 +0000
+authors:
+  - "Evan Floden"
+  - "Alain Coletta"
+  - "Seqera Labs"
+headline: "Executing workflows hosted in a public git repository"
+description: 'Managing and connecting to workflow git repositories'
+
 menu:
   docs:
     parent: Git Integration
@@ -15,4 +27,4 @@ Launching public hosted git pipelines simply requires adding the git repo URL in
 [nf-core](https://nf-co.re/pipelines) is a great resource for public nextflow pipelines.
 {{% /tip %}}
 <br>
-**[NEXT Connexting to a private Git repository →](/docs/git/git-private/)**
+**[NEXT Connecting to a private Git repository →](/docs/git/git-private/)**
