@@ -34,13 +34,13 @@ weight = 3
 name = "Launching Pipelines"
 weight = 4
 [[menu.docs]]
-name = "Pipeline Monitoring"
+name = "Monitoring Pipelines"
 weight = 5
 [[menu.docs]]
-name = "Version control"
+name = "Git Integration"
 weight = 6
 [[menu.docs]]
-name = "Pipeline Actions"
+name = "Webhooks"
 weight = 7
 [[menu.docs]]
 name = "API"

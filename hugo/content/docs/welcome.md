@@ -5,12 +5,10 @@ aliases:
 weight: 1
 layout: single
 publishdate: 2020-06-11 04:00:00 +0000
-expirydate: 2030-01-01 04:00:00 +0000
-date: 2020-06-11 04:00:00 +0000
-authors:
-- Forestry Team
-headline: ''
-description: ''
+authors: Evan Floden & Alain Coletta
+- Seqera Labs
+headline: 'Welcome to Tower.nf documentation'
+description: 'Nextflow Tower is full-stack application for the development, deployment and monitoring  of Nextflow data analysis pipelines.'
 textline: ''
 categories: []
 tags: []
@@ -35,10 +33,7 @@ menu:
 
 ---
 
-## Introduction
-
-Nextflow Tower is full-stack application for the development and deployment of data analysis
-pipelines.
+Nextflow Tower is full-stack application for the development, deployment and monitoring  of Nextflow data analysis pipelines.
 
 Nextflow Tower bridges the gap between developers and their teams, by making development fun and easy, while providing powerful content management for their teams.
 
