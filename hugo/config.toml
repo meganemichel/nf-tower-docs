@@ -22,31 +22,31 @@ codeFences = true
 guessSyntax = true
 style = "monokailight"
 [[menu.docs]]
-name = "Quick Start"
-weight = 2
-[[menu.docs]]
 name = "Welcome"
 weight = 1
 [[menu.docs]]
-name = "Launching Pipelines"
-weight = 3
+name = "Getting Started"
+weight = 2
 [[menu.docs]]
 name = "Compute Environments"
+weight = 3
+[[menu.docs]]
+name = "Launching Pipelines"
 weight = 4
 [[menu.docs]]
-name = "Pipeline Monitoring"
+name = "Monitoring Pipelines"
 weight = 5
 [[menu.docs]]
 name = "Git Integration"
 weight = 6
 [[menu.docs]]
-name = "Pipeline Actions"
+name = "Webhooks"
 weight = 7
 [[menu.docs]]
-name = "Installation"
+name = "API"
 weight = 8
 [[menu.docs]]
-name = "API"
+name = "Nextflow test"
 weight = 9
 [[menu.faqs]]
 name = "Glossary"
@@ -168,3 +168,8 @@ twitter = "forestryio"
 author = "authors"
 category = "categories"
 tag = "tags"
+#the following lines enable hrefTargetBlank where all external links shall be generated with target='_blank'.
+# https://gohugo.io/getting-started/configuration/#configure-blackfriday
+[blackfriday]
+  plainIDAnchors = true
+  hrefTargetBlank = true

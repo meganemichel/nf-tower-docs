@@ -1,3 +1,5 @@
+.shortcode-star,
+.shortcode-note,
 .shortcode-tip,
 .shortcode-warning,
 .shortcode-error,
@@ -95,6 +97,28 @@
 
   &::after {
     background: $color-error;
+  }
+}
+
+.shortcode-note {
+  &::before {
+    background-color: $color-blue;
+    content: "N";
+  }
+
+  &::after {
+    background-color: $color-blue;
+  }
+}
+
+.shortcode-star {
+  &::before {
+    background-color: $color-sinbad;
+    content: "★";
+  }
+
+  &::after {
+    background-color: $color-sinbad;
   }
 }
 
