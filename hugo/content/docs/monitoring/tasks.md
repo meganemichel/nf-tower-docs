@@ -1,5 +1,17 @@
 ---
-title: Individual Processes and Metrics
+title: Tasks & metrics
+aliases:
+- "/docs/monitoring/stats-load"
+weight: 1
+layout: single
+publishdate: 2020-10-20 04:00:00 +0000
+authors:
+  - "Evan Floden"
+  - "Alain Coletta"
+  - "Seqera Labs"
+headline: "Detailed list of processes' tasks and metrics"
+description: 'Monitoring a Nextflow pipeline executed through Tower.nf'
+
 menu:
   docs:
     parent: Monitoring Pipelines
@@ -11,7 +23,7 @@ The **Tasks** section shows all processes' tasks. You can use the `Search` bar t
 
 {{% pretty_screenshot img="/uploads/2020/10/monitoring_cached.png" %}}
 
-Clicking on a `Process` in the **Precesses** section will filter all tasks for that specific process
+Clicking on a `Process` in the **Processes** section will filter all tasks for that specific process
 
 {{% pretty_screenshot img="/uploads/2020/10/monitoring_star.png" %}}
 
@@ -27,10 +39,9 @@ Furthermore, scrolling down shows details related to selected tasks including in
 
 {{% pretty_screenshot img="/uploads/2020/10/monitoring_task_resources.png" %}}
 
-## Processes' metrics 
+### Processe metrics
 
-The last section shows plot with CPU, memory, Job duration and I/O usage grouped by Processes.  
-
+The last section shows plot with CPU, memory, Job duration and I/O usage grouped by Processes.
 {{% pretty_screenshot img="/uploads/2020/10/monitoring_metrics.png" %}}
 
 {{% tip %}}

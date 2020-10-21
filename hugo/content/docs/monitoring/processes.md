@@ -1,12 +1,25 @@
 ---
-title: Jobs Processes
+title: Processes
+aliases:
+- "/docs/monitoring/job-processes"
+weight: 1
+layout: single
+publishdate: 2020-10-20 04:00:00 +0000
+authors:
+  - "Evan Floden"
+  - "Alain Coletta"
+  - "Seqera Labs"
+
+headline: 'List of the pipeline processes and their status'
+description: 'Monitoring a Nextflow pipeline executed through Tower.nf'
+
 menu:
   docs:
     parent: Monitoring Pipelines
     weight: 4
 ---
 
-In Nextflow a process is the basic processing primitive to execute a user script. The **Processes** section shows all processes and their instances (individual tasks). In this example, the [test profile](https://github.com/nf-core/rnaseq/blob/master/conf/test.config) is passing 4 fastq files as the `--reads` parameter.
+In Nextflow a `process` is the basic processing `primitive` to execute a user script. The **Processes** section shows all processes and their instances (individual tasks). In this example, the [test profile](https://github.com/nf-core/rnaseq/blob/master/conf/test.config) is passing 4 fastq files as the `--reads` parameter.
 
 {{% pretty_screenshot img="/uploads/2020/10/monitoring_reads.png" %}}
 

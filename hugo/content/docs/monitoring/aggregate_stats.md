@@ -1,5 +1,18 @@
 ---
-title: Aggregate Stats and Load
+title: Aggregate stats & load
+aliases:
+- "/docs/monitoring/stats-load-utilization"
+weight: 1
+layout: single
+publishdate: 2020-10-20 04:00:00 +0000
+authors:
+  - "Evan Floden"
+  - "Alain Coletta"
+  - "Seqera Labs"
+
+headline: 'Aggregated stats and resources used by the workflow'
+description: 'Monitoring a Nextflow pipeline executed through Tower.nf'
+
 menu:
   docs:
     parent: Monitoring Pipelines
@@ -13,7 +26,7 @@ Note the estimated cost is only based on computation usage and does not currentl
 {{% /tip %}}
 
 
-## Load and Utilization sections
+### Load and Utilization sections
 
 As processes are being submitted to the compute environment, the **Load** and **Utilization** sections allow the user to monitor how many cores, memory and CPUs are being used as well as how many processes tasks are being computed.
 
