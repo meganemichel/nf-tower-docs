@@ -1,24 +1,17 @@
 ---
 title: Introduction
 aliases:
-- "/docs/"
+- "/docs/introduction"
 weight: 1
 layout: single
-publishdate: 2020-06-11 04:00:00 +0000
-authors: Evan Floden & Alain Coletta
-- Seqera Labs
+publishdate: 2020-10-20 04:00:00 +0000
+authors:
+  - "Evan Floden"
+  - "Alain Coletta"
+  - "Seqera Labs"
+
 headline: 'Welcome to Tower.nf documentation'
 description: 'Nextflow Tower is full-stack application for the development, deployment and monitoring  of Nextflow data analysis pipelines.'
-textline: ''
-categories: []
-tags: []
-cta:
-  headline: ''
-  textline: ''
-  calls_to_action: []
-private: false
-images:
-- "/uploads/2018/01/OGimage-01-docs-3x.jpg"
 menu:
   footer:
     name: Docs
@@ -58,7 +51,7 @@ We created Nextflow in 2013 to deliver the most seamless experience for data pip
 
 Nextflow Tower is the continuation of this mission encompassing the latest technologies.
 
-## Advantages
+### Advantages
 
 Choosing to build a static site and use a Git-backed CMS comes with a multitude of advantages over the traditional Monolithic CMS:
 

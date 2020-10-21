@@ -1,12 +1,15 @@
 ---
 title: Google Cloud
-weight: 2
-publishdate: 2017-12-31T04:00:00.000+00:00
-expirydate: 2030-01-01T04:00:00.000+00:00
-date: '2017-04-06T04:00:00.000+00:00'
+weight: 1
 layout: single
-images:
-- "/uploads/2018/01/OGimage-01-docs-3x.jpg"
+publishdate: 2020-10-20 04:00:00 +0000
+authors:
+  - "Evan Floden"
+  - "Alain Coletta"
+  - "Seqera Labs"
+
+headline: 'Setting up a Google-Cloud compute environment for Tower.nf'
+description: 'step-by-step instructions to setup Google-Cloud for Tower.nf'
 menu:
   docs:
     parent: Compute Environments
@@ -46,7 +49,7 @@ If you do not already have one, the first Step is to create a a Google Cloud pro
 
 <br>
 
-**6.** Enter a name for your bucket. 
+**6.** Enter a name for your bucket.
 
 {{% pretty_screenshot img="/uploads/2020/09/google_name_bucket.png" %}}
 
@@ -86,7 +89,7 @@ Next we need to create a service account.
 
 <br>
 
-**4.** Select the newly created **Service account**, click **Actions** and **Create key**. 
+**4.** Select the newly created **Service account**, click **Actions** and **Create key**.
 
 {{% pretty_screenshot img="/uploads/2020/09/google_create_key.png" %}}
 
@@ -124,15 +127,15 @@ To create a new compute environment for Google Cloud in Tower:
 
 <br>
 
-**4.** Select the **Region** (e.g. *europe-west2*) that should be in the same location as the bucket created above. 
+**4.** Select the **Region** (e.g. *europe-west2*) that should be in the same location as the bucket created above.
 
-**5.** You can leave the **Location** empty and Google will run the Life Sciences API Service in the closest available location. 
+**5.** You can leave the **Location** empty and Google will run the Life Sciences API Service in the closest available location.
 
-**6.** Enter the bucket location in the **Pipeline work directory** e.g. *gs://nf-tower-bucket*. 
+**6.** Enter the bucket location in the **Pipeline work directory** e.g. *gs://nf-tower-bucket*.
 
 **7.** All other options can remain empty.
 
-**8.** Select **Create** to finalize the creation of the compute environment. 
+**8.** Select **Create** to finalize the creation of the compute environment.
 
 {{% pretty_screenshot img="/uploads/2020/09/google_tower_location.png" %}}
 
@@ -141,5 +144,3 @@ To create a new compute environment for Google Cloud in Tower:
 {{% star "Ace!" %}}
 Time to start launching pipelines in your cloud.
 {{% /star %}}
-
-
