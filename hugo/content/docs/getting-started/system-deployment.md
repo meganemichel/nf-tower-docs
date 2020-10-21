@@ -36,7 +36,7 @@ This diagram shows the Tower architecture deployed on AWS.
 
 The application is composed of different modules that can be configured and deployed depending on user requirements.
 
-All components are packaged as Docker container images which are hosted and security validated by the Amazon ECR service.  
+All components are packaged as Docker container images which are hosted and security validated by the Amazon ECR service.
 
 ### Backend module
 
@@ -60,7 +60,7 @@ The frontend can be configured to expose the application directly to the user/DM
 
 Nextflow Tower requires a relational database as its primary storage.
 
-It is suggested to use MySQL 5.6, however, any SQL database compatible with JPA/JDBC industry-standards are supported.   
+It is suggested to use MySQL 5.6, however, any SQL database compatible with JPA/JDBC industry-standards are supported.
 
 ### Caching
 
@@ -72,32 +72,25 @@ This module requires a Redis 5.0 in-memory database.
 
 Nextflow Tower supports enterprise authentication mechanisms such as OAuth and LDAP.
 
-Third-party authority providers and custom single-sign-on flow can be developed depending on exact customer requirements.     
+Third-party authority providers and custom single-sign-on flow can be developed depending on exact customer requirements.
 
 ### Cron scheduler
 
-Tower implements a cron service which takes care of executing periodical activities, such as sending mail notifications and cleaning up.
+Tower implements a cron service which takes care of executing periodical activities, such as sending e-mail notifications and cleaning up.
 
 The cron service can be configured to run as an embedded backend service or an independent service.
 
-
 ## Deployment configurations
-
-We created Nextflow in 2013 to deliver the most seamless experience for data pipelines at scale.
-
-Nextflow Tower is the continuation of this mission encompassing the latest technologies.
 
 ### Basic deployment
 
-In the minimal configuration only requires the front-end, backend and database module.
+The minimal Tower configuration only requires the front-end, backend and database modules.
 
-This can be executed as Docker containers or as native services running in the hosting environment.
-
-This is generally a suggested configuration for evaluation purposes or for a small number of users.
+These can be executed as Docker containers or as native services running in the hosting environment. Such minimal configuration is only suggested for evaluation purposes or for a small number of users.
 
 ### Kubernetes deployment
 
-Kubernetes cluster management is emerging as the technology of choice for the deployment applications requiring high-availability, scalability and security standards.
+Kubernetes cluster management is emerging as the technology of choice for the deployment of applications requiring high-availability, scalability and security standards.
 
 Nextflow Tower Enterprise includes configuration manifests for the deployment in the Kubernetes environment.
 
