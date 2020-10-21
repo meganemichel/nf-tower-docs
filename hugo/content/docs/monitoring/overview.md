@@ -1,5 +1,17 @@
 ---
-title: Pipelines Overview
+title: Dashboard Overview
+aliases:
+- "/docs/monitoring-tower-pipelines"
+weight: 1
+layout: single
+publishdate: 2020-10-20 04:00:00 +0000
+authors:
+  - "Evan Floden"
+  - "Alain Coletta"
+  - "Seqera Labs"
+
+headline: 'Monitoring Nextflow pipelines with Tower.nf'
+description: 'Prescriptive guide to monitor Nextflow pipelines executed through Tower.nf'
 menu:
   docs:
     parent: Monitoring Pipelines

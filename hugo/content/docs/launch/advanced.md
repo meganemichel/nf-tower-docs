@@ -1,5 +1,15 @@
 ---
 title: Advanced options
+weight: 1
+layout: single
+publishdate: 2020-10-20 04:00:00 +0000
+authors:
+  - "Evan Floden"
+  - "Alain Coletta"
+  - "Seqera Labs"
+
+headline: 'Advanced options for launching Nextflow pipelines with Tower.nf'
+description: 'Prescriptive guide to launch Nextflow pipelines using Tower.nf'
 menu:
   docs:
     parent: Launching Pipelines
