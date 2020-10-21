@@ -21,13 +21,11 @@ menu:
     weight: 1
 ---
 
-Tower is a web application server based on a microservice oriented architecture and designed to maximize the portability, scalability and security of the application.
+Tower.nf is Open Source and accessible as three plans:
 
-Tower is available in three plans:
-
-  * **For individuals**: tower.nf hosted by seqeralabs (Free & fully featured)
-  * **For Sys-admins in academic environments**: Installing locally Tower open source version (Free & limited features)
-  * **For enterprises**: Installing locally Tower fully featured version (Paid & fully features)
+  * **For individuals**: [tower.nf](https://tower.nf) Enterprise version hosted by seqeralabs (Free)
+  * **For Sys-admins in academic environments**: on-premise installation of the [Tower Open Source](https://github.com/seqeralabs/nf-tower) version (Free Open Source version)
+  * **For enterprises**: on-premise Installation of the Tower Enterprise version (Paid fully features)
 
 {{% tip %}}
 All versions of tower require you to setup a compute environment. Data and workflow executions remain always under your full control.
@@ -37,13 +35,13 @@ All versions of tower require you to setup a compute environment. Data and workf
 
 {{% pretty_screenshot img="/uploads/2020/10/starting_tower_nf.png" %}}
 
-To try a free and fully featured version of tower, visit [tower.nf](https://tower.nf/login) and create an account to get started. The [Launching Pipelines](/docs/launch/) documentation section gives step-by-step instructions to launch your first pipeline.
+To try a free and fully featured Enterprise version of tower, visit [tower.nf](https://tower.nf/login) and create an account to get started. The [Launching Pipelines](/docs/launch/) documentation section gives step-by-step instructions to launch your first pipeline.
 
 ## Open Source tower
 
 {{% pretty_screenshot img="/uploads/2020/10/starting_tower_opensource.png" %}}
 
-For more information on installing the free open source version of tower visit [this page](/docs/installation/installation)
+For more information on installing the free Tower Open Source version of tower visit [our GitHub repository](https://github.com/seqeralabs/nf-tower) and follow our [installation guide](docs/getting-started/system-deployment/)
 
 ## Tower Enterprise version
 
