@@ -4,28 +4,14 @@ aliases:
 - "/docs/api"
 weight: 1
 layout: single
-publishdate: 2020-06-11 04:00:00 +0000
-expirydate: 2030-01-01 04:00:00 +0000
-date: 2020-06-11 04:00:00 +0000
+publishdate: 2020-10-20 04:00:00 +0000
 authors:
-- Forestry Team
-headline: ''
-description: ''
-textline: ''
-categories: []
-tags: []
-cta:
-  headline: ''
-  textline: ''
-  calls_to_action: []
-private: false
-images:
-- "/uploads/2018/01/OGimage-01-docs-3x.jpg"
+  - "Evan Floden"
+  - "Alain Coletta"
+  - "Seqera Labs"
+headline: "Tower - an API centric platform"
+description: 'Automating pipeline execution through webhooks'
 menu:
-  footer:
-    name: API
-    parent: Product
-    weight: 2
   docs:
     parent: API
     weight: 1
@@ -33,8 +19,23 @@ menu:
 
 ---
 
-## Overview
+Tower is API centric, it exposes a public API with all necessary calls to manage and monitor Nextflow workflows programatically. This allows organisations to extend their existing solutions by simply leveraging the Tower API.
 
-## The API format
+### Authorisation token
 
-The main thing to understand is that Nextflow -- unlike other workflow management systems -- is both a language and a runtime.
+Authorisation tokens can be found on your settings on the top right of the page. Select `Your tokens` and click on the `Show HTTP token` button.
+
+{{% pretty_screenshot img="/uploads/2020/10/api_tokens.png" %}}
+
+
+### Example call using the cURL command
+
+```curl -H "Authorization: Basic QHRva2XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXWM4MGU4MjE5MDM=" https://tower.nf/api/workflow```
+
+where `QHRva2XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXWM4MGU4MjE5MDM=` is authorisation token shown in the screenshot above.  
+
+{{% pretty_screenshot img="/uploads/2020/10/api_example_call.png" %}}
+
+### API documentation
+
+Detailed API documentation can be found in our [API page](https://tower.nf/openapi/index.html)
