@@ -21,6 +21,8 @@ plainIDAnchors = true
 codeFences = true
 guessSyntax = true
 style = "monokailight"
+font-size = "0.85rem"
+font-family = "monokai"
 [[menu.docs]]
 name = "Welcome"
 weight = 1
@@ -46,8 +48,14 @@ weight = 7
 name = "API"
 weight = 8
 [[menu.docs]]
-name = "Nextflow test"
+name = "Get started"
 weight = 9
+[[menu.docs]]
+name = "Basic concepts"
+weight = 10
+[[menu.docs]]
+name = "Nextflow scripting"
+weight = 11
 [[menu.faqs]]
 name = "Glossary"
 weight = 2
