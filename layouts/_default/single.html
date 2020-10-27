@@ -1,25 +1,35 @@
 {{- define "main" -}}
-  <main class="single-post">
-    {{- with .Params.images -}}
-      {{- range first 1 . -}}
-        <div class="post--feature-image">
-            {{ partial "cloudinary/image" (dict "pg" $ "image" . "alt" ($.Params.headline | default $.Title) "width" "auto:100:760" "dpr" "auto" "quality" "70") }}
-        </div>
-      {{- end -}}
-    {{- end -}}
-    <div class="container">
-      <h1 class="post--title">{{ .Params.headline | default .Title }}</h1>
-      <div class="post--meta">
-        <div class="post--info">
-          <span class="post--meta-label">Last updated</span>
-          <span class="post--date">{{ .Lastmod.UTC.Format .Site.Params.dateFormat }}</span>
-        </div>
-      </div>
-      <div class="md-content">
-          {{ partial "cloudinary/content" (dict "pg" $  "preset" "content") }}
-      </div>
+{{- $currentSection := (replace (index (findRE "([\\w]+)\\/\\z" (.CurrentSection.File.Dir) 1) 0) "/" "") -}}
+  <main class="docs-container">
+    <div class="sidebar">
+      <aside class="sidebar-inner">
+        {{- partial "components/sidebar" . -}}
+      </aside>
     </div>
-  </main>
+    <section class="docs-content">
+      <div class="container md-content">
+        <h1>{{ .Params.headline | default .Title }}</h1>
+        {{ partial "cloudinary/content" (dict "pg" $  "preset" "content") }}
 
-  {{- partial "components/cta/basic" .Params.cta -}}
+        {{ partial "components/pagination/menu" . }}
+
+        {{- if not .Params.hideFeedback -}}
+        <hr />
+        <div class="doc--info">
+          <span class="doc--meta-label">Last updated on</span>
+          <span class="doc--date">
+            {{- with .GitInfo -}}
+              <a href="{{$.Site.Params.ghrepo}}/commit/{{ .Hash }}" target="_blank">
+            {{- end -}}
+            {{ .Lastmod.UTC.Format $.Site.Params.dateformat }}
+            {{- with .GitInfo -}}
+              </a>
+            {{- end -}}
+          </span>
+        </div>
+        {{- end -}}
+
+      </div>
+    </section>
+  </main>
 {{- end -}}
