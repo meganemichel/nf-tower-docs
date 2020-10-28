@@ -15,17 +15,9 @@ authors:
 headline: 'Tower.nf documentation - Welcome!'
 description: 'Nextflow Tower is full-stack application for the development, deployment and monitoring  of Nextflow data analysis pipelines.'
 menu:
-  footer:
-    name: Docs
-    parent: Product
-    weight: 3
   docs:
     parent: Welcome
     weight: 1
-  main:
-    name: Docs
-    weight: 1
-
 ---
 
 Nextflow Tower is a full-stack application for the development, deployment and monitoring  of [Nextflow](https://nextflow.io) data analysis pipelines.

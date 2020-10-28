@@ -1,5 +1,5 @@
 ---
-title: Webhooks
+title: Web hooks
 aliases:
 - "/docs/github-webhook"
 weight: 1
@@ -9,15 +9,15 @@ authors:
   - "Evan Floden"
   - "Alain Coletta"
   - "Seqera Labs"
-headline: "Leveraging webhooks for automation"
-description: 'Automating pipeline execution through webhooks'
+headline: "Leveraging web hooks for automation"
+description: 'Automating pipeline execution through web hooks'
 menu:
   docs:
     parent: Automation
     weight: 1
 ---
 
-Webhooks allow you to Launch pipelines automatically based on events. Tower currently offers support for native GitHub webhook and a general Tower webhook that can be invoked programatically. Support for native Bitbucket and Gitlab webhooks will be supported soon.
+Webhooks allow you to Launch pipelines automatically based on events. Tower currently offers support for native **GitHub web hook** and a general **Tower web hook** that can be invoked programatically. Support for native Bitbucket and Gitlab web hooks will be supported soon.
 
 ### Github webhook
 
@@ -29,7 +29,7 @@ To create a new **Pipeline action** navigate to the user menu on the top right, 
 
 **1.** Choose a name for your Action.
 
-**2.** Choose the Github web hook as event source.
+**2.** Choose the **Github web hook** as event source.
 
 {{% pretty_screenshot img="/uploads/2020/10/actions_githook.png" %}}
 

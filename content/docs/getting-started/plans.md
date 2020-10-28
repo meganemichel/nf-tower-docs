@@ -27,9 +27,9 @@ Tower.nf is Open Source and accessible as three plans:
   * **For Sys-admins in academic environments**: on-premise installation of the [Tower Open Source](https://github.com/seqeralabs/nf-tower) version (Free Open Source version)
   * **For enterprises**: on-premise Installation of the Tower Enterprise version (Paid fully features)
 
-{{% tip %}}
+{{% note %}}
 All versions of tower require you to setup a compute environment. Data and workflow executions remain always under your full control.
-{{% /tip %}}
+{{% /note %}}
 
 ## Tower.nf
 

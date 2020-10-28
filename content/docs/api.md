@@ -30,9 +30,11 @@ Authorisation tokens can be found on your settings on the top right of the page.
 
 ### Example call using the cURL command
 
-```curl -H "Authorization: Basic QHRva2XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXWM4MGU4MjE5MDM=" https://tower.nf/api/workflow```
+{{< highlight bash >}}
+curl -H "Authorization: Basic QH..E5M=" https://tower.nf/api/workflow
+{{< /highlight >}}
 
-where `QHRva2XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXWM4MGU4MjE5MDM=` is authorisation token shown in the screenshot above.  
+where `QH..E5M=` is authorisation token shown in the screenshot above.  
 
 {{% pretty_screenshot img="/uploads/2020/10/api_example_call.png" %}}
 

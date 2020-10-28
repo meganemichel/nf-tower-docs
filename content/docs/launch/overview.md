@@ -18,7 +18,7 @@ menu:
     weight: 1
 ---
 {{% warning %}}
-All pipelines are executed in a users own compute infrastructure. Tower currently supports launching into AWS, Google, Slurm and LSF compute environments. See the [**Compute Environment**](/content/docs/compute-environments) documentation to learn how to configure an environment.
+All pipelines are executed in a users own compute infrastructure. Tower currently supports launching into **AWS**, **Google**, **Slurm** and **LSF** compute environments. See the [**Compute Environment**](/content/docs/compute-environments) documentation to learn how to configure an environment.
 {{% /warning %}}
 
 To launch a pipeline:
@@ -51,11 +51,13 @@ The **Launch Pipeline** dialog will appear.
 **5.** Enter the name(s) of each of the Nextflow **Config profiles** followed by the `Enter` key.  
 *See the Nextflow [Config profiles](https://www.nextflow.io/docs/latest/config.html?highlight=profiles#config-profiles) documentation for more details.*
 
-**6.** Enter any **Config parameters** in YAML or JSON format.  
-*For example:*
+**6.** Enter any **Config parameters** in YAML or JSON format.
+*YAML example:*
 
+{{< highlight yaml >}}
     reads: 's3://nf-bucket/exome-data/ERR013140_{1,2}.fastq.bz2'  
     paired_end: true
+{{< /highlight >}}
 
 **7.** Select *Launch* to begin the pipeline execution.
 

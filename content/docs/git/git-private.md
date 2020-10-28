@@ -53,7 +53,7 @@ It is also possible to specify Git server endpoints for private hosting.
 
 These can be specified in a file `tower.yaml` and must be accessible from the backend and cron container instances.
 
-```yaml
+{{< highlight yaml >}}
 tower:
   scm:
     providers:
@@ -63,7 +63,7 @@ tower:
         platform: bitbucketserver
         user: some_user_name
         password: password_or_access_token
-```
+{{< /highlight >}}
 
 {{% tip %}}
 

@@ -22,11 +22,9 @@ Selecting a pipeline on the on the left side bar shows the workflow details on t
 
 * a [general top section](#job-execution-information) with execution details: the command line use, the parameters, the job configuration, and the execution logs in real-time.
 * a [general summary](/docs/monitoring/general_section/) and [status section](/docs/monitoring/general_section/)
-* a list of [processes]()
-* aggregated [stats]()
-* a summary of used [resources]()
-* a detailed list of [individual tasks]()
-* a [metrics dashboard]()
+* a list of [processes](/docs/monitoring/processes/)
+* aggregated [stats](/docs/monitoring/aggregate_stats/) and [load](/docs/monitoring/aggregate_stats/)
+* a detailed list of [individual tasks](/docs/monitoring/tasks/) and [metrics](/docs/monitoring/tasks/)
 
 ### Job execution information
 
