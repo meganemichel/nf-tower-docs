@@ -18,6 +18,15 @@ menu:
     weight: 1
 ---
 
+## Searching pipelines
+
+{{% tip %}}
+Use asterisks `✽` before and after keywords to search for job names and pipelines.  
+{{% /tip %}}
+
+{{% pretty_screenshot img="/uploads/2020/10/monitoring_search.png" %}}
+
+## Left side navigation bar
 {{% tip %}}
 Note all information in the dashboard is updated in realtime.
 {{% /tip %}}
