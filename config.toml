@@ -71,6 +71,8 @@ home = ["HTML", "RSS", "OpenSearch", "Algolia", "Redirects"]
 dateformat = "January 2, 2006"
 description = "Content management system for sites built with static site generators. Get the speed, security, and reliability of static and the power of a Headless CMS."
 ghrepo = "https://github.com/seqeralabs/nf-tower"
+ghrepo_edit = "https://github.com/seqeralabs/nf-tower-docs/edit/master/content/"
+
 [params.algolia]
 params = ["tags", "categories", "authors"]
 vars = ["date", "description", "dir", "path", "expirydate", "fuzzywordcount", "keywords", "kind", "lang", "lastmod", "permalink", "publishdate", "readingtime", "relpermalink", "summary", "title", "type", "url", "weight", "wordcount", "section"]
