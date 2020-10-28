@@ -24,41 +24,91 @@ style = "monokailight"
 font-size = "0.85rem"
 font-family = "monokai"
 [[menu.docs]]
-name = "Welcome"
+name = "Get started"
 weight = 1
 [[menu.docs]]
-name = "Getting Started"
-weight = 2
-[[menu.docs]]
-name = "Compute Environments"
-weight = 3
-[[menu.docs]]
-name = "Launching Pipelines"
-weight = 4
-[[menu.docs]]
-name = "Monitoring Pipelines"
-weight = 5
-[[menu.docs]]
-name = "Git Integration"
-weight = 6
-[[menu.docs]]
-name = "Webhooks"
-weight = 7
-[[menu.docs]]
-name = "API"
-weight = 8
-[[menu.docs]]
-name = "Get started"
-weight = 9
-[[menu.docs]]
 name = "Basic concepts"
-weight = 10
+weight = 2
 [[menu.docs]]
 name = "Nextflow scripting"
+weight = 3
+[[menu.docs]]
+name = "Processes"
+weight = 4
+[[menu.docs]]
+name = "Channels"
+weight = 5
+[[menu.docs]]
+name = "Operators"
+weight = 6
+[[menu.docs]]
+name = "Executors"
+weight = 7
+[[menu.docs]]
+name = "Configuration"
+weight = 8
+[[menu.docs]]
+name = "DSL2"
+weight = 9
+[[menu.docs]]
+name = "Command line interface CLI"
+weight = 10
+[[menu.docs]]
+name = "Amazon cloud"
 weight = 11
-[[menu.faqs]]
-name = "Glossary"
-weight = 2
+[[menu.docs]]
+name = "Amazon S3 storage"
+weight = 12
+[[menu.docs]]
+name = "Google cloud"
+weight = 13
+[[menu.docs]]
+name = "Conda environments"
+weight = 14
+[[menu.docs]]
+name = "Docker containers"
+weight = 15
+[[menu.docs]]
+name = "Docker containers"
+weight = 16
+[[menu.docs]]
+name = "Shifter containers"
+weight = 17
+[[menu.docs]]
+name = "Singularity containers"
+weight = 18
+[[menu.docs]]
+name = "Podman containers"
+weight = 19
+[[menu.docs]]
+name = "Apache Ignite"
+weight = 20
+[[menu.docs]]
+name = "Kubernetes"
+weight = 21
+[[menu.docs]]
+name = "Tracing and visulation"
+weight = 22
+[[menu.docs]]
+name = "Pipeline sharing"
+weight = 23
+[[menu.docs]]
+name = "Workflow introspection"
+weight = 24
+[[menu.docs]]
+name = "Mail and notifications"
+weight = 25
+[[menu.docs]]
+name = "Examples"
+weight = 26
+
+
+
+
+
+
+
+
 
 [[menu.footer]]
 name = "Roadmap"
