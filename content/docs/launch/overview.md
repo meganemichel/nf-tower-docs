@@ -18,7 +18,7 @@ menu:
     weight: 1
 ---
 {{% warning %}}
-All pipelines are executed in a users own compute infrastructure. Tower currently supports launching into **AWS**, **Google**, **Slurm** and **LSF** compute environments. See the [**Compute Environment**](/content/docs/compute-environments) documentation to learn how to configure an environment.
+All pipelines are executed in a users own compute infrastructure. Tower currently supports launching into **AWS**, **Google**, **Slurm** and **LSF** compute environments. See the [**Compute Environment**](/docs/compute-environments) documentation to learn how to configure an environment.
 {{% /warning %}}
 
 To launch a pipeline:
@@ -36,7 +36,7 @@ The **Launch Pipeline** dialog will appear.
 
 <br>
 
-**2.** Select the drop down menu to choose a [**Compute Environment**](/content/docs/compute-environments).  
+**2.** Select the drop down menu to choose a [**Compute Environment**](/docs/compute-environments/overview).  
 *A primary compute environment is selected by default.*
 
 **3.** Enter the location of the **Pipeline to launch**.  
@@ -62,7 +62,7 @@ The **Launch Pipeline** dialog will appear.
 **7.** Select *Launch* to begin the pipeline execution.
 
 {{% tip %}}
-Nextflow pipelines are simply Git repositories and the location can be any public or private Git-hosting platform. See [**Git Integration**](/content/docs/git-integration) in the Tower docs and [**Pipeline Sharing**](https://www.nextflow.io/docs/latest/sharing.html) in the Nextflow docs for more details.
+Nextflow pipelines are simply Git repositories and the location can be any public or private Git-hosting platform. See [**Git Integration**](/docs/git/git-overview) in the Tower docs and [**Pipeline Sharing**](/docs/monitoring/sharing) in the Nextflow docs for more details.
 {{% /tip %}}
 
 {{% warning %}}

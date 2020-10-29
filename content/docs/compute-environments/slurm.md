@@ -20,8 +20,7 @@ menu:
 
 [Slurm Workload Manager](https://slurm.schedmd.com/overview.html) is an open source, fault-tolerant, and highly scalable cluster management and job scheduling system for large and small Linux clusters.
 
-{{% warning %}}
-Support for remote batch schedulers is an incubating feature.
+{{% warning "Support for remote batch schedulers is an incubating feature" %}}
 This feature enables Tower to connect to remote cloud or on-premise clusters and launch pipelines.
 {{% /warning %}}
 
@@ -86,3 +85,5 @@ The Compute queue can be overridden as a configuration option in the Nextflow pi
 {{% star "Groovy!" %}}
 You are now ready to launch pipelines.
 {{% /star %}}
+
+Jump to the documentation section for [Launching Pipelines](/docs/launch/overview/).
