@@ -27,12 +27,12 @@ Use asterisks `✽` before and after keywords to search for job names and pipeli
 {{% pretty_screenshot img="/uploads/2020/10/monitoring_search.png" %}}
 
 ## Left side navigation bar
-{{% tip %}}
+{{% note %}}
 Note all information in the dashboard is updated in realtime.
-{{% /tip %}}
+{{% /note %}}
 
 
-Once Jobs have been submitted Tower enables you to easily monitor progress and results. **The left side bar** contains all previous jobs executions, each new or resumed job will be given a random name starting with an adjective and followed by a noun e.g(grave_williams).
+Once Jobs have been submitted Tower enables you to easily monitor progress and results. **The left side bar** contains all previous jobs executions, each new or resumed job will be given a random name e.g: `grave_williams`.
 
 {{% pretty_screenshot img="/uploads/2020/10/monitoring_overview.png" %}}
 
