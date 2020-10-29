@@ -20,7 +20,7 @@ menu:
 
 You can receive email notifications at the completion of a  workflow execution.
 
-Go to your profile page on the top right of the window and select the **Send notification email on workflow completion** toggle option. at the bottom of the page.
+Go to your profile page on the top right of the window and select the **Send notification email on workflow completion** toggle option at the bottom of the page.
 
 {{% pretty_screenshot img="/uploads/2020/10/launch_notifications.png" %}}
 
