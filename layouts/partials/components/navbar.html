@@ -3,8 +3,10 @@
 {{- $isBlog := (eq .Section "blog") -}}
 {{- $isPricing := (eq .Section "pricing") -}}
 <header class="header container{{ if $isDocs }} docs{{ end }}{{ if $isPricing }} dark{{   end }}">
-  <div class="left-block">
-    <a href="{{ .Site.BaseURL | relURL }}" title="Go to homepage" class="logo"></a>
+  <div class="left-block tower-logo">
+    <a href="{{ .Site.BaseURL | relURL }}" title="Go to homepage">
+      <img src="/img/nf-tower-black.svg" alt="Go to homepage">
+    </a>
   </div>
   <div class="right-block">
     {{- if or $isDocs $isBlog -}}
