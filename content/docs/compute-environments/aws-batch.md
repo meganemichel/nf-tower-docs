@@ -19,7 +19,7 @@ menu:
 ## Overview
 {{% tip "Disclaimer" %}}
 <!-- If you already have Batch environment pre-configured skip Forge and go to Launch -->
-This guide assumes you have an existing [AWS Account](https://aws.amazon.com/). Sign up for free [here](https://aws.amazon.com/account/sign-up).
+This guide assumes you have an existing [AWS Account](https://aws.amazon.com/). Sign up for a free AWS account [here](https://aws.amazon.com/account/sign-up).
 {{% /tip %}}
 
 There are two ways of creating a **Compute Environment** for **AWS Batch** with Tower.
@@ -28,22 +28,22 @@ There are two ways of creating a **Compute Environment** for **AWS Batch** with 
 
 2. **Tower Launch** allows you to create a compute environment using existing AWS Batch resources.
 
-If you don't yet have an AWS Batch environment fully set-up, the [Tower Forge](#tower-forge-for-aws-batch) guide is suggested. If have been provided with an AWS Batch queue from your account administrator, or if you have setup AWS Batch previously, follow the [Tower Launch](#tower-launch-for-aws-batch) guide.
+If you don't yet have an AWS Batch environment fully set-up, the [Tower Forge](#forge) guide is suggested. If you have been provided with an AWS Batch queue from your account administrator, or if you have setup AWS Batch previously, follow the [Tower Launch](#manual) guide.
 
 ## Forge
 
 <!-- Add explanation for what is Forge and disclaimer -->
 {{% warning %}}
-Follow these instructions if you do not have not pre-configured an AWS Batch environment. This will create resources in your AWS account that you may be charged for by AWS.
+Follow these instructions if you have not pre-configured an AWS Batch environment. This will create resources in your AWS account that you may be charged for by Amazon.
 {{% /warning %}}
 
-Tower Forge automates the configuration of the [AWS Batch](https://aws.amazon.com/batch/) compute environments and queues required for the deployment of Nextflow pipelines.
+Tower Forge automates the configuration of an [AWS Batch](https://aws.amazon.com/batch/) compute environment and queues required for the deployment of Nextflow pipelines.
 
 ## Forge AWS Resources
 
 ### IAM User Permissions
 
-To use the Tower Forge feature, Tower requires an IAM user with the permissions listed in this [policy file](https://github.com/seqeralabs/nf-tower-aws/blob/master/forge/forge-policy.json). These permissions are more permissive that are required to only launch a pipeline as Tower will create the AWS resources on your behalf.
+To use the Tower Forge feature, Tower requires an IAM user with the permissions listed in this [policy file](https://github.com/seqeralabs/nf-tower-aws/blob/master/forge/forge-policy.json). These permissions are more permissive that the ones required to only launch a pipeline as Tower needs to create AWS resources on your behalf.
 
 The steps below will guide you through the creation a new IAM user for Tower and attach the required policy for the newly created user.
 
@@ -81,7 +81,7 @@ Note the user has now been created but has not yet been granted any permissions.
 
 </br>
 
-**7.** Select the **Review policy** button, create name your policy (e.g. `tower-forge-policy`), and confirm the operation by clicking on the **Create policy** button. Your user should now have required attached inline policy.
+**7.** Select the **Review policy** button, name your policy (e.g. `tower-forge-policy`), and confirm the operation by clicking on the **Create policy** button.
 
 {{% tip "What permissions are required?" %}}
 This policy includes the minimal permissions required to allow the user to submit jobs to AWS Batch, gather the container execution metadata, read CloudWatch logs and access data from the S3 bucket in your AWS account in read-only mode.
@@ -100,9 +100,9 @@ We must grant our new Tower IAM user access to this bucket.
 
 {{% pretty_screenshot img="/uploads/2020/09/aws_create_bucket.png" %}}
 
-{{% tip "Which AWS region should I use?" %}}
+{{% warning "Which AWS region should I use?" %}}
 The region of the bucket should be in the same region as the compute environment which we will set in the next section. Typically users select a region closest to their physical location but Tower Forge supports creating resources in any of the available AWS regions.
-{{% /tip %}}
+{{% /warning %}}
 
 <br>
 
@@ -158,7 +158,7 @@ Now we can add a new **AWS Batch** environment in the Tower UI. To create a new 
 {{% pretty_screenshot img="/uploads/2020/09/aws_keys.png" %}}
 
 {{% tip "Multiple credentials" %}}
-You can create multiple credentials in your Tower environment. See the section **Credentials Management**.
+You can create multiple credentials in your Tower environment.
 {{% /tip %}}
 
 <br>
@@ -209,7 +209,7 @@ You can choose to create a compute environment that will launch either **Spot** 
 You now have everything to begin deploying massively scalable pipelines.
 {{% /tip %}}
 
-Jump to the documentation section for Launching Pipelines.
+Jump to the documentation section for [Launching Pipelines](/docs/launch/overview/).
 
 
 ## Manual
@@ -289,8 +289,12 @@ Tower can use S3 to access data, create work directories and write outputs. The 
 
 <br>
 
-**5.** Enter a name your policy and create it.
+**5.** Name your policy and click **Create policy**.
 
 {{% pretty_screenshot img="/uploads/2020/09/aws_name_policy.png" %}}
 
-<br>
+{{% star "Amazing!" %}}
+You now have everything to begin deploying massively scalable pipelines.
+{{% /tip %}}
+
+Jump to the documentation section for [Launching Pipelines](/docs/launch/overview/).
