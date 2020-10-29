@@ -8,14 +8,14 @@
   </div>
   <div class="right-block">
     {{- if or $isDocs $isBlog -}}
-    <div class="search">
-      <!-- <input type="search" name="search" placeholder="Search the {{ .Section }}..." class="search--input"> -->
-    </div>
+    <!-- <div class="search">
+      <input type="search" name="search" placeholder="Search the {{ .Section }}..." class="search--input">
+    </div> -->
     {{- end -}}
     <nav class="nav">
       <div class="nav-content">
         <a href="{{ .Site.BaseURL | relURL }}" class="mini-nav--logo"></a>
-        
+
         <!--
         <ul class="main-nav-items">
           {{- range .Site.Menus.main -}}
@@ -43,12 +43,12 @@
       </div>
     </nav>
     <div class="mini-nav--toggle">
-      {{- if $isPricing -}}
+      <!-- {{- if $isPricing -}}
         <img class="toggle-open" src="{{ "/img/navtoggle-light-open.svg" | relURL }}" alt="Open nav">
       {{- else -}}
         <img class="toggle-open" src="{{ "img/navtoggle-open.svg" | relURL }}" alt="Open nav">
       {{- end -}}
-      <img class="toggle-close" src="{{ "img/navtoggle-close.svg" | relURL }}" alt="Close nav">
+      <img class="toggle-close" src="{{ "img/navtoggle-close.svg" | relURL }}" alt="Close nav"> -->
     </div>
   </div>
 </header>
