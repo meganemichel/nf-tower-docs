@@ -30,11 +30,11 @@ Click on the `Add Collaborator` button, add your collaborator's email and click 
 
 {{% pretty_screenshot img="/uploads/2020/10/monitoring_sharing2.png" %}}
 
-An email with the pipeline URL will be sent
+An email with the pipeline URL will be sent to the email address you entered.
 
 {{% pretty_screenshot img="/uploads/2020/10/monitoring_sharing3.png" %}}
 
 
 {{% warning %}}
-Your collaborator's account email must match the email where you sent the invite.
+Your collaborator's Tower account email must match the email where you sent the invite.
 {{% /warning %}}
