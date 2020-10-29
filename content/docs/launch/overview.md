@@ -43,7 +43,7 @@ The **Launch Pipeline** dialog will appear.
 *For example https://github.com/nf-core/rnaseq.git*.
 
 **3.** A **Revision number** can be used select different versions of pipeline.  
-*The Git master branch or `manifest.defaultBranch` in the Nextflow configuration will be used by default.*
+*The Git main branch or `manifest.defaultBranch` in the Nextflow configuration will be used by default.*
 
 **4.** The **Work directory** specifies the location of the Nextflow work directory.  
 *The location associated with the compute environment will be selected by default.*
