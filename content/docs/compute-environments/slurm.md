@@ -55,7 +55,7 @@ To create a new compute environment for Slurm:
 
 **4.** Enter a name for the credentials
 
-**5** Enter your **SSH private key** and associated **Passphrase** if required then select **Create**.
+**5** Enter your **SSH private key** and associated **Passphrase** if required then click **Create**.
 
 {{% pretty_screenshot img="/uploads/2020/09/slurm_tower_credentials.png" %}}
 
@@ -77,7 +77,7 @@ An passphrase for your SSH key may be optional depending on how it was created. 
 
 **11.** Select **Create** to finalize the creation of the compute environment.
 
-{{% pretty_screenshot img="/uploads/2020/09/slurm_tower_options.png" %}}
+{{% pretty_screenshot img="/uploads/2020/10/slurm_tower_options.png" %}}
 
 {{% tip %}}
 The Compute queue can be overridden as a configuration option in the Nextflow pipeline configuration. See Nextflow [docs](https://www.nextflow.io/docs/latest/process.html#queue) for more details.
