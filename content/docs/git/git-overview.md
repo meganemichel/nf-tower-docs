@@ -33,5 +33,3 @@ The following sections document how to connect to execute pipelines hosted in a 
 
   * [Executing a pipeline hosted in a public git repository](/docs/git/git-public/)
   * [Connecting to a private git repository](/docs/git/git-private/)
-
-**[NEXT Connecting to a public Git repository →](/docs/git/git-public/)**
