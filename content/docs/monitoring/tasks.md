@@ -9,8 +9,8 @@ authors:
   - "Evan Floden"
   - "Alain Coletta"
   - "Seqera Labs"
-headline: "Detailed list of processes' tasks and metrics"
-description: 'Monitoring a Nextflow pipeline executed through Tower.nf'
+headline: "Task table and metrics"
+description: 'Monitoring tasks and metrics of Nextflow pipeline executed through Tower.'
 
 menu:
   docs:
@@ -18,33 +18,68 @@ menu:
     weight: 6
 ---
 
+## Task table
 
-The **Tasks** section shows all processes' tasks. You can use the `Search` bar to filter tasks by process name, tag, hash, status, etc. Clicking in previous sections' fields, e.g: clicking in the _CACHED_ card in the **status** column will filter all the _CACHED_ tasks.
+The **Tasks** section shows all the tasks from an execution.
+
+You can use the `Search` bar to filter tasks by process name, tag, hash, status, etc. 
+
+Selecting a status in **status** section filters the task table.  E.g. clicking in the _CACHED_ card in the **status** column.
 
 {{% pretty_screenshot img="/uploads/2020/10/monitoring_cached.png" %}}
 
-Clicking on a `process` in the **process** column will filter all tasks for that specific process
+<br>
+
+Selecting a `process` in the **Processes** section above will filter all tasks for that specific process.
 
 {{% pretty_screenshot img="/uploads/2020/10/monitoring_star.png" %}}
 
-Clicking on a task gives specific information about that particular task including the `Command` used and the `Execution log`
+<br>
+
+Selecting a task in the task table provides specific information about the task in the **Task details** dialog. 
 
 {{% pretty_screenshot img="/uploads/2020/10/monitoring_task_command.png" %}}
 
-This can be very helpful for troubleshooting. Note you can download the log files including `stdout` and `stderr` from your compute environment.
+<br>
 
-{{% pretty_screenshot img="/uploads/2020/10/monitoring_task_exec_log.png" %}}
+The task details dialog has the task information tab and the task **Execution log** tab.
 
-Furthermore, scrolling down shows details related to selected tasks including individual costs per task and resource usage.
+### Task information
+
+The task information tab contains the process name and task tag in the title. The tab includes:
+
+ - Command 
+ - Status
+ - Work directory
+ - Environment
+ - Execution time
+ - Resources requested
+ - Resources used
 
 {{% pretty_screenshot img="/uploads/2020/10/monitoring_task_resources.png" %}}
 
-### Processe metrics
+<br>
 
-The last section shows plots with CPU, memory, Job duration and I/O usage grouped by Processes.
+### Execution log
+
+The **Execution log** provides a realtime log of the individual task of a Nextflow execution. 
+
+This can be very helpful for troubleshooting. It is possible to download the log files including `stdout` and `stderr` from your compute environment.
+
+{{% pretty_screenshot img="/uploads/2020/10/monitoring_task_exec_log.png" %}}
+
+<br>
+
+## Resource metrics
+
+This section displays plots with CPU, memory, task duration and I/O usage, grouped by process.
+
+These metrics can be used to profile an execution to ensure that the correct amount or resources are being requested for each process.
 
 {{% pretty_screenshot img="/uploads/2020/10/monitoring_metrics.png" %}}
 
+<br>
+
 {{% tip %}}
-Hover your mouse over the box plots to display details
+Hover the mouse over the box plots to display more details.
 {{% /tip %}}

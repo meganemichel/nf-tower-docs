@@ -10,34 +10,42 @@ authors:
   - "Alain Coletta"
   - "Seqera Labs"
 
-headline: 'Job summary & real-time status'
-description: 'Monitoring a Nextflow pipeline executed through Tower.nf'
+headline: 'Run summary & job status'
+description: 'Monitoring run and job status of Nextflow pipeline executed through Tower'
 menu:
   docs:
     parent: Monitoring Pipelines
     weight: 3
 ---
+
+## General
+
 The General summary displays information on the environment and the job being executed:
 
-  - A unique ID
-  - A Job name
-  - Date and time of job submission
-  - The Nextflow session ID
-  - The username
-  - The work directory path
-  - The docker container image
-  - The executor
-  - The compute environment details
-  - The Nextflow version
+  - Unique workflow run ID
+  - Workflow run name
+  - Date and time of job submission timestamp
+  - Project revision and git commit ID
+  - Nextflow session ID
+  - Username of the launcher
+  - Work directory path
+  - Container image
+  - Executor
+  - Compute environment details
+  - Nextflow version
 
 {{% tip %}}
-hoover over with mouse to get full details.
+Hover over with mouse to get full details on the compute environment.
 {{% /tip %}}
 
 {{% pretty_screenshot img="/uploads/2020/10/monitoring_general.png" %}}
 
-### Status section
+<br>
 
-The **Status** section shows in real time the statuses of your workflow processes. The panel uses the same colour code as the pipelines in the left-side navigation bar.
+## Task status
+
+The **Task status** section shows in real time the statuses of your workflow tasks. The panel uses the same colour code as the pipelines in the navigation bar.
+
+The exact meaning of each status is dependant on the execution platform. 
 
 {{% pretty_screenshot img="/uploads/2020/10/monitoring_status.png" %}}

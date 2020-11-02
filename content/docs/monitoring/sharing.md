@@ -9,8 +9,8 @@ authors:
   - "Evan Floden"
   - "Alain Coletta"
   - "Seqera Labs"
-headline: "How to share pipelines with collaborators"
-description: 'Sharing Nextflow pipelines'
+headline: "Sharing and collaborators"
+description: 'Sharing and collaborating on Nextflow pipelines with Nextflow Tower.'
 
 menu:
   docs:
@@ -18,23 +18,30 @@ menu:
     weight: 7
 ---
 
-{{% warning %}}
-To ensure your collaborators have access to your pipelines' results, make sure to give them access to the compute environment where the shared pipeline is being executed. For the moment you have to do this outside of Tower: e.g in AWS, Google, or in your on premise cluster.
-{{% /warning %}}
-
-To share a pipeline with a collaborator click on the `Sharing` icon.
+To share a pipeline execution with a collaborator, select the **Sharing** icon from the main monitoring panel.
 
 {{% pretty_screenshot img="/uploads/2020/10/monitoring_sharing1.png" %}}
 
-Click on the `Add Collaborator` button, add your collaborator's email and click `Confirm`.
+<br>
+
+Select the **Add Collaborator** button, add your collaborator's email or Tower login and click **Confirm**.
 
 {{% pretty_screenshot img="/uploads/2020/10/monitoring_sharing2.png" %}}
 
-An email with the pipeline URL will be sent to the email address you entered.
+<br>
+
+An email with the pipeline URL will be sent to the collaborator.
 
 {{% pretty_screenshot img="/uploads/2020/10/monitoring_sharing3.png" %}}
 
+<br>
 
 {{% warning %}}
 Your collaborator's Tower account email must match the email where you sent the invite.
 {{% /warning %}}
+
+Once shared, the pipeline execution is visible in the users navigation panel with the launchers name shown.
+
+It is important to ensure your collaborators have permissions to your compute resources to make the most of this feature. For example, information in a cloud bucket such as task logs will only be visible if the collaborator also has access to that bucket.
+
+

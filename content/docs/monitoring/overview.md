@@ -1,5 +1,5 @@
 ---
-title: Dashboard Overview
+title: Dashboard overview
 aliases:
 - "/docs/monitoring-tower-pipelines"
 weight: 1
@@ -10,38 +10,40 @@ authors:
   - "Alain Coletta"
   - "Seqera Labs"
 
-headline: 'Monitoring Nextflow pipelines with Tower.nf'
-description: 'Prescriptive guide to monitor Nextflow pipelines executed through Tower.nf'
+headline: 'Monitoring Pipelines'
+description: 'Guide to monitoring Nextflow pipelines executed through Tower.'
 menu:
   docs:
     parent: Monitoring Pipelines
     weight: 1
 ---
 
-## Searching pipelines
+## Navigation bar
 
-{{% tip %}}
-Use asterisks `✽` before and after keywords to search for job names and pipelines.  
-{{% /tip %}}
+Jobs have been submitted with Tower can be monitored wherever you have an internet connection. 
 
-{{% pretty_screenshot img="/uploads/2020/10/monitoring_search.png" %}}
-
-## Left side navigation bar
-{{% note %}}
-Note all information in the dashboard is updated in realtime.
-{{% /note %}}
-
-
-Once Jobs have been submitted Tower enables you to easily monitor progress and results. **The left side bar** contains all previous jobs executions, each new or resumed job will be given a random name e.g: `grave_williams`.
+The **navigation bar** contains all previous jobs executions. Each new or resumed job will be given a random name e.g: `grave_williams`.
 
 {{% pretty_screenshot img="/uploads/2020/10/monitoring_overview.png" %}}
 
+<br>
+
 In the left bar:
 
-  - jobs in **Blue** are running Jobs
-  - jobs in **Green** are successfully executed Jobs
-  - jobs in **yellow** are successfully executed Jobs where some process partially failed
-  - jobs in **red** are jobs where where at least one process fully failed
-  - jobs in **gray** are jobs that where forced to stop during execution
+  - **Blue** are running.
+  - **Green** are successfully executed.
+  - **Yellow** are successfully executed where some tasks failed.
+  - **Red** are jobs where where at least one task fully failed.
+  - **Grey** are jobs that where forced to stop during execution.
 
-  Selecting a job on the left panel will display the job execution details.
+  Selecting a run on the left panel will display the job execution details.
+
+## Search
+
+The search box enables searching for runs and pipelines by name. 
+
+Use asterisks `✽` before and after keyword to filter results.
+
+{{% pretty_screenshot img="/uploads/2020/10/monitoring_search.png" %}}
+
+<br>

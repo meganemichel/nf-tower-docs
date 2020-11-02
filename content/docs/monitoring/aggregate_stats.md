@@ -10,8 +10,8 @@ authors:
   - "Alain Coletta"
   - "Seqera Labs"
 
-headline: 'Aggregated stats and resources used by the workflow'
-description: 'Monitoring a Nextflow pipeline executed through Tower.nf'
+headline: 'Aggregate stats and resources'
+description: 'Statistics and resources usage of Nextflow pipelines executed through Tower.'
 
 menu:
   docs:
@@ -19,15 +19,23 @@ menu:
     weight: 5
 ---
 
-The **aggregate stats** section is a real-time summary of the resources used by the workflow. These include total running time ('wall time'), aggregated CPU, memory usage, i/o data, and cost.
+## Aggregate Stats
+
+The **Aggregate stats** panel displays a real-time summary of the resources used by the workflow. These include total running time ('wall time'), aggregated CPU time (CPU hours), memory usage (GB hours), data i/o and cost.
+
 {{% pretty_screenshot img="/uploads/2020/10/monitoring_aggregate_stats.png" %}}
-{{% tip %}}
-Note the estimated cost is only based on computation usage and does not currently take into account storage or associated network costs.
-{{% /tip %}}
+
+<br>
+
+The cost is only based on estimated computation usage and does not currently take into account storage or associated network costs. Tower has a database of costs for all cloud instances of AWS and Google Cloud in all regions and zones.
 
 
-### Load and Utilization sections
+## Load and Utilization
 
-As processes are being submitted to the compute environment, the **Load** and **Utilization** sections allow the user to monitor how many cores, memory and CPUs are being used as well as how many processes tasks are being computed.
+As processes are being submitted to the compute environment, the **Load** monitors how many cores and tasks are currently being used. 
+
+**Utilization** is calculated for memory and CPUs. This is the average value across all tasks and is calculated by dividing the memory (or CPUs) usage by the memory (or CPUs) requested.
 
 {{% pretty_screenshot img="/uploads/2020/10/monitoring_load.png" %}}
+
+<br>
