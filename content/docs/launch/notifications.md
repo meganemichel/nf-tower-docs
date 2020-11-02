@@ -8,8 +8,8 @@ authors:
   - "Alain Coletta"
   - "Seqera Labs"
 
-headline: 'Get notified on pipelines execution statuses'
-description: 'Prescriptive guide to launch Nextflow pipelines using Tower.nf'
+headline: 'Notifications'
+description: 'Guide to setup notification for Nextflow pipelines using Tower.'
 menu:
   docs:
     parent: Launching Pipelines
@@ -20,7 +20,7 @@ menu:
 
 You can receive email notifications at the completion of a  workflow execution.
 
-Go to your profile page on the top right of the window and select the **Send notification email on workflow completion** toggle option at the bottom of the page.
+Select your profile page on the top right of the window and select the **Send notification email on workflow completion** toggle option at the bottom of the page.
 
 {{% pretty_screenshot img="/uploads/2020/10/launch_notifications.png" %}}
 

@@ -8,8 +8,8 @@ authors:
   - "Alain Coletta"
   - "Seqera Labs"
 
-headline: 'Setting up a SLURM compute environment for Tower.nf'
-description: 'step-by-step instructions to setup SLURM for Tower.nf'
+headline: 'SLURM Compute Environments'
+description: 'Step-by-step instructions to setup SLURM for Nextflow Tower.'
 menu:
   docs:
     parent: Compute Environments

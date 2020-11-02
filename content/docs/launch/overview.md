@@ -10,16 +10,23 @@ authors:
   - "Alain Coletta"
   - "Seqera Labs"
 
-headline: 'Launching Nextflow pipelines with Tower.nf'
-description: 'Prescriptive guide to launch Nextflow pipelines using Tower.nf'
+headline: 'Pipeline Execution'
+description: 'Guide to launching pipelines using Nextflow Tower.'
 menu:
   docs:
     parent: Launching Pipelines
     weight: 1
 ---
+
 {{% warning %}}
-All pipelines are executed in a users own compute infrastructure. Tower currently supports launching into **AWS**, **Google**, **Slurm** and **LSF** compute environments. See the [**Compute Environment**](/docs/compute-environments) documentation to learn how to configure an environment.
+
+See the [**Compute Environment**](/docs/compute-environments) documentation to learn how to create an environment.
+
 {{% /warning %}}
+
+Tower currently supports launching into **AWS**, **Google**, **Slurm** and **LSF** compute environments. 
+
+In the following example we will launch the nf-core RNASeq pipeline using a Google Cloud compute environment we have previously set up.
 
 To launch a pipeline:
 
@@ -29,21 +36,20 @@ To launch a pipeline:
 
 <br>
 
-The **Launch Pipeline** dialog will appear.  
-*In the following we will launch the nf-core RNASeq pipeline.*
+The **Launch Pipeline** dialog will appear.
+
+**2.** Select the drop down menu to choose a [**Compute Environment**](/docs/compute-environments/overview).  
+*The users primary compute environment is selected by default.*
 
 {{% pretty_screenshot img="/uploads/2020/10/launch_RNASeq.png" %}}
 
 <br>
 
-**2.** Select the drop down menu to choose a [**Compute Environment**](/docs/compute-environments/overview).  
-*A primary compute environment is selected by default.*
-
-**3.** Enter the location of the **Pipeline to launch**.  
+**3.** Enter the repository of the **Pipeline to launch**.  
 *For example https://github.com/nf-core/rnaseq.git*.
 
 **3.** A **Revision number** can be used select different versions of pipeline.  
-*The Git main branch or `manifest.defaultBranch` in the Nextflow configuration will be used by default.*
+*The Git default branch (main/master) or `manifest.defaultBranch` in the Nextflow configuration will be used by default.*
 
 **4.** The **Work directory** specifies the location of the Nextflow work directory.  
 *The location associated with the compute environment will be selected by default.*
@@ -51,7 +57,7 @@ The **Launch Pipeline** dialog will appear.
 **5.** Enter the name(s) of each of the Nextflow **Config profiles** followed by the `Enter` key.  
 *See the Nextflow [Config profiles](https://www.nextflow.io/docs/latest/config.html?highlight=profiles#config-profiles) documentation for more details.*
 
-**6.** Enter any **Config parameters** in YAML or JSON format.
+**6.** Enter any **Pipeline parameters** in YAML or JSON format.
 *YAML example:*
 
 {{< highlight yaml >}}
@@ -59,10 +65,12 @@ The **Launch Pipeline** dialog will appear.
     paired_end: true
 {{< /highlight >}}
 
+<br>
+
 **7.** Select *Launch* to begin the pipeline execution.
 
 {{% tip %}}
-Nextflow pipelines are simply Git repositories and the location can be any public or private Git-hosting platform. See [**Git Integration**](/docs/git/git-overview) in the Tower docs and [**Pipeline Sharing**](/docs/monitoring/sharing) in the Nextflow docs for more details.
+Nextflow pipelines are simply Git repositories and the location can be any public or private Git-hosting platform. See [**Git Integration**](/docs/git/git-overview) in the Tower docs and [**Pipeline Sharing**](https://www.nextflow.io/docs/latest/sharing.html) in the Nextflow docs for more details.
 {{% /tip %}}
 
 {{% warning %}}
@@ -70,5 +78,5 @@ The credentials associated with the compute environment must be able to access t
 {{% /warning %}}
 
 {{% tip %}}
-In the configuration, the full path to the s3 bucket must be specified with single-quotes around strings no quotes around booleans or numbers.
+In the configuration, the full path to a bucket must be specified with single-quotes around strings no quotes around booleans or numbers.
 {{% /tip %}}

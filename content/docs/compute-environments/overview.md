@@ -10,8 +10,8 @@ authors:
   - "Alain Coletta"
   - "Seqera Labs"
 
-headline: 'Setting up compute environments for Tower.nf'
-description: 'step-by-step instructions to setup compute environments for Tower.nf'
+headline: 'Compute Environments'
+description: 'Step-by-step instructions to setup compute environments in Nextflow Tower.'
 menu:
   docs:
     parent: Compute Environments
@@ -20,7 +20,7 @@ menu:
 
 ## Introduction
 
-Tower uses a concept of **Compute Environments** to define the execution platform where a pipeline will run.
+Tower uses the concept of **Compute Environments** to define the execution platform where a pipeline will run.
 
 Tower supports launching of pipelines into **AWS Batch**, **Google Cloud**, **IBM LSF**, and **Slurm** with many more in development.
 

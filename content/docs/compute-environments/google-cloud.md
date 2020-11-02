@@ -8,8 +8,8 @@ authors:
   - "Alain Coletta"
   - "Seqera Labs"
 
-headline: 'Setting up a Google-Cloud compute environment for Tower.nf'
-description: 'step-by-step instructions to setup Google-Cloud for Tower.nf'
+headline: 'Google Cloud Compute Environments'
+description: 'Step-by-step instructions to setup Google Cloud for Nextflow Tower.'
 menu:
   docs:
     parent: Compute Environments

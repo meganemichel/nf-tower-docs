@@ -8,8 +8,8 @@ authors:
   - "Alain Coletta"
   - "Seqera Labs"
 
-headline: 'Setting up an IBM LSF compute environment for Tower.nf'
-description: 'step-by-step instructions to setup IBM LSF for Tower.nf'
+headline: 'IBM LSF Compute Environments'
+description: 'Step-by-step instructions to setup IBM LSF for Nextflow Tower.'
 menu:
   docs:
     parent: Compute Environments

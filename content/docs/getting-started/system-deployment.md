@@ -10,27 +10,43 @@ authors:
   - "Alain Coletta"
   - "Seqera Labs"
 
-headline: 'Prescriptive guideline to deploy Tower.nf'
-description: 'step-by-step instructions to deploy Tower.nf'
+headline: 'Deployment Guide'
+description: 'System description and instructions for Nextflow Tower.'
 menu:
   docs:
     parent: Getting Started
     weight: 2
 ---
 
-Nextflow Tower is an **Open Source** monitoring and managing platform for Nextflow workflows. Source code and full instructions are available [here](https://github.com/seqeralabs/nf-tower).
-
-
 {{% tip %}}
 
-[**Sign up**](https://tower.nf "Nextflow Tower") to Tower.nf for free today, or request a [**demo**](https://seqera.io/demo "Nextflow Tower Demo") for a deployment in your own on-premise or cloud environment.
+It is highly recommended to first [**Sign up**](https://tower.nf "Nextflow Tower") and try the hosted version of Tower for free or request a [**demo**](https://seqera.io/demo "Nextflow Tower Demo") for a deployment in your own on-premise or cloud environment.
 
 {{% /tip %}}
 
+Nextflow Tower is a web application server based on a microservices oriented architecture and designed to maximize the portability, scalability and security of the application.
+
+The application is composed of different modules that can be configured and deployed depending on user requirements. 
+
+All components for the Enterprise release are packaged as Docker container images which are hosted and security validated by the Amazon ECR service. The community version can be accessed via GitHub.
+
+## Deployment configurations
+
+### Basic deployment
+
+The minimal Tower configuration only requires the front-end, backend and database modules.
+
+These can be executed as Docker containers or as native services running in the hosting environment. Such minimal configuration is only suggested for evaluation purposes or for a small number of users.
+
+### Kubernetes deployment
+
+Kubernetes cluster management is emerging as the technology of choice for the deployment of applications requiring high-availability, scalability and security standards.
+
+Nextflow Tower Enterprise includes configuration manifests for the deployment in the Kubernetes environment.
+
+This diagram shows the system architecture for the reference deployment on AWS.
+
 {{% pretty_screenshot img="/uploads/2020/10/installation_reference_architecture.png" %}}
-
-This diagram shows the Tower architecture deployed on AWS.
-
 
 ## Tower Modules
 
@@ -79,25 +95,3 @@ Third-party authority providers and custom single-sign-on flow can be developed 
 Tower implements a cron service which takes care of executing periodical activities, such as sending e-mail notifications and cleaning up.
 
 The cron service can be configured to run as an embedded backend service or an independent service.
-
-## Deployment configurations
-
-### Basic deployment
-
-The minimal Tower configuration only requires the front-end, backend and database modules.
-
-These can be executed as Docker containers or as native services running in the hosting environment. Such minimal configuration is only suggested for evaluation purposes or for a small number of users.
-
-### Kubernetes deployment
-
-Kubernetes cluster management is emerging as the technology of choice for the deployment of applications requiring high-availability, scalability and security standards.
-
-Nextflow Tower Enterprise includes configuration manifests for the deployment in the Kubernetes environment.
-
-## Nextflow client
-
-Once deployed the Nextflow workflow runtime includes a thin HTTP client to connect and submit execution metadata to the Tower service.
-
-The service endpoint can be accessed at the backend layer or at the frontend layer depending on the chosen Tower configuration.
-
-In both cases, the data transfer is encrypted using HTTPS protocol.  
