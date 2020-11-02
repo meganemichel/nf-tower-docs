@@ -38,6 +38,6 @@ hoover over with mouse to get full details.
 
 ### Status section
 
-The **Status** section shows in real time the statuses of your workflow processes. The panel uses the same colour code as the pipelines left-side navigation bar.
+The **Status** section shows in real time the statuses of your workflow processes. The panel uses the same colour code as the pipelines in the left-side navigation bar.
 
 {{% pretty_screenshot img="/uploads/2020/10/monitoring_status.png" %}}

@@ -18,10 +18,9 @@ menu:
 ---
 ## Overview
 
-[IBM Spectrum LSF](https://www.ibm.com/products/hpc-workload-management/details) is an IBM workload management solution that for HPC. IT aims to enhance user and administrator experience, reliability and performance at scale.
+[IBM Spectrum LSF](https://www.ibm.com/products/hpc-workload-management/details) is an IBM workload management solution that for HPC. LSF aims to enhance user and administrator experience, reliability and performance at scale.
 
-{{% warning %}}
-Support for remote batch schedulers is an incubating feature.
+{{% warning "Support for remote batch schedulers is an incubating feature" %}}
 This feature enables Tower to connect to remote cloud or on-premise clusters and launch pipelines.
 {{% /warning %}}
 
@@ -86,3 +85,5 @@ The Compute queue can be overridden as a configuration option in the Nextflow pi
 {{% star "Groovy!" %}}
 You are now ready to launch pipelines.
 {{% /star %}}
+
+Jump to the documentation section for [Launching Pipelines](/docs/launch/overview/).

@@ -18,7 +18,7 @@ menu:
     weight: 2
 ---
 
-Nextflow Tower is an open source monitoring and managing platform for Nextflow workflows. Source code and full instructions are available [here](https://github.com/seqeralabs/nf-tower).
+Nextflow Tower is an **Open Source** monitoring and managing platform for Nextflow workflows. Source code and full instructions are available [here](https://github.com/seqeralabs/nf-tower).
 
 
 {{% tip %}}

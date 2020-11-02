@@ -17,7 +17,7 @@ menu:
 
 ---
 ---
-{{% tip "Disclaimer" %}}
+{{% tip "Requirements" %}}
 This guide assumes you have an existing [Google Cloud Account](https://console.cloud.google.com). Sign-up for a free account [here](https://cloud.google.com/).
 {{% /tip %}}
 
@@ -25,7 +25,7 @@ This guide assumes you have an existing [Google Cloud Account](https://console.c
 
 Tower provides integration to Google Cloud via the [Cloud Life Sciences API](https://cloud.google.com/life-sciences/docs/reference/rest).
 
-The guide will begin with configuring your Google Cloud account and enabling the Google Life Sciences API then guide you through creating a new Google Cloud compute environment in Tower.
+The guide will begin with configuring your Google Cloud account and enabling the Google Life Sciences API. It will then guide you through creating a new Google Cloud compute environment in Tower.
 
 ## Project configuration
 
@@ -53,7 +53,7 @@ If you do not already have one, the first Step is to create a a Google Cloud pro
 
 {{% pretty_screenshot img="/uploads/2020/09/google_name_bucket.png" %}}
 
-{{% warning "Bucket Naming"%}}
+{{% warning "Bucket Naming - No underscores _ !"%}}
 Avoid underscores in your bucket name and use hyphens instead.   
 {{% /warning %}}
 
@@ -77,19 +77,19 @@ Next we need to create a service account.
 
 <br>
 
-**2.** Select **+ CREATE SERVICE ACCOUNT**. Choose a name and a description and select something.
+**2.** Select **+ CREATE SERVICE ACCOUNT**. Choose a name and a description and click **CREATE**.
 
 {{% pretty_screenshot img="/uploads/2020/09/google_service_account_name.png" %}}
 
 <br>
 
-**3.** Set the role to Editor, leave the **Grant users access to this service account (optional)** options empty and select **CREATE**.
+**3.** In step 2: **Grant this service account access to project (optional)**  Set the role to _Editor_ and click **CONTINUE**, in step 3: **Grant users access to this service account (optional)** leave all options empty and select **CREATE**.
 
 {{% pretty_screenshot img="/uploads/2020/09/google_service_account_role.png" %}}
 
 <br>
 
-**4.** Select the newly created **Service account**, click **Actions** and **Create key**.
+**4.** Select the newly created **Service account**, click **⠇** in the **Actions** column, and **Create key**.
 
 {{% pretty_screenshot img="/uploads/2020/09/google_create_key.png" %}}
 
@@ -144,3 +144,5 @@ To create a new compute environment for Google Cloud in Tower:
 {{% star "Ace!" %}}
 Time to start launching pipelines in your cloud.
 {{% /star %}}
+
+Jump to the documentation section for [Launching Pipelines](/docs/launch/overview/).

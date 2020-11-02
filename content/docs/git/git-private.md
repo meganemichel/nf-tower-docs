@@ -19,9 +19,9 @@ menu:
     weight: 3
 ---
 
-{{% warning %}}
+{{% note Security %}}
 All credentials are securely stored using advanced encryption (AES-256) and never exposed by any Tower API.
-{{% /warning %}}
+{{% /note %}}
 
 Credentials for private git repositories can be managed from the [credentials page](https://tower.nf/credentials) accessible on the right top menu, under **manage credentials**.
 
@@ -33,7 +33,7 @@ Tower offers support to connect to private repositories from popular git hosting
 
 ## GitHub
 
-To connect a private GitHub repository you need to enter your **username** and **password** or **Access token**. GitHub recommends generating an access token instead of a password. Personal access tokens (PATs) are an alternative to using passwords for authentication to GitHub when using APIs.
+To connect a private GitHub repository you need to enter your **username** and **password** or **Access token** (GitHub recommends generating an access token instead of a using your password). Personal access tokens (PATs) are an alternative to using passwords for authentication to GitHub when using APIs.
 
 Step-by-step instructions to create a personal access token can be found [here](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token).
 

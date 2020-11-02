@@ -29,6 +29,6 @@ In Tower we can see there are 4 instances of the fastqc process.
 
 {{% pretty_screenshot img="/uploads/2020/10/monitoring_fastqc_processes.png" %}}
 
-{{% tip %}}
-Clicking in a processes filters it in the [Tasks section](## Tasks section) bellow.
+{{% tip "Filtering processes" %}}
+Clicking in a processes filters it in the [Tasks section](/docs/monitoring/tasks/) bellow.
 {{% /tip %}}
