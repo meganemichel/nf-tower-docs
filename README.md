@@ -2,7 +2,7 @@
 
 `clone https://github.com/seqeralabs/nf-tower-docs.git`
 
-`cd nf-docs`
+`cd nf-tower-docs`
 
 `> hugo server`
 
