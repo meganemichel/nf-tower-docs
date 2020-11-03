@@ -1,5 +1,5 @@
 ---
-title: Private git repositories
+title: Private Git repositories
 aliases:
 - "/docs/git-private"
 weight: 1
@@ -9,8 +9,8 @@ authors:
   - "Evan Floden"
   - "Alain Coletta"
   - "Seqera Labs"
-headline: "Executing workflows hosted in a private git repository"
-description: 'Managing and connecting to workflow git repositories'
+headline: "Private git repositories"
+description: 'Managing and connecting to Nextflow workflows to private Git repositories using Nextflow Tower.'
 
 
 menu:
@@ -19,35 +19,44 @@ menu:
     weight: 3
 ---
 
-{{% note Security %}}
-All credentials are securely stored using advanced encryption (AES-256) and never exposed by any Tower API.
-{{% /note %}}
-
-Credentials for private git repositories can be managed from the [credentials page](https://tower.nf/credentials) accessible on the right top menu, under **manage credentials**.
+Access to private Git repositories can be managed from the Credentials section, accessible on the right top menu, under **Manage credentials**.
 
 {{% pretty_screenshot img="/uploads/2020/10/git_manage_credentials.png" %}}
 
-Tower offers support to connect to private repositories from popular git hosting platforms (GitHub, GitLab, and BitBucket)
+Tower provides support to connect to private repositories from the popular Git hosting platforms GitHub, GitLab, and BitBucket.
 
 {{% pretty_screenshot img="/uploads/2020/10/git_platforms.png" %}}
 
+<br>
+
+{{% note %}}
+All credentials are securely stored using advanced encryption (AES-256) and never exposed by any Tower API.
+{{% /note %}}
+
 ## GitHub
 
-To connect a private GitHub repository you need to enter your **username** and **password** or **Access token** (GitHub recommends generating an access token instead of a using your password). Personal access tokens (PATs) are an alternative to using passwords for authentication to GitHub when using APIs.
+To connect a private GitHub repository you need to enter a **Name** for the credentials, a **Username** and a **Password** or **Access token**. 
 
-Step-by-step instructions to create a personal access token can be found [here](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token).
+It is recommended to use an access token instead of a using your password. Personal access tokens (PATs) are an alternative to using passwords for authentication to GitHub when using APIs. Step-by-step instructions to create a personal access token can be found [here](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token).
+
 
 ## GitLab
 
-To connect a private GitLab repository you need to enter your **username**, **password** and an **Access token**. The GitLab API access token that can be found in your [GitLab account page](https://gitlab.com/profile/personal_access_tokens). Make sure to select the `api`, `read_api`, and  `read_repository` options.
+To connect a private GitLab repository you need to enter a **Name** for the credentials, a **Username** and a **Password** or **Access token**.
+
+A GitLab API access token that can be found in your [GitLab account page](https://docs.gitlab.com/ee/api/personal_access_tokens.html). Make sure to select the `api`, `read_api`, and  `read_repository` options.
 
 {{% pretty_screenshot img="/uploads/2020/10/git_gitlab_access_token.png" %}}
 
+<br>
+
 ## Bitbucket
 
-To connect a private BitBucket repository you need to enter your **username** and a **BitBucket App password**. [This step by step example](https://support.atlassian.com/bitbucket-cloud/docs/app-passwords/) shows how to create a BitBucket App password.
+To connect a private BitBucket repository you need to enter a **Name** for the credentials, a **Username** and a **BitBucket App password**. 
 
-## Self-hosted git repositories
+[This step-by-step example](https://support.atlassian.com/bitbucket-cloud/docs/app-passwords/) shows how to create a BitBucket App password.
+
+## Self-hosted Git
 
 It is also possible to specify Git server endpoints for private hosting.
 
@@ -59,7 +68,7 @@ tower:
     providers:
       my_org_bitbucket:
         server: "https://bitbucket.my-org.com"
-        endpoint: "<the API endpoint URL if different from the above>"
+        endpoint: "<API endpoint if different from the above>"
         platform: bitbucketserver
         user: some_user_name
         password: password_or_access_token
@@ -67,6 +76,6 @@ tower:
 
 {{% tip %}}
 
-These [Git access options](https://www.nextflow.io/docs/latest/sharing.html#scm-configuration-file Nextflow SCM configuration file) are Nextflow examples. You can first test your connection with a Nextflow execution using the standard SCM file and then convert it to the YAML structure, as shown above, for Tower.
+For more details on this configuration, see the [Nextflow SCM configuration file](https://www.nextflow.io/docs/latest/sharing.html#scm-configuration-file) for examples. You can first test your connection with a Nextflow execution using the standard SCM file and then convert it to the YAML structure, as shown above, for Tower.
 
 {{% /tip %}}

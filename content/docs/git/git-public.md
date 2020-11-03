@@ -9,20 +9,22 @@ authors:
   - "Evan Floden"
   - "Alain Coletta"
   - "Seqera Labs"
-headline: "Executing workflows hosted in a public git repository"
-description: 'Managing and connecting to workflow git repositories'
+headline: "Public git repositories"
+description: 'Managing and connecting to Nextflow workflows in Public git repositories'
 
 menu:
   docs:
     parent: Git Integration
     weight: 2
 ---
-As Nextflow data pipelines are simply Git repositories, these can be either public or private and hosted on any of the popular Git platforms: GitHub, GitLab or BitBucket.
+Nextflow data pipelines can pulled remotely from either public or private Git-hosting solutions including the popular platforms: GitHub, GitLab, BitBucket and Gitea.
 
-Launching public hosted git pipelines simply requires adding the git repo URL in the **pipeline to launch** field. Note the revision numbers for the given repository are automatically loaded. By default, the stable `main` branch will be executed.
+Launching a publicly hosted git pipelines simply requires adding the git repo URL in the **pipeline to launch** field. 
 
 {{% pretty_screenshot img="/uploads/2020/10/git_public_repo.png" %}}
 
+Note the revision and version numbers for a given repository are automatically pulled using the Git API. By default, the default `main/master` branch will be executed.
+
 {{% tip %}}
-[nf-core](https://nf-co.re/pipelines) is a great resource for public nextflow pipelines.
+[nf-core](https://nf-co.re/pipelines) are a great resource for public nextflow pipelines.
 {{% /tip %}}
