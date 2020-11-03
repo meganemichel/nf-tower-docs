@@ -1,21 +1,10 @@
-# Nextflow Tower documentation 
+## Usage
 
-## Getting started 
+`clone https://github.com/seqeralabs/nf-tower-docs.git`
 
+Move to the working directory e.g: `cd nf-tower-docs`
 
-Clone this repo: 
-
-```
-clone https://github.com/seqeralabs/nf-tower-docs.git`
-cd nf-tower-docs
-```
-
-Then run the Hugo server:
-
-```
-hugo server
-```
-
+`> hugo server`
 
 The result is that a local website is run and can be
-accessed from `http://localhost:1313`.
+accessed from ```http://localhost:1313```.

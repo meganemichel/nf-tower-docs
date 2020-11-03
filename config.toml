@@ -78,9 +78,9 @@ custom_css = ["css/custom/main.css"]
 params = ["tags", "categories", "authors"]
 vars = ["date", "description", "dir", "path", "expirydate", "fuzzywordcount", "keywords", "kind", "lang", "lastmod", "permalink", "publishdate", "readingtime", "relpermalink", "summary", "title", "type", "url", "weight", "wordcount", "section"]
 [params.cloudinary]
-cloud_name = "forestry-io"
+cloud_name = "nexflow-io"
 use_upload = false
-baseurl = "https://res.cloudinary.com/forestry-io/image/fetch"
+baseurl = "https://res.cloudinary.com/nexflow-io/image/fetch"
 [params.cloudinary.lazysizes]
 enabled = true
 [params.cloudinary.presets.content]

@@ -1,6 +1,6 @@
 {
-    "name": "Forestry.io",
-    "short_name": "Forestry",
+    "name": "nexflow.io",
+    "short_name": "nexflow",
     "icons": [
         {
             "src": "/favicons/android-chrome-192x192.png",
@@ -15,6 +15,6 @@
     ],
     "theme_color": "#20c997",
     "background_color": "#ffffff",
-    "start_url": "https://forestry.io",
+    "start_url": "https://nexflow.io",
     "display": "standalone"
 }
