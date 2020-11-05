@@ -1,7 +1,7 @@
 ---
 title: Pipeline Actions
 aliases:
-- "/docs/github-webhook"
+- "/docs/pipeline_actions"
 weight: 1
 layout: single
 publishdate: 2020-10-20 04:00:00 +0000
@@ -17,7 +17,7 @@ menu:
     weight: 1
 ---
 
-Pipeline actions allow launching of pipelines based on events. 
+Pipeline actions allow launching of pipelines based on events.
 
 Tower currently offers support for native **GitHub webhooks** and a general **Tower webhook** that can be invoked programmatically. Support for Bitbucket and GitLab are coming soon.
 
