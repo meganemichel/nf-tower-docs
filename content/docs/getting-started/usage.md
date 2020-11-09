@@ -28,7 +28,7 @@ Tower can be accessed or deployed three ways:
 
 
 {{% note %}}
-All versions of Tower require the setup a compute environment. Data and workflow executions always remain in this environment.
+All versions of Tower require the setup of a compute environment. Data and workflow executions always remain within this environment.
 {{% /note %}}
 
 ## Hosted
@@ -59,7 +59,7 @@ Tower Enterprise is installed within an organization's own cloud or on-premise e
   * Fully featured API
   * Support for Nextflow & Tower
 
-To install the Tower enterprise version, please contact [Seqera Labs](https://seqera.io) for a demo and to discuss your organizations requirements.
+To install the Tower enterprise version, please contact [Seqera Labs](https://seqera.io) for a demo and to discuss your organization's requirements.
 
 {{% pretty_screenshot img="/uploads/2020/10/starting_tower_enterprise.png" %}}
 
