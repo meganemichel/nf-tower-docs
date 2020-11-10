@@ -1,7 +1,7 @@
 ---
 title: Dashboard overview
 aliases:
-- "/docs/monitoring-tower-pipelines"
+- "/docs/monitoring"
 weight: 1
 layout: single
 publishdate: 2020-10-20 04:00:00 +0000
@@ -20,7 +20,7 @@ menu:
 
 ## Navigation bar
 
-Jobs have been submitted with Tower can be monitored wherever you have an internet connection. 
+Jobs have been submitted with Tower can be monitored wherever you have an internet connection.
 
 The **navigation bar** contains all previous jobs executions. Each new or resumed job will be given a random name e.g: `grave_williams`.
 
@@ -40,7 +40,7 @@ In the left bar:
 
 ## Search
 
-The search box enables searching for runs and pipelines by name. 
+The search box enables searching for runs and pipelines by name.
 
 Use asterisks `✽` before and after keyword to filter results.
 
