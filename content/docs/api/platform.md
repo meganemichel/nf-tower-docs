@@ -27,7 +27,7 @@ List available computing platforms.
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \
      -H 'Authorization: Bearer {access_token}' \
-     -X GET 'localhost:8000/api/platforms'
+     -X GET 'https://api.tower.nf/api/platforms'
 {{< /highlight >}}
 
 ### Default response 
@@ -83,7 +83,7 @@ List available regions for the platform specified
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \
      -H 'Authorization: Bearer {access_token}' \
-     -X GET 'localhost:8000/api/platforms/{platformId}/regions'
+     -X GET 'https://api.tower.nf/api/platforms/{platformId}/regions'
 {{< /highlight >}}
 
 ### Default response 
@@ -144,7 +144,7 @@ Describe the platform entity by a given id
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \
      -H 'Authorization: Bearer {access_token}' \
-     -X GET 'localhost:8000/api/platforms/{platformId}/?regionId={regionId}&credentialsId={credentialsId}'
+     -X GET 'https://api.tower.nf/api/platforms/{platformId}/?regionId={regionId}&credentialsId={credentialsId}'
 {{< /highlight >}}
 
 ### Default response 

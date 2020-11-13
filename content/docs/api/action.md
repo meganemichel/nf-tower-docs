@@ -30,7 +30,7 @@ List the available Pipeline actions for the authenticated user.
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \ 
      -H 'Authorization: Bearer {access_token}' \
-     -X GET 'localhost:8000/api/actions'
+     -X GET 'https://api.tower.nf/api/actions'
 {{< /highlight >}}
 
 ### Default response 
@@ -75,7 +75,7 @@ List the supported event types that can trigger a pipeline action.
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \ 
      -H 'Authorization: Bearer {access_token}' \
-     -X GET 'localhost:8000/api/actions/types'
+     -X GET 'https://api.tower.nf/api/actions/types'
 {{< /highlight >}}
 
 ### Default response 
@@ -130,7 +130,7 @@ Describe an existing pipeline action.
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \ 
      -H 'Authorization: Bearer {access_token}' \
-     -X GET 'localhost:8000/api/actions/{actionId}'
+     -X GET 'https://api.tower.nf/api/actions/{actionId}'
 {{< /highlight >}}
 
 ### Default response 
@@ -347,7 +347,7 @@ Update a pipeline action.
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \ 
      -H 'Authorization: Bearer {access_token}' \
-     -X PUT 'localhost:8000/api/actions/{actionId}' \
+     -X PUT 'https://api.tower.nf/api/actions/{actionId}' \
      -d '{"key":"value"}'
 {{< /highlight >}}
 
@@ -432,7 +432,7 @@ Create a new pipeline action.
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \ 
      -H 'Authorization: Bearer {access_token}' \
-     -X POST 'localhost:8000/api/actions'
+     -X POST 'https://api.tower.nf/api/actions'
      -d '{"params":{"foo":"Hello world"}}'
 {{< /highlight >}}
 
@@ -481,7 +481,7 @@ Toggle the pause status of an existing pipeline action.
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \ 
      -H 'Authorization: Bearer {access_token}' \
-     -X GET 'localhost:8000/api/actions/{actionId}/pause'
+     -X GET 'https://api.tower.nf/api/actions/{actionId}/pause'
 {{< /highlight >}}
 
 ### Standard response 
@@ -536,7 +536,7 @@ Trigger the execution of a Tower Launch action.
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \ 
      -H 'Authorization: Bearer {access_token}' \
-     -X POST 'localhost:8000/api/actions/{actionId}/launch'
+     -X POST 'https://api.tower.nf/api/actions/{actionId}/launch'
      -d '{"key":"value"}'
 {{< /highlight >}}
 
@@ -585,7 +585,7 @@ Delete a pipeline action.
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \ 
      -H 'Authorization: Bearer {access_token}' \
-     -X DELETE 'localhost:8000/api/actions/{actionId}'
+     -X DELETE 'https://api.tower.nf/api/actions/{actionId}'
 {{< /highlight >}}
 
 ### Standard response 

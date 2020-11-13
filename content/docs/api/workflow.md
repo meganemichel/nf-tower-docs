@@ -27,7 +27,7 @@ List workflow records matching the filter parameters.
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \
      -H 'Authorization: Bearer {access_token}' \
-     -X GET 'localhost:8000/api/workflows'
+     -X GET 'https://api.tower.nf/api/workflows'
 {{< /highlight >}}
 
 ### Default response 
@@ -150,7 +150,7 @@ Describe the workflow entity for a given ID.
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \
      -H 'Authorization: Bearer {access_token}' \
-     -X GET 'localhost:8000/api/workflow/{workflowId}'
+     -X GET 'https://api.tower.nf/api/workflow/{workflowId}'
 {{< /highlight >}}
 
 ### Default response 
@@ -427,7 +427,7 @@ Retrieve the execution progress for a given workflow ID.
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \
      -H 'Authorization: Bearer {access_token}' \
-     -X GET 'localhost:8000/api/workflow/{workflowId}/progress'
+     -X GET 'https://api.tower.nf/api/workflow/{workflowId}/progress'
 {{< /highlight >}}
 
 ### Default response 
@@ -621,7 +621,7 @@ List the tasks for a given workflow ID and filter parameters.
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \
      -H 'Authorization: Bearer {access_token}' \
-     -X GET 'localhost:8000/api/workflow/{workflowId}/tasks'
+     -X GET 'https://api.tower.nf/api/workflow/{workflowId}/tasks'
 {{< /highlight >}}
 
 ### Default response 
@@ -990,7 +990,7 @@ Describe a task entity with a given ID.
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \
      -H 'Authorization: Bearer {access_token}' \
-     -X GET 'localhost:8000/api/workflow/{workflowId}/task/{taskId}'
+     -X GET 'https://api.tower.nf/api/workflow/{workflowId}/task/{taskId}'
 {{< /highlight >}}
 
 ### Default response 
@@ -1088,7 +1088,7 @@ Get the execution metrics for a given workflow ID.
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \
      -H 'Authorization: Bearer {access_token}' \
-     -X GET 'localhost:8000/api/workflow/{workflowId}/metrics'
+     -X GET 'https://api.tower.nf/api/workflow/{workflowId}/metrics'
 {{< /highlight >}}
 
 ### Standard response 
@@ -1553,7 +1553,7 @@ Relaunch a workflow entity with a given ID.
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \
      -H 'Authorization: Bearer {access_token}' \
-     -X GET 'localhost:8000/api/workflow/{workflowId}/launch'
+     -X GET 'https://api.tower.nf/api/workflow/{workflowId}/launch'
 {{< /highlight >}}
 
 ### Standard response 
@@ -1691,7 +1691,7 @@ Retrieves a workflow entity' log with a given ID.
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \
      -H 'Authorization: Bearer {access_token}' \
-     -X GET 'localhost:8000/api/workflow/{workflowId}/log'
+     -X GET 'https://api.tower.nf/api/workflow/{workflowId}/log'
 {{< /highlight >}}
 
 ### Standard response 
@@ -1778,7 +1778,7 @@ Retrieves a workflow entity's task log with a given ID.
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \
      -H 'Authorization: Bearer {access_token}' \
-     -X GET 'localhost:8000/api/workflow/{workflowId}/log/{taskId}'
+     -X GET 'https://api.tower.nf/api/workflow/{workflowId}/log/{taskId}'
 {{< /highlight >}}
 
 ### Standard response 
@@ -1853,7 +1853,7 @@ Download a workflow entity with a given ID.
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \
      -H 'Authorization: Bearer {access_token}' \
-     -X GET 'localhost:8000/api/workflow/{workflowId}/download?fileName=nf-{:workflowId}.{txt,log}'
+     -X GET 'https://api.tower.nf/api/workflow/{workflowId}/download?fileName=nf-{:workflowId}.{txt,log}'
 {{< /highlight >}}
 
 ### Default response 
@@ -1920,7 +1920,7 @@ Download a workflow entity's task with a given ID.
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \
      -H 'Authorization: Bearer {access_token}' \
-     -X GET 'localhost:8000/api/workflow/{workflowId}/download?fileName={fileName}'
+     -X GET 'https://api.tower.nf/api/workflow/{workflowId}/download?fileName={fileName}'
 {{< /highlight >}}
 
 ### Default response 
@@ -2028,7 +2028,7 @@ Create and launch a workflow.
 ### Code Sample
 {{< highlight bash >}}
 curl -H 'Authorization: Bearer {access_token}' \
-     -X POST 'localhost:8000/api/workflow/{workflowId}/launch'
+     -X POST 'https://api.tower.nf/api/workflow/{workflowId}/launch'
      -d '{"key" : "value"}'
 {{< /highlight >}}
 
@@ -2075,7 +2075,7 @@ Cancel the workflow entity with a given ID
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \
      -H 'Authorization: Bearer {access_token}' \
-     -X POST 'localhost:8000/api/workflow/{workflowId}/cancel'
+     -X POST 'https://api.tower.nf/api/workflow/{workflowId}/cancel'
 {{< /highlight >}}
 
 ### Standard response 
@@ -2116,7 +2116,7 @@ Delete the workflow entity with a given ID
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \
      -H 'Authorization: Bearer {access_token}' \
-     -X DELETE 'localhost:8000/api/workflow/{workflowId}/metrics'
+     -X DELETE 'https://api.tower.nf/api/workflow/{workflowId}/metrics'
 {{< /highlight >}}
 
 ### Standard response 

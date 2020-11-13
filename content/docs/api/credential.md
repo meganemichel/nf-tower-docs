@@ -27,7 +27,7 @@ List available credentials for the user and platform.
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \
      -H 'Authorization: Bearer {access_token}' \
-     -X GET 'localhost:8000/api/credentials'
+     -X GET 'https://api.tower.nf/api/credentials'
 {{< /highlight >}}
 
 ### Default response 
@@ -74,7 +74,7 @@ Describe the credentials for a given id.
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \
      -H 'Authorization: Bearer {access_token}' \
-     -X GET 'localhost:8000/api/credentials/{credentialId}'
+     -X GET 'https://api.tower.nf/api/credentials/{credentialId}'
 {{< /highlight >}}
 
 ### Default response 
@@ -156,7 +156,7 @@ Status: 200 OK
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \
      -H 'Authorization: Bearer {access_token}' \
-     -X PUT 'localhost:8000/api/credentials/{credentialId}'
+     -X PUT 'https://api.tower.nf/api/credentials/{credentialId}'
 {{< /highlight >}}
 
 ### Default response 
@@ -220,7 +220,7 @@ Status: 200 OK
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \
      -H 'Authorization: Bearer {access_token}' \
-     -X POST 'localhost:8000/api/credentials'
+     -X POST 'https://api.tower.nf/api/credentials'
 {{< /highlight >}}
 
 ### Default response 
@@ -266,7 +266,7 @@ Delete the credential record for the given id.
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \
      -H 'Authorization: Bearer {access_token}' \
-     -X DELETE 'localhost:8000/api/credentials/{credentialId}'
+     -X DELETE 'https://api.tower.nf/api/credentials/{credentialId}'
 {{< /highlight >}}
 
 ### Default response 

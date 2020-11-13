@@ -27,7 +27,7 @@ List the all account token records.
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \
      -H 'Authorization: Bearer {access_token}' \
-     -X GET 'localhost:8000/api/tokens'
+     -X GET 'https://api.tower.nf/api/tokens'
 {{< /highlight >}}
 
 ### Default response 
@@ -66,7 +66,7 @@ Create a new token.
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \
      -H 'Authorization: Bearer {access_token}' \
-     -X POST 'localhost:8000/api/tokens'
+     -X POST 'https://api.tower.nf/api/tokens'
 {{< /highlight >}}
 
 ### Default response 
@@ -121,7 +121,7 @@ Delete a token entity with a given ID
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \
      -H 'Authorization: Bearer {access_token}' \
-     -X DELETE 'localhost:8000/api/tokens/{tokenId}'
+     -X DELETE 'https://api.tower.nf/api/tokens/{tokenId}'
 {{< /highlight >}}
 
 ### Standard response 
@@ -157,7 +157,7 @@ Delete all existing token entities
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \
      -H 'Authorization: Bearer {access_token}' \
-     -X DELETE 'localhost:8000/api/tokens/deltete-all'
+     -X DELETE 'https://api.tower.nf/api/tokens/deltete-all'
 {{< /highlight >}}
 
 ### Standard response 

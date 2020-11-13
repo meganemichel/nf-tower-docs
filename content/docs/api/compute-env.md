@@ -27,7 +27,7 @@ List all Tower compute environments for the given user.
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \   
      -H 'Authorization: Bearer {access_token}' \
-     -X GET 'localhost:8000/api/compute-envs'
+     -X GET 'https://api.tower.nf/api/compute-envs'
 {{< /highlight >}}
 
 ### Default response 
@@ -75,7 +75,7 @@ Describe a Tower compute environment.
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \ 
      -H 'Authorization: Bearer {access_token}' \
-     -X GET 'localhost:8000/api/compute-envs/{computeEnvId}'
+     -X GET 'https://api.tower.nf/api/compute-envs/{computeEnvId}'
 {{< /highlight >}}
 
 ### Default response 
@@ -247,7 +247,7 @@ Create a new Tower compute environment.
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \ 
      -H 'Authorization: Bearer {access_token}' \
-     -X POST 'localhost:8000/api/compute-envs'
+     -X POST 'https://api.tower.nf/api/compute-envs'
      -d '{"key" : "value"}'
 {{< /highlight >}}
 
@@ -297,7 +297,7 @@ Defines the primary Tower compute environment.
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \ 
      -H 'Authorization: Bearer {access_token}' \
-     -X POST 'localhost:8000/api/compute-envs/{computeEnvId}/primary'
+     -X POST 'https://api.tower.nf/api/compute-envs/{computeEnvId}/primary'
 {{< /highlight >}}
 
 ### Default response 
@@ -328,7 +328,7 @@ Delete an existing Tower compute environment.
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \
      -H 'Authorization: Bearer {access_token}' \
-     -X DELETE 'localhost:8000/api/compute-envs/{computeEnvId}'
+     -X DELETE 'https://api.tower.nf/api/compute-envs/{computeEnvId}'
 {{< /highlight >}}
 
 ### Standard response 

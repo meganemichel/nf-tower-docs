@@ -32,7 +32,7 @@ Describe s launch record for the given id.
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \ 
      -H 'Authorization: Bearer {access_token}' \
-     -X GET 'localhost:8000/api/launch/{launchId}'
+     -X GET 'https://api.tower.nf/api/launch/{launchId}'
 {{< /highlight >}}
 
 ### Default response 
