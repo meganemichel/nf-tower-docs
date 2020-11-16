@@ -20,7 +20,7 @@ menu:
 
 [Slurm Workload Manager](https://slurm.schedmd.com/overview.html) is an open source, fault-tolerant, and highly scalable cluster management and job scheduling system for large and small Linux clusters.
 
-{{% warning "Support for remote batch schedulers is an incubating feature" %}}
+{{% warning "Support for remote batch schedulers is a beta feature" %}}
 This feature enables Tower to connect to remote cloud or on-premise clusters and launch pipelines.
 {{% /warning %}}
 
@@ -50,7 +50,7 @@ To create a new compute environment for Slurm:
 
 <br>
 
-**3.** Select the **+** sign to add new SHH credentials.
+**3.** Select the **+** sign to add new SSH credentials.
 
 **4.** Enter a name for the credentials
 
@@ -59,7 +59,7 @@ To create a new compute environment for Slurm:
 {{% pretty_screenshot img="/uploads/2020/09/slurm_tower_credentials.png" %}}
 
 {{% tip %}}
-An passphrase for your SSH key may be optional depending on how it was created. See [here](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) for detailed instructions for how to create a key.
+A passphrase for your SSH key may be optional depending on how it was created. See [here](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) for detailed instructions for how to create a key.
 {{% /tip %}}
 
 <br>
