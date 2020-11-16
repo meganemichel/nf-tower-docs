@@ -20,7 +20,7 @@ menu:
 Describe s launch record for the given id.
 
 {{% tip %}}
-**GET** /api/launch/:launchId
+**GET** /api/launch/{launchId}
 {{% /tip %}}
 
 ### Request parameters

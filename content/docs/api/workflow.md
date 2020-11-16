@@ -138,7 +138,7 @@ Status: 403 Forbidden
 Describe the workflow entity for a given ID.
 
 {{% tip %}}
-**GET** /api/workflow/:workflowId
+**GET** /api/workflow/{workflowId}
 {{% /tip %}}
 
 ### Request parameters
@@ -415,7 +415,7 @@ Status: 403 Forbidden
 Retrieve the execution progress for a given workflow ID.
 
 {{% tip %}}
-**GET** /api/workflow/:workflowId/progress
+**GET** /api/workflow/{workflowId}/progress
 {{% /tip %}}
 
 ### Request parameters
@@ -609,7 +609,7 @@ Status: 403 Forbidden
 List the tasks for a given workflow ID and filter parameters.
 
 {{% tip %}}
-**GET** /api/workflow/:workflowId/tasks
+**GET** /api/workflow/{workflowId}/tasks
 {{% /tip %}}
 
 ### Request parameters
@@ -977,7 +977,7 @@ Status: 403 Forbidden
 Describe a task entity with a given ID.
 
 {{% tip %}}
-**GET** /api/workflow/:workflowId/tasks/:taskId
+**GET** /api/workflow/{workflowId}/tasks/{taskId}
 {{% /tip %}}
 
 ### Request parameters
@@ -1076,7 +1076,7 @@ Status: 403 Forbidden
 Get the execution metrics for a given workflow ID.
 
 {{% tip %}}
-**GET** /api/workflow/:workflowId/metrics
+**GET** /api/workflow/{workflowId}/metrics
 {{% /tip %}}
 
 ### Request parameters
@@ -1541,7 +1541,7 @@ Status: 403 Forbidden
 Relaunch a workflow entity with a given ID.
 
 {{% tip %}}
-**GET** /api/workflow/:workflowId/launch
+**GET** /api/workflow/{workflowId}/launch
 {{% /tip %}}
 
 ### Request parameters
@@ -1679,7 +1679,7 @@ Status: 403 Forbidden
 Retrieves a workflow entity' log with a given ID.
 
 {{% tip %}}
-**GET** /api/workflow/:workflowId/log
+**GET** /api/workflow/{workflowId}/log
 {{% /tip %}}
 
 ### Request parameters
@@ -1765,7 +1765,7 @@ Status: 403 Forbidden
 Retrieves a workflow entity's task log with a given ID.
 
 {{% tip %}}
-**GET** /api/workflow/:workflowId/log/{taskId}
+**GET** /api/workflow/{workflowId}/log/{taskId}
 {{% /tip %}}
 
 ### Request parameters
@@ -1840,7 +1840,7 @@ Status: 403 Forbidden
 Download a workflow entity with a given ID.
 
 {{% tip %}}
-**GET** /api/workflow/:workflowId/download?fileName=:fileName
+**GET** /api/workflow/{workflowId}/download?fileName={fileName}
 {{% /tip %}}
 
 ### Request parameters
@@ -1906,7 +1906,7 @@ Status: 403 Forbidden
 Download a workflow entity's task with a given ID.
 
 {{% tip %}}
-**GET** /api/workflow/:workflowId/download/:taskId?fileName=:fileName
+**GET** /api/workflow/{workflowId}/download/{taskId}?fileName={fileName}
 {{% /tip %}}
 
 ### Request parameters
@@ -2063,7 +2063,7 @@ Status: 403 Forbidden
 Cancel the workflow entity with a given ID
 
 {{% tip %}}
-**POST** /api/workflow/:workflowId/cancel
+**POST** /api/workflow/{workflowId}/cancel
 {{% /tip %}}
 
 ### Request parameters
@@ -2104,7 +2104,7 @@ Status: 403 Forbidden
 Delete the workflow entity with a given ID
 
 {{% tip %}}
-**DELETE** /api/workflow/:workflowId
+**DELETE** /api/workflow/{workflowId}
 {{% /tip %}}
 
 ### Request parameters
@@ -2131,7 +2131,7 @@ Status: 400 Bad Request
 
 {{< highlight json >}}
 {
-    "message": "Invalid cancel request for workflow id: 5exbg5o9ptqq34; status: CANCELLED"
+    "message": "Oops... Unable to process request - Error ID: 54apnFENQxbvCr23JaIjLb"
 }
 {{< /highlight >}}
 

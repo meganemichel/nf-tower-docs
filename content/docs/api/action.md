@@ -118,7 +118,7 @@ Status: 403 Forbidden
 Describe an existing pipeline action.
 
 {{% tip %}}
-**GET** /actions/:actionId
+**GET** /actions/{actionId}
 {{% /tip %}}
 
 ### Request parameters
@@ -291,7 +291,7 @@ Status: 403 Forbidden
 Update a pipeline action.
 
 {{% tip %}}
-**PUT** /actions/:actionId
+**PUT** /actions/{actionId}
 {{% /tip %}}
 
 ### Request parameters
@@ -433,7 +433,7 @@ Create a new pipeline action.
 curl -H "Content-Type: application/json" \ 
      -H 'Authorization: Bearer {access_token}' \
      -X POST 'https://api.tower.nf/api/actions'
-     -d '{"params":{"foo":"Hello world"}}'
+     -d '{"key":"value"}'
 {{< /highlight >}}
 
 ### Standard response 
@@ -469,7 +469,7 @@ Status: 403 Forbidden
 Toggle the pause status of an existing pipeline action.
 
 {{% tip %}}
-**POST** /actions/:actionId/pause
+**POST** /actions/{actionId}/pause
 {{% /tip %}}
 
 ### Request parameters
@@ -511,7 +511,7 @@ Status: 403 Forbidden
 Trigger the execution of a Tower Launch action.
 
 {{% tip %}}
-**POST** /actions/:actionId/launch
+**POST** /actions/{actionId}/launch
 {{% /tip %}}
 
 ### Request parameters
@@ -519,25 +519,12 @@ Trigger the execution of a Tower Launch action.
 | Name | Type     | In | Description                |
 |------|----------|----|----------------------------|
 | `actionId` | `string` | query | **Required**. Action id. |
-| `params` | `array` | body | **Required**. Array of key/values attributes. |
-| `key` | `string` | body | **Required**. Parameter key. |
-| `value` | `any` | body | **Required**. Parameter value. |
-
-### Sample payload
-{{< highlight json >}}
-{
-    "params": {
-        "key": "value"
-    }
-}
-{{< /highlight >}}
 
 ### Code sample
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \ 
      -H 'Authorization: Bearer {access_token}' \
      -X POST 'https://api.tower.nf/api/actions/{actionId}/launch'
-     -d '{"key":"value"}'
 {{< /highlight >}}
 
 ### Standard response 
@@ -573,7 +560,7 @@ Status: 403 Forbidden
 Delete a pipeline action.
 
 {{% tip %}}
-**DELETE** /actions/:actionId
+**DELETE** /actions/{actionId}
 {{% /tip %}}
 
 ### Request parameters

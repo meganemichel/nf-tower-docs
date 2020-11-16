@@ -20,7 +20,7 @@ menu:
 List available computing platforms.
 
 {{% tip %}}
-**GET** /actions/platforms
+**GET** /platforms
 {{% /tip %}}
 
 ### Code sample
@@ -71,7 +71,7 @@ Status: 403 Forbidden
 List available regions for the platform specified
 
 {{% tip %}}
-**GET** /actions/platforms/:platformId/regions
+**GET** /platforms/{platformId}/regions
 {{% /tip %}}
 
 ### Request parameters
@@ -130,7 +130,7 @@ Status: 403 Forbidden
 Describe the platform entity by a given id
 
 {{% tip %}}
-**GET** /actions/platforms/:platformId?regionId=:regionId&credentialsId=:credentialsId
+**GET** /platforms/{platformId}?regionId={regionId}&credentialsId={credentialsId}
 {{% /tip %}}
 
 ### Request parameters

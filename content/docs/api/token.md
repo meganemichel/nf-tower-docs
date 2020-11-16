@@ -62,6 +62,18 @@ Create a new token.
 **POST** /api/tokens
 {{% /tip %}}
 
+### Request parameters
+| Name | Type     | In | Description           |
+|------|----------|----|-----------------------|
+| `name` | `string` | body | **Required**. Token name. |
+
+### Sample payload
+{{< highlight json >}}
+{
+    "name": "API access token"
+}
+{{< /highlight >}}
+
 ### Code sample
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \
@@ -109,7 +121,7 @@ Status: 403 Forbidden
 Delete a token entity with a given ID
 
 {{% tip %}}
-**DELETE** /api/tokens/:tokenId
+**DELETE** /api/tokens/{tokenId}
 {{% /tip %}}
 
 ### Request parameters
@@ -157,7 +169,7 @@ Delete all existing token entities
 {{< highlight bash >}}
 curl -H "Content-Type: application/json" \
      -H 'Authorization: Bearer {access_token}' \
-     -X DELETE 'https://api.tower.nf/api/tokens/deltete-all'
+     -X DELETE 'https://api.tower.nf/api/tokens/delete-all'
 {{< /highlight >}}
 
 ### Standard response 

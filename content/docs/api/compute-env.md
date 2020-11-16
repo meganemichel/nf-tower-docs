@@ -63,7 +63,7 @@ Status: 403 Forbidden
 Describe a Tower compute environment.
 
 {{% tip %}}
-**GET** /api/compute-envs/:computeEnvId
+**GET** /api/compute-envs/{computeEnvId}
 {{% /tip %}}
 
 ### Request parameters
@@ -316,7 +316,7 @@ Status: 403 Forbidden
 Delete an existing Tower compute environment.
 
 {{% tip %}}
-**DELETE** /compute-envs/:computeEnvId
+**DELETE** /compute-envs/{computeEnvId}
 {{% /tip %}}
 
 ### Request parameters

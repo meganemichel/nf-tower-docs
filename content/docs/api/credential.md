@@ -62,7 +62,7 @@ Status: 403 Forbidden
 Describe the credentials for a given id.
 
 {{% tip %}}
-**GET** /api/credentials/:credentialId
+**GET** /api/credentials/{credentialId}
 {{% /tip %}}
 
 ### Request parameters
@@ -118,7 +118,7 @@ Status: 403 Forbidden
 Update a credential data for a given id
 
 {{% tip %}}
-**PUT** /api/credentials/:credentialId
+**PUT** /api/credentials/{credentialId}
 {{% /tip %}}
 
 ### Request parameters
@@ -254,7 +254,7 @@ Status: 403 Forbidden
 Delete the credential record for the given id.
 
 {{% tip %}}
-**DELETE** /api/credentials/:credentialId
+**DELETE** /api/credentials/{credentialId}
 {{% /tip %}}
 
 ### Request parameters
