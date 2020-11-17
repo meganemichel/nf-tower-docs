@@ -44,10 +44,12 @@ Enabling this option ensures Nextflow pulls the latest version from the Git repo
 
 {{% pretty_screenshot img="/uploads/2020/11/launch_advanced.png" %}}
 
-<br>
-
 ## Main script
 Nextflow will attempt to run the script named `main.nf` in project repository by default. This can be changed via either the `manifest.mainScript` option or by providing the script filename to run in this field.
 
-## Workflow entry name 
+## Workflow entry name
 Nextflow DSL2 provides the ability to launch specific named workflows. Enter the name of the workflow to be executed in this field.
+
+## Launching pipelines in AWS with Fuse mount enabled
+
+Follow [these](/docs/compute-envs/aws-batch/#faster-pipelines-with-mounting-enabled) steps to enable fuse mounting in your compute environment. With this option enabled Tower will automatically mount the work directory in every EC2 instance and add the `/fusion/S3/BUCKET_NAME` subpath automatically. Because data is mounted rather than being copied across every EC2 instance, enabling this option can result in improved performance and reduced costs. 
