@@ -193,7 +193,7 @@ Optionally you can mount S3 buckets with *Lustre* or *Fuse*. These options attac
 
 {{% /tip %}}
 
-**12.a** With the optional **Enable Fusion mounts** feature enabled, S3 buckets specified in the **Pipeline work directory** and **Allowed S3 Buckets**  fields will be accessible from `/fusion/s3/BUCKET_NAME`. In the example bellow the `tower-bucket` and `imputation-gp2` buckets will be mounted and available in all EC2 instances as `/fusion/s3/tower-bucket` and `/fusion/s3/imputation-gp2` .
+**12.a** With the optional **Enable Fusion mounts** feature enabled, S3 buckets specified in the **Pipeline work directory** and **Allowed S3 Buckets**  fields will be accessible from `/fusion/s3/BUCKET_NAME`. In the example below the `tower-bucket` and `imputation-gp2` buckets will be mounted and available in all EC2 instances as `/fusion/s3/tower-bucket` and `/fusion/s3/imputation-gp2` .
 
 {{% pretty_screenshot img="/uploads/2020/11/aws_fuse_options.png" %}}
 
