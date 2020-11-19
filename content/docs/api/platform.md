@@ -68,7 +68,7 @@ Status: 403 Forbidden
 {{< /highlight >}}
 
 ## List platform regions
-List available regions for the platform specified
+List available regions for the platform specified.
 
 {{% tip %}}
 **GET** /platforms/{platformId}/regions
@@ -127,7 +127,7 @@ Status: 403 Forbidden
 {{< /highlight >}}
 
 ## Describe platform
-Describe the platform entity by a given id
+Describe the platform entity by a given id.
 
 {{% tip %}}
 **GET** /platforms/{platformId}?regionId={regionId}&credentialsId={credentialsId}

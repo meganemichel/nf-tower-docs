@@ -16,7 +16,7 @@ menu:
     
 ------------------------------------------------------------------------------------------------
 
-Pipeline actions allow you to launch the execution of your pipeline when submitting a change to the associated code repository
+Pipeline actions allow you to launch the execution of your pipeline when submitting a change to the associated code repository.
 
 
 ## List actions

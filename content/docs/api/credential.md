@@ -115,7 +115,7 @@ Status: 403 Forbidden
 {{< /highlight >}}
 
 ## Update credential
-Update a credential data for a given id
+Update a credential data for a given id.
 
 {{% tip %}}
 **PUT** /api/credentials/{credentialId}

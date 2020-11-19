@@ -60,10 +60,16 @@ Please remember that, as any other Bearer token, this token must be included in 
 
 
 {{< highlight bash >}}
-curl -H "Authorization: Bearer QH..E5M=" https://tower.nf/api/workflow
+curl -H "Authorization: Bearer eyJ…YTk=" https://tower.nf/api/workflow
 {{< /highlight >}}
 
 where `QH..E5M=` is the authorization token shown in the screenshot above.
+
+{{% note "Use your token in every API call"%}}
+
+Please remember that, as any other Bearer token, this token must be included in every API call.
+
+{{% /note %}}
 
 ## Parameters
 Some API `GET` methods will accept standard `query` parameters, which are defined in the documentation; `querystring` optional 
@@ -91,7 +97,7 @@ The request payload is not properly defined or the query parameters are invalid.
 {{< /highlight >}}
 
 ### Forbidden 
-Your access token is invalid or expire. This response may also imply that the entry point you are trying to access is not available; 
+Your access token is invalid or expired. This response may also imply that the entry point you are trying to access is not available; 
 in such a case, it is recommended you check your request syntax.
 
 {{< highlight bash >}}
@@ -99,7 +105,7 @@ Status: 403 Forbidden
 {{< /highlight >}}
 
 ## HTTP verbs
-The following table describe the standard API Rest verbs used.
+The following table describes the standard and API Rest verbs used.
 
 | Verb | Description |
 |------|-------------|

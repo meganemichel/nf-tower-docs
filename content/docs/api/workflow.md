@@ -135,7 +135,7 @@ Status: 403 Forbidden
 ------------------------------------------------------------------------------------------------
 
 ## Describe workflow
-Describe the workflow entity for a given ID.
+Describe the workflow entity for a given id.
 
 {{% tip %}}
 **GET** /api/workflow/{workflowId}
@@ -412,7 +412,7 @@ Status: 403 Forbidden
 ------------------------------------------------------------------------------------------------
 
 ## Describe workflow progress
-Retrieve the execution progress for a given workflow ID.
+Retrieve the execution progress for a given workflow id.
 
 {{% tip %}}
 **GET** /api/workflow/{workflowId}/progress

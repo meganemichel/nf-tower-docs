@@ -118,7 +118,7 @@ Status: 403 Forbidden
 
 ## Delete token
 
-Delete a token entity with a given ID
+Delete a token entity with a given id.
 
 {{% tip %}}
 **DELETE** /api/tokens/{tokenId}
@@ -159,7 +159,7 @@ Status: 403 Forbidden
 
 ## Delete all tokens
 
-Delete all existing token entities
+Delete all existing token entities.
 
 {{% tip %}}
 **DELETE** /api/tokens/delete-all
