@@ -177,7 +177,17 @@ The bucket should be in the same **Region** as selected above.
 
 **6.** Choose a **Provisioning model**. In most cases this will be *Spot*.
 
-**7.** Enter the **Min CPUs**. When this is set to greater than `0`, EC2 instances will remain active and you will be billed regardless of whether you are running workloads. The advantage of setting a minimum number of CPUs greater than `0` is that a pipeline execution will initialize faster.
+**7.** **Optionally** enter an amount of **Min CPUs** greater than `0`. Note that if **Min CPUs** is greater than `0`, EC2 instances will remain always active. The advantage is that a pipeline execution will initialize faster. Note this can result in important additional costs.
+
+{{% warning "Additional Costs!" %}}
+
+ Keeping EC2 instances always running can result in important additional costs. You will be billed for these running EC2 instances regardless of whether you are running pipelines with Tower. We recommend using this option only in production and when launching workflows constantly.  
+
+{{% /warning %}}
+
+{{% pretty_screenshot img="/uploads/2020/11/aws_min_cpus.png" %}}
+
+
 
 **8.** Enter the **Max CPUs** e.g. `64`.
 
@@ -187,13 +197,13 @@ The bucket should be in the same **Region** as selected above.
 
 **11.** Enter any additional **Allowed S3 buckets** that your workflows require to read input data or to write output files. The **Pipeline work directory** bucket above is added by default to the list of **Allowed S3 buckets**.
 
-**12.** With the optional **Enable Fusion mounts** feature enabled, S3 buckets specified in the **Pipeline work directory** and **Allowed S3 Buckets** 
-fields will be mounted as a plain file system volumes in the EC2 instances carrying out the Batch job execution and accessible at the path location following this pattern `/fusion/s3/BUCKET_NAME`. 
-For example if the bucket name is `imputation-gp2` the Nextflow pipeline will access it using the file system path and `/fusion/s3/imputation-gp2`. 
+**12.** With the optional **Enable Fusion mounts** feature enabled, S3 buckets specified in the **Pipeline work directory** and **Allowed S3 Buckets**
+fields will be mounted as a plain file system volumes in the EC2 instances carrying out the Batch job execution and accessible at the path location following this pattern `/fusion/s3/BUCKET_NAME`.
+For example if the bucket name is `imputation-gp2` the Nextflow pipeline will access it using the file system path and `/fusion/s3/imputation-gp2`.
 
 {{% tip %}}
-Note that's not required to modify your pipeline to get advantage of this feature, Nextflow is able to recognise these buckets and automatically replace any reference to s3:// prefixed files 
-to the corresponding Fusion mount paths. 
+Note that's not required to modify your pipeline to get advantage of this feature, Nextflow is able to recognise these buckets and automatically replace any reference to s3:// prefixed files
+to the corresponding Fusion mount paths.
 {{% /tip %}}
 
 **13.** If using **FSx** enter `/fsx` as the **FSx mount path** and then, the **Pipeline work directory** above should be set as `/fsx/work`
@@ -205,11 +215,9 @@ to the corresponding Fusion mount paths.
 {{% pretty_screenshot img="/uploads/2020/09/aws_cpus.png" %}}
 
 {{% tip "Spot or On-demand?" %}}
-You can choose to create a compute environment that will launch either **Spot** or **On-demand** instances. Spot instances can cost as little as 20% of on-demand instances and with Nextflow's ability to automatically relaunch failed tasks, Spot is almost always the recommended provisioning model. 
+You can choose to create a compute environment that will launch either **Spot** or **On-demand** instances. Spot instances can cost as little as 20% of on-demand instances and with Nextflow's ability to automatically relaunch failed tasks, Spot is almost always the recommended provisioning model.
 Note however that when choosing *Spot* instances, Tower will in any case create a dedicated queue for running the main Nextflow job using a single on-demand instance in order to prevent any execution interruption.
 {{% /tip %}}
-
-<br>
 
 **15.** Select **Create** to finalize the compute environment setup. It will take approximately 60 seconds for all the resources to be created and then you will be ready to launch pipelines.
 
