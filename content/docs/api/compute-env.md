@@ -103,8 +103,8 @@ Status: 200 OK
 			"postRunScript": "./postRunScript.sh",
 			"forge": {
 				"type": "EC2",
-				"minCpus": 2,
-				"maxCpus": 5,
+				"minCpus": 0,
+				"maxCpus": 1,
 				"gpuEnabled": false,
 				"ebsAutoScale": true,
 				"instanceTypes": [
@@ -224,7 +224,7 @@ Create a new Tower compute environment.
             "workDir": "s3://random-tower-bucket",
             "forge": {
                 "type": "EC2",
-                "minCpus": 1,
+                "minCpus": 0,
                 "maxCpus": 1,
                 "gpuEnabled": false,
                 "ebsAutoScale": true,
