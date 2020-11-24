@@ -1,4 +1,4 @@
-{{- $title := cond (isset . "Title") .Title $.Site.Title -}}
+{{- $title := $.Site.Title  -}}
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="Accept-CH" content="DPR,Width,Viewport-Width" />
@@ -38,7 +38,7 @@
   <link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ $title }}" />
 {{- end -}}
 {{/* TODO: canonical + multilingual meta */}}
-{{- with $.Site.Params.gtmid -}}
+{{- with $.Site.Params.gtmid -}} 
 <!-- Page Hiding Snippet (recommended) -->
 <style>.async-hide { opacity: 0 !important} </style>
 <script>
