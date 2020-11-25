@@ -1,12 +1,12 @@
-{{- $title := $.Site.Title  -}}
+ 
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="Accept-CH" content="DPR,Width,Viewport-Width" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 {{ hugo.Generator }}
-<meta name="apple-mobile-web-app-title" content="{{ $title }}" />
-<meta name="application-name" content="{{ $title }}" />
+<meta name="apple-mobile-web-app-title" content=" {{ if .IsHome }}{{ .Title }}{{ else }}{{ .Title }}{{ .Site.Title }}{{ end }}" />
+<meta name="application-name" content="{{ if .IsHome }}{{ .Title }}{{ else }}{{ .Title }}{{ .Site.Title }}{{ end }}" />
 <meta name="theme-color" content="#ffffff" />
 <meta name="description" content="{{ if .IsHome }}{{ $.Site.Params.description }}{{ else }}{{ .Description }}{{ end }} /">
 {{- with .Keywords -}}
@@ -27,15 +27,15 @@
 {{- range .Site.AllPages -}}
 {{- $section := .Section -}}
 {{- with .OutputFormats.Get "opensearch" -}}
-<link rel="search" type="application/opensearchdescription+xml" title="{{ $title }}{{ with $section }} {{ . }}{{ end }} search" href="{{ .RelPermalink | safeURL }}" />
+<link rel="search" type="application/opensearchdescription+xml" title="{{ if .IsHome }}{{ .Title }}{{ else }}{{ .Title }}{{ .Site.Title }}{{ end }}{{ with $section }} {{ . }}{{ end }} search" href="{{ .RelPermalink | safeURL }}" />
 {{- end -}}
 {{- end -}}
 {{- end -}}
 <link id="faviconLink" rel="icon" type="image/x-icon" href="{{ "/favicons/favicon.ico" | relURL }}">
 <meta name="theme-color" content="#ffffff">
 {{- with .OutputFormats.Get "RSS" -}}
-  <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $title }}" />
-  <link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ $title }}" />
+  <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ if .IsHome }}{{ .Title }}{{ else }}{{ .Title }}{{ .Site.Title }}{{ end }}" />
+  <link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ if .IsHome }}{{ .Title }}{{ else }}{{ .Title }}{{ .Site.Title }}{{ end }}" />
 {{- end -}}
 {{/* TODO: canonical + multilingual meta */}}
 {{- with $.Site.Params.gtmid -}} 
