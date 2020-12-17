@@ -46,7 +46,7 @@ At the top left of the page, in the navigation menu (**≡**) click **Billing**.
 {{% pretty_screenshot img="/uploads/2020/12/google_enable_billing.png" %}}
 
 
-### 4 Enable the Google Life Sciences API, the Compute Engine API, and the Google Cloud Storage API.
+### 3. Enable the Google Life Sciences API, the Compute Engine API, and the Google Cloud Storage API.
 
 Open this [link](https://console.cloud.google.com/flows/enableapi?apiid=lifesciences.googleapis.com%2Ccompute.googleapis.com%2Cstorage-api.googleapis.com), to enable all **three APIs** on for your project. Select your project from the drop down menu and click **Enable**.
 
@@ -83,7 +83,7 @@ A JSON key will be downloaded to your computer, you will need it to configure th
 {{% pretty_screenshot img="/uploads/2020/12/google_service_account_create_key_manage.png" %}}
 
 
-### 5. Create a Google Storage bucket.
+### 4. Create a Google Storage bucket.
 
 In top left of the page, in the navigation menu (**≡**) click **Storage** and **Create Bucket**.
 
