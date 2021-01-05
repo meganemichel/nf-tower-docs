@@ -45,45 +45,68 @@ At the top left of the page, in the navigation menu (**≡**) click **Billing**.
 
 {{% pretty_screenshot img="/uploads/2020/12/google_enable_billing.png" %}}
 
-
 ### 3. Enable the Google Life Sciences API, the Compute Engine API, and the Google Cloud Storage API.
 
-Open this [link](https://console.cloud.google.com/flows/enableapi?apiid=lifesciences.googleapis.com%2Ccompute.googleapis.com%2Cstorage-api.googleapis.com), to enable all **three APIs** on for your project. Select your project from the drop down menu and click **Enable**.
+Open this [link](https://console.cloud.google.com/flows/enableapi?apiid=lifesciences.googleapis.com%2Ccompute.googleapis.com%2Cstorage-api.googleapis.com),to enable all **three APIs** on for your project. Select your project from the drop down menu and click **Enable**. Alternatively enable these APIs manually by selecting the project on the top bar and visiting the API pages:
+
+[Google Cloud Life Sciences API](https://console.cloud.google.com/marketplace/product/google/lifesciences.googleapis.com)
+
+[Compute Engine API](https://console.cloud.google.com/marketplace/product/google/compute.googleapis.com)
+
+[Google Cloud Storage JSON API](https://console.cloud.google.com/marketplace/product/google/storage-api.googleapis.com)
 
 {{% pretty_screenshot img="/uploads/2020/12/google_enable_apis.png" %}}
 
-You sill get confirmation that the APIs are enabled. Click **Go to credentials**
+<br>
+
+### 4. Retrieve the Compute Engine Service account for your project
+
+Click **Go to credentials** or visit this [link](https://console.cloud.google.com/apis/credentials/wizard?api=lifesciences.googleapis.com)
 
 {{% pretty_screenshot img="/uploads/2020/12/google_api_enabled_confirmation.png" %}}
 
-Select the **Cloud Life Sciences API** from the dropdown menu and select the radio button **Yes, I'm using one or both** to indicate we will use the Compute Engine API. The click **What credentials do I need?**
+<br>
+
+*i)* Select the **Cloud Life Sciences API** from the dropdown menu and select the radio button **Yes, I'm using one or both** to indicate we will use the Compute Engine API. The click **What credentials do I need?**
 
 {{% pretty_screenshot img="/uploads/2020/12/google_credential_options.png" %}}
 
-a second screen appears to say you do not need any further credentials. Click **Done**.
+<br>
+
+*ii)* A second screen appears to say you do not need any further credentials. Click **Done**.
 
 {{% pretty_screenshot img="/uploads/2020/12/google_credentials_confirmation.png" %}}
 
-You will be redirected to the **API & Services** page and the **Credentials** section. Note a **Compute Engine default service account** has been created. Copy the email, you will need it to configure the **Google Storage**.
+<br>
 
-Click on the **Email** of the service account.
+You will be redirected to the **API & Services** page and the **Credentials** section. Note a **Compute Engine default service account** has been created. **Copy** the email, you will need it to configure the **Google Storage**.
+
+### 5. Create a new key for the compute service accounts
+
+Copy and click the **Email** of the service account.
 
 {{% pretty_screenshot img="/uploads/2020/12/google_service_account.png" %}}
 
-Bellow the page click on **Add key** and **Create new key**.
+<br>
+
+*i)* Bellow the page click on **Add key** and **Create new key**.
 
 {{% pretty_screenshot img="/uploads/2020/12/google_service_account_create_key.png" %}}
 
-Select **JSON** format and press Create.
+<br>
+
+*ii)* Select **JSON** format and press **Create**.
 
 {{% pretty_screenshot img="/uploads/2020/12/google_service_account_create_key_json.png" %}}
+
+<br>
 
 A JSON key will be downloaded to your computer, you will need it to configure the Tower environment. In the **Service accounts** page, you can see your key is now active and you can manage it from here.
 
 {{% pretty_screenshot img="/uploads/2020/12/google_service_account_create_key_manage.png" %}}
 
 
-### 4. Create a Google Storage bucket.
+### 6. Create a Google Storage bucket.
 
 In top left of the page, in the navigation menu (**≡**) click **Storage** and **Create Bucket**.
 
@@ -93,33 +116,51 @@ In top left of the page, in the navigation menu (**≡**) click **Storage** and 
 
 {{% pretty_screenshot img="/uploads/2020/12/google_create_bucket.png" %}}
 
-Name your bucket, you will need this name to configure the Tower environment.
+<br>
+
+### 7. Configure your Bucket
 
 {{% warning "Bucket Naming - No underscores _ !"%}}
 Do not use underscores in your bucket name and use hyphens instead.
 {{% /warning %}}
 
-Select **Region** as the **Location type** and the **Location** for your bucket. You will need the **Location** to configure the Tower environment.
+*i)* Name your bucket, you will need this name to configure the Tower environment.
+
+*ii)* Select **Region** as the **Location type** and the **Location** for your bucket. You will need the **Location** to configure the Tower environment.
+
+*iii)* Select **Standard** as the **default storage class**.
+
+*iv)* Select **Uniform** as the **Access control**.
+
+{{% pretty_screenshot img="/uploads/2020/12/google_create_bucket_options.png" %}}
 
 {{% tip %}}
 The Google Cloud Life Sciences API is available in limited number of [locations](https://cloud.google.com/life-sciences/docs/concepts/locations), however, these locations are only used to store metadata about the pipeline operations. The location of the storage bucket and compute resources can be in any region.
 {{% /tip %}}
 
-Select **Standard** as the **default storage class**.
+### 8. Set Bucket permissions
 
-Select **Uniform** as the **Access control**.
-
-{{% pretty_screenshot img="/uploads/2020/12/google_create_bucket_options.png" %}}
-
-In the **Storage** page on the **Browser** section click on the newly created storage.
+*i)* In the **Storage** page on the **Browser** section click on the newly created storage.
 
 {{% pretty_screenshot img="/uploads/2020/12/google_storage_browser.png" %}}
 
-Navigate to the **Permissions** tab and click on **+ Add**,
+<br>
 
-Copy-paste the service account email created above into the `new members box` and add the following roles: **Storage Admin**, **Storage Legacy Bucket Owner**, **Storage Legacy Object Owner** and **Storage Object Creator**.   
+*ii)* Navigate to the **Permissions** tab and click on **+ Add**,
+
+*iii)* Copy-paste the service account email created above into the `new members box` and add the following roles:
+
+**Storage Admin**
+
+**Storage Legacy Bucket Owner**
+
+**Storage Legacy Object Owner**
+
+**Storage Object Creator**  
 
 {{% pretty_screenshot img="/uploads/2020/12/google_storage_roles.png" %}}
+
+<br>
 
 {{% star "Sweet!" %}}
 You have created a project, enabled the necessary Google APIs, created a bucket and a JSON file containing required credentials. You are now ready to set up a new compute environment in Tower.
