@@ -1,8 +1,6 @@
 ---
 title: Pipeline Actions
 aliases:
-- "/docs/webhooks"
-- "/docs/pipeline-actions"
 - "/docs/automation"
 weight: 1
 layout: single
