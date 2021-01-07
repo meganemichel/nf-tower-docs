@@ -1,5 +1,5 @@
 ---
-title: Google Cloud
+title: Google Cloud Life Sciences
 weight: 1
 layout: single
 publishdate: 2020-10-20 04:00:00 +0000
@@ -8,8 +8,8 @@ authors:
   - "Alain Coletta"
   - "Seqera Labs"
 
-headline: 'Google Cloud Compute Environment'
-description: 'Step-by-step instructions to setup Google Cloud for Nextflow Tower.'
+headline: 'Google Cloud Life Sciences Compute Environment'
+description: 'Step-by-step instructions to setup Google Cloud Life Sciences for Nextflow Tower.'
 menu:
   docs:
     parent: Compute Environments
@@ -25,7 +25,7 @@ This guide assumes you have an existing [Google Cloud Account](https://console.c
 
 Tower provides integration to Google Cloud via the [Cloud Life Sciences API](https://cloud.google.com/life-sciences/docs/reference/rest).
 
-The guide will begin with configuring your Google Cloud account and enabling the Google Life Sciences API. It will then guide you through creating a new Google Cloud compute environment in Tower.
+The guide is split into two parts. We will begin with configuring your Google Cloud account and enabling the Google Life Sciences API. It will then guide you through creating a new Google Cloud compute environment in Tower.
 
 ## Configuration of Google Cloud
 
@@ -35,9 +35,13 @@ Navigate to the [Google Project Selector page](https://console.cloud.google.com/
 
 {{% pretty_screenshot img="/uploads/2020/09/google_create_project.png" %}}
 
-Enter a name for your new project e.g: "tower-nf", if you are part of an organisation the location will be set by default to match your organisation parameters.
+<br>
+
+Enter a name for your new project e.g: "tower-nf", if you are part of an organization the location will be set by default to match your organization parameters.
 
 {{% pretty_screenshot img="/uploads/2020/12/google_new_project_name.png" %}}
+
+<br>
 
 ### 2. Make sure Billing is enabled for the project.
 
@@ -45,15 +49,17 @@ At the top left of the page, in the navigation menu (**≡**) click **Billing**.
 
 {{% pretty_screenshot img="/uploads/2020/12/google_enable_billing.png" %}}
 
-### 3. Enable the Google Life Sciences API, the Compute Engine API, and the Google Cloud Storage API.
+<br>
 
-Open this [link](https://console.cloud.google.com/flows/enableapi?apiid=lifesciences.googleapis.com%2Ccompute.googleapis.com%2Cstorage-api.googleapis.com),to enable all **three APIs** on for your project. Select your project from the drop down menu and click **Enable**. Alternatively enable these APIs manually by selecting the project on the top bar and visiting the API pages:
+### 3. Enable the Google Life Sciences, the Compute Engine , and the Google Cloud Storage APIs.
 
-[Google Cloud Life Sciences API](https://console.cloud.google.com/marketplace/product/google/lifesciences.googleapis.com)
+Open this [link](https://console.cloud.google.com/flows/enableapi?apiid=lifesciences.googleapis.com%2Ccompute.googleapis.com%2Cstorage-api.googleapis.com), to enable all **three APIs** on for your project. Select your project from the drop down menu and click **Enable**. Alternatively enable these APIs manually by selecting the project on the top bar and visiting the API pages:
 
-[Compute Engine API](https://console.cloud.google.com/marketplace/product/google/compute.googleapis.com)
+**1.** [Google Cloud Life Sciences API](https://console.cloud.google.com/marketplace/product/google/lifesciences.googleapis.com)
 
-[Google Cloud Storage JSON API](https://console.cloud.google.com/marketplace/product/google/storage-api.googleapis.com)
+**2.** [Compute Engine API](https://console.cloud.google.com/marketplace/product/google/compute.googleapis.com)
+
+**3.** [Google Cloud Storage JSON API](https://console.cloud.google.com/marketplace/product/google/storage-api.googleapis.com)
 
 {{% pretty_screenshot img="/uploads/2020/12/google_enable_apis.png" %}}
 
@@ -79,9 +85,9 @@ Click **Go to credentials** or visit this [link](https://console.cloud.google.co
 
 <br>
 
-You will be redirected to the **API & Services** page and the **Credentials** section. Note a **Compute Engine default service account** has been created. **Copy** the email, you will need it to configure the **Google Storage**.
+You will be redirected to the **API & Services** page and the **Credentials** section. Note a **Compute Engine default service account** has been created. **Copy** the email address as you will need this to configure **Google Storage**.
 
-### 5. Create a new key for the compute service accounts
+### 5. Create a new key for the compute service account
 
 Copy and click the **Email** of the service account.
 
@@ -89,7 +95,7 @@ Copy and click the **Email** of the service account.
 
 <br>
 
-*i)* Bellow the page click on **Add key** and **Create new key**.
+*i)* Below the page select **Add key** and **Create new key**.
 
 {{% pretty_screenshot img="/uploads/2020/12/google_service_account_create_key.png" %}}
 
@@ -101,7 +107,7 @@ Copy and click the **Email** of the service account.
 
 <br>
 
-A JSON key will be downloaded to your computer, you will need it to configure the Tower environment. In the **Service accounts** page, you can see your key is now active and you can manage it from here.
+A JSON key will be downloaded to your computer. This is the credentials used by Tower and you will need it to configure the Tower compute environment. In the **Service accounts** page, you can see your key is now active and you can manage it from here.
 
 {{% pretty_screenshot img="/uploads/2020/12/google_service_account_create_key_manage.png" %}}
 
