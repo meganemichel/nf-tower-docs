@@ -213,15 +213,23 @@ to the corresponding Fusion mount paths.
 
 **Advanced options**
 
-Note that if **Min CPUs** is greater than `0`, EC2 instances will remain always active. The advantage is that a pipeline execution will initialize faster. Note this can result in important additional costs.
+{{% warning "AMI id - AMI requirements for AWS batch use" %}}
 
-{{% warning "Additional Costs!" %}}
+If you want to use an existing AMI, you have to make sure your AMI is based on a Amazon Linux-2 ECS_optimised image and it must meet batch requirements. To learn more about approved version of the Amazon ECS optimized AMI for compute resources visit this [link](https://docs.aws.amazon.com/batch/latest/userguide/compute_resource_AMIs.html#batch-ami-spec)
+
+{{% /warning %}}
+
+{{% warning "Min CPUs - Editing this will result in AWS additional costs" %}}
 
  Keeping EC2 instances always running can result in important additional costs. You will be billed for these running EC2 instances regardless of whether you are running pipelines with Tower. We recommend using this option only in production and when launching workflows constantly.  
 
 {{% /warning %}}
 
+Note that if **Min CPUs** is greater than `0`, EC2 instances will remain always active. The advantage is that a pipeline execution will initialize faster. Note this can result in important additional costs.
 
+{{% pretty_screenshot img="/uploads/2021/01/aws_warning_min_cpus.png" %}}
+
+<br>
 
 **14.** Select **Create** to finalize the compute environment setup. It will take approximately 60 seconds for all the resources to be created and then you will be ready to launch pipelines.
 
