@@ -14,7 +14,7 @@ description: 'Step-by-step instructions to set up a Tower compute environment fo
 menu:
   docs:
     parent: Compute Environments
-    weight: 6
+    weight: 8
 
 ---
 ## Overview
@@ -45,7 +45,7 @@ the steps in the [Cluster preparation](https://github.com/seqeralabs/nf-tower-k8
 
 **3.** Select your Google Cloud credentials. The credentials are needed to identify the user that will access the GKE cluster.
 
-**4.** Select the **Location** where the GKE cluster is located. 
+**4.** Select the **Location** where the GKE cluster is located.
 
 {{% warning "Regional and zonal clusters" %}}
 GKE clusters can be either *regional* or *zonal*. For example, the `us-west1` identify the United States West-Coast region, and it has three zones: `us-west1-a`, `us-west1-b`, and `us-west1-c`.
@@ -70,7 +70,7 @@ If you have followed the [cluster preparation](https://github.com/seqeralabs/nf-
 **8.** The **Storage claim** field allows you to specify the storage Nextflow should use as a
 scratch file system for the pipeline execution.
 
-This should reference a Kubernetes persistence volume with `ReadWriteMany` capability. Check the [cluster preparation](https://github.com/seqeralabs/nf-tower-k8s/blob/master/cluster-preparation.md#3-storage-configuration) guide for details. 
+This should reference a Kubernetes persistence volume with `ReadWriteMany` capability. Check the [cluster preparation](https://github.com/seqeralabs/nf-tower-k8s/blob/master/cluster-preparation.md#3-storage-configuration) guide for details.
 
 ## Advanced options
 
