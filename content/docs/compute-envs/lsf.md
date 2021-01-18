@@ -13,7 +13,7 @@ description: 'Step-by-step instructions to set up IBM LSF for Nextflow Tower.'
 menu:
   docs:
     parent: Compute Environments
-    weight: 4
+    weight: 5
 
 ---
 ## Overview

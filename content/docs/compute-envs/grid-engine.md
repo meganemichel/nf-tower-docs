@@ -13,7 +13,7 @@ description: 'Step-by-step instructions to set up Grid engine for Nextflow Tower
 menu:
   docs:
     parent: Compute Environments
-    weight: 6
+    weight: 4
 
 ---
 ## Overview

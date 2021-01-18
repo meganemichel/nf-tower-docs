@@ -13,7 +13,7 @@ description: 'Step-by-step instructions to set up SLURM for Nextflow Tower.'
 menu:
   docs:
     parent: Compute Environments
-    weight: 5
+    weight: 6
 
 ---
 ## Overview
