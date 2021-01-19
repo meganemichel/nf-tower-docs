@@ -2,7 +2,7 @@
 title: AWS Batch
 weight: 1
 layout: single
-publishdate: 2020-10-20 04:00:00 +0000
+publishdate: 2021-01-19 04:00:00 +0000
 authors:
   - "Evan Floden"
   - "Alain Coletta"
@@ -18,7 +18,7 @@ menu:
 ---
 ## Overview
 {{% tip "Disclaimer" %}}
-<!-- If you already have Batch environment pre-configured skip Forge and go to Launch -->
+<!-- If you already have Batch environment pre-configured, skip Forge and go to Launch -->
 This guide assumes you have an existing [AWS Account](https://aws.amazon.com/). Sign up for a free AWS account [here](https://portal.aws.amazon.com/billing/signup).
 {{% /tip %}}
 
@@ -34,7 +34,7 @@ If you don't yet have an AWS Batch environment fully set-up, following the [Towe
 
 <!-- Add explanation for what is Forge and disclaimer -->
 {{% warning %}}
-Follow these instructions if you have not pre-configured an AWS Batch environment. Note that this will create resources in your AWS account that you may be charged for by Amazon.
+Follow these instructions if you have not pre-configured an AWS Batch environment. Note that this will create resources in your AWS account that you may be charged for by AWS.
 {{% /warning %}}
 
 Tower Forge automates the configuration of an [AWS Batch](https://aws.amazon.com/batch/) compute environment and queues required for the deployment of Nextflow pipelines.
@@ -179,23 +179,23 @@ The bucket should be in the same **Region** as selected above.
 <br>
 {{% tip "Spot or On-demand?" %}}
 You can choose to create a compute environment that will launch either **Spot** or **On-demand** instances. **Spot instances can cost as little as 20% of on-demand instances** and with Nextflow's ability to automatically relaunch failed tasks, Spot is almost always the recommended provisioning model.
-Note however that when choosing *Spot* instances, Tower will in any case create a dedicated queue for running the main Nextflow job using a single on-demand instance in order to prevent any execution interruption.
+Note however that when choosing *Spot* instances, Tower will also create a dedicated queue for running the main Nextflow job using a single on-demand instance in order to prevent any execution interruptions.
 {{% /tip %}}
 <br>
 {{% pretty_screenshot img="/uploads/2021/01/aws_cpus.png" %}}
 <br>
 
-**7.** Enter the **Max CPUs** e.g. `64`. This is the maximum number of combined CPUs (the sum of all instances CPUs) Amazon will be able to start.
+**7.** Enter the **Max CPUs** e.g. `64`. This is the maximum number of combined CPUs (the sum of all instances CPUs) AWS Batch will launch at any time.
 
-**8.** Choose **EBS Auto scale** to allow the EC2 virtual machines to expand the amount of available disk space during the task execution.
+**8.** Choose **EBS Auto scale** to allow the EC2 virtual machines to expand the amount of available disk space during task execution.
 
 **9.** With the optional **Enable Fusion mounts** feature enabled, S3 buckets specified in the **Pipeline work directory** and **Allowed S3 Buckets**
-fields will be mounted as a plain file system volumes in the EC2 instances carrying out the Batch job execution and accessible at the path location following this pattern `/fusion/s3/BUCKET_NAME`.
-For example if the bucket name is `imputation-gp2` the Nextflow pipeline will access it using the file system path and `/fusion/s3/imputation-gp2`.
+fields will be mounted as file system volumes in the EC2 instances carrying out the Batch job execution. These are then accessible at the path location with the pattern `/fusion/s3/BUCKET_NAME`.
+For example if the bucket name is `s3://imputation-gp2` the Nextflow pipeline will access it using the file system path `/fusion/s3/imputation-gp2`.
 
 {{% tip %}}
-Note that's not required to modify your pipeline to get advantage of this feature, Nextflow is able to recognise these buckets and automatically replace any reference to s3:// prefixed files
-to the corresponding Fusion mount paths.
+Note that's not required to modify your pipeline or files to take advantage of this feature. Nextflow is able to recognise these buckets will automatically replace any reference to s3:// prefixed files
+with the corresponding Fusion mount paths.
 {{% /tip %}}
 
 
@@ -204,28 +204,30 @@ to the corresponding Fusion mount paths.
 **11.** Enter any additional **Allowed S3 buckets** that your workflows require to read input data or to write output files. The **Pipeline work directory** bucket above is added by default to the list of **Allowed S3 buckets**.
 
 
-**12.** **If** you want to use **FSx** enter `/fsx` as the **FSx mount path** and then, the **Pipeline work directory** above should be set as `/fsx/work`
+**12.** To use **FSx**, you can enter `/fsx` as the **FSx mount path** and set the **Pipeline work directory** above to be `/fsx/work`
 
 {{% pretty_screenshot img="/uploads/2020/11/aws_lustre_options.png" %}}
+
+<br>
 
 **13.** Choose the **Dispose resources** option.
 
 
 **Advanced options**
 
-{{% warning "AMI id - AMI requirements for AWS batch use" %}}
+{{% warning "AMI ID - AMI requirements for AWS Batch use" %}}
 
-If you want to use an existing AMI, you have to make sure your AMI is based on a Amazon Linux-2 ECS_optimised image and it must meet batch requirements. To learn more about approved version of the Amazon ECS optimized AMI for compute resources visit this [link](https://docs.aws.amazon.com/batch/latest/userguide/compute_resource_AMIs.html#batch-ami-spec)
-
-{{% /warning %}}
-
-{{% warning "Min CPUs - Editing this will result in AWS additional costs" %}}
-
- Keeping EC2 instances always running can result in important additional costs. You will be billed for these running EC2 instances regardless of whether you are running pipelines with Tower. We recommend using this option only in production and when launching workflows constantly.  
+To use an existing AMI, make sure the AMI is based on an Amazon Linux-2 ECS optimized image that meets the Batch requirements. To learn more about approved versions of the Amazon ECS optimized AMI, visit this [link](https://docs.aws.amazon.com/batch/latest/userguide/compute_resource_AMIs.html#batch-ami-spec)
 
 {{% /warning %}}
 
-Note that if **Min CPUs** is greater than `0`, EC2 instances will remain always active. The advantage is that a pipeline execution will initialize faster. Note this can result in important additional costs.
+{{% warning "Min CPUs - Editing this will result in additional AWS costs" %}}
+
+ Keeping EC2 instances running may result in additional costs. You will be billed for these running EC2 instances regardless of whether you are executing pipelines or not.
+
+{{% /warning %}}
+
+Note that if **Min CPUs** is greater than `0`, EC2 instances will remain active. An advantage of this is that a pipeline execution will initialize faster but it may have additional costs.
 
 {{% pretty_screenshot img="/uploads/2021/01/aws_warning_min_cpus.png" %}}
 
