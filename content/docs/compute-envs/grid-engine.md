@@ -1,14 +1,14 @@
 ---
-title: Grid engine
+title: Grid Engine
 weight: 1
 layout: single
-publishdate: 2021-01-18 04:00:00 +0000
+publishdate: 2021-01-19 04:00:00 +0000
 authors:
   - "Evan Floden"
   - "Alain Coletta"
   - "Seqera Labs"
 
-headline: 'Grid engine Compute Environment'
+headline: 'Grid Engine Compute Environment'
 description: 'Step-by-step instructions to set up Grid engine for Nextflow Tower.'
 menu:
   docs:
@@ -18,11 +18,11 @@ menu:
 ---
 ## Overview
 
-[Grid engine](https://www.univa.com/products/univa-grid-engine.php) is a workload management tool maintained by Univa.
+[Grid engine](https://www.univa.com/products/univa-grid-engine.php) is a workload management tool maintained by Altair.
 
 ## Requirements
 
-To launch pipelines into a **Grid engine** managed cluster from Tower, the following requirements must be fulfilled:
+To launch pipelines into a **Grid engine** scheduler from Tower, the following requirements must be fulfilled:
 
 * The cluster should be reachable via an SSH connection using an SSH key.
 * The cluster should allow outbound connections to the Tower web service.
@@ -40,7 +40,7 @@ Follow these steps to create a new compute environment for Grid Engine:
 
 <br>
 
-**2.** Enter a descriptive name (e.g. *Grid engine On-premise*) and select **Grid Engine** as the target platform.
+**2.** Enter a descriptive name (e.g. *Grid Engine On-prem*) and select **Grid Engine** as the target platform.
 
 {{% pretty_screenshot img="/uploads/2021/01/grid-engine_new_env.png" %}}
 

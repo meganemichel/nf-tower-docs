@@ -2,7 +2,7 @@
 title: Google GKE
 weight: 1
 layout: single
-publishdate: 2020-12-17 04:00:00 +0000
+publishdate: 2021-01-19 04:00:00 +0000
 authors:
   - "Jordi Deu-Pons"
   - "Paolo Di Tommaso"
@@ -48,10 +48,10 @@ the steps in the [Cluster preparation](https://github.com/seqeralabs/nf-tower-k8
 **4.** Select the **Location** where the GKE cluster is located.
 
 {{% warning "Regional and zonal clusters" %}}
-GKE clusters can be either *regional* or *zonal*. For example, the `us-west1` identify the United States West-Coast region, and it has three zones: `us-west1-a`, `us-west1-b`, and `us-west1-c`.
+GKE clusters can be either *regional* or *zonal*. For example, `us-west1` identifies the United States West-Coast region which has three zones: `us-west1-a`, `us-west1-b`, and `us-west1-c`.
 
 <br>
-Tower self-completion only shows regions. You can manually edit this field if your GKE cluster was created zonally rather than regionally.
+Tower self-completion only shows regions. You should manually edit this field if your GKE cluster was created zonally rather than regionally.
 <br>
 {{% pretty_screenshot img="/uploads/2020/12/gke_regions.png" %}}
 

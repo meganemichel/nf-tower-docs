@@ -2,14 +2,14 @@
 title: Amazon EKS
 weight: 1
 layout: single
-publishdate: 2020-10-20 04:00:00 +0000
+publishdate: 2021-01-19 04:00:00 +0000
 authors:
   - "Jordi Deu-Pons"
   - "Paolo Di Tommaso"
   - "Alain Coletta"
   - "Seqera Labs"
 
-headline: 'Kubernetes Compute environment'
+headline: 'Amazon EKS Compute environment'
 description: 'Step-by-step instructions to set up a Tower compute environment for Amazon EKS clusters'
 menu:
   docs:
@@ -32,14 +32,13 @@ the steps in the [Cluster preparation](https://github.com/seqeralabs/nf-tower-k8
 
 ## Compute environment setup  
 
-
 **1.** In the navigation bar on the upper right, select your account profile, then choose **Compute environments** and select **New Environment**.
 
 {{% pretty_screenshot img="/uploads/2020/09/aws_new_env.png" %}}
 
 </br>
 
-**2.** Provide a name for this environment. For example, *My EKS* and select **Amazon EKS** as the target platform.
+**2.** Provide a name for this environment. For example, *Amazon EKS (us-east-1)* and select **Amazon EKS** as the target platform.
 
 {{% pretty_screenshot img="/uploads/2020/12/eks_new_env.png" %}}
 
@@ -62,16 +61,15 @@ If you have followed the example in the [cluster preparation](https://github.com
 
 If you have followed the [cluster preparation](https://github.com/seqeralabs/nf-tower-k8s/blob/master/cluster-preparation.md#2-service-account--role-creation) guide, this field should be `tower-launcher-sa`.
 
-**8.** The **Storage claim** field allows you to specify the storage Nextflow should use as a
+**8.** The **Storage claim** field allows you to specify the storage Nextflow will use as a
 scratch file system for the pipeline execution.
 
-This should reference a Kubernetes persistence volume with `ReadWriteMany` capability. Check the [cluster preparation](https://github.com/seqeralabs/nf-tower-k8s/blob/master/cluster-preparation.md#3-storage-configuration) guide for details.
+This should reference a Kubernetes persistence volume with `ReadWriteMany` capability. See the [cluster preparation](https://github.com/seqeralabs/nf-tower-k8s/blob/master/cluster-preparation.md#3-storage-configuration) guide for details.
 
 
 ## Advanced options
 
 These options allow for the fine-tuning of the Tower configuration for the EKS cluster.
-
 
 {{% pretty_screenshot img="/uploads/2020/12/advanced_options.png" %}}
 <br>
