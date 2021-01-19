@@ -10,6 +10,10 @@ paginate = 10
 pluralizeListTitles = false
 relativeURLs = false
 title = "Nextflow Tower Docs"
+
+# Enable Git variables like commit, lastmod
+enableGitInfo = true
+
 [markup]
 defaultMarkdownHandler = "blackfriday"
 [markup.blackFriday]
@@ -131,3 +135,6 @@ tag = "tags"
 [blackfriday]
   plainIDAnchors = true
   hrefTargetBlank = true
+[frontmatter]
+  lastmod = [":git", "lastmod", "date", "publishDate"]
+  publishDate = ["publishDate", "date"]

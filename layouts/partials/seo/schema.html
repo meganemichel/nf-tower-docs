@@ -6,8 +6,8 @@
   {{- if not .PublishDate.IsZero -}}
     <meta itemprop="datePublished" content="{{ .PublishDate.Format $ISO8601 | safeHTML }}" />
   {{- end -}}
-  {{- if not .Date.IsZero -}}
-    <meta itemprop="dateModified" content="{{ .Date.Format $ISO8601 | safeHTML }}" />
+  {{- if not .Lastmod.IsZero -}}
+    <meta itemprop="dateModified" content="{{ .Lastmod.Format $ISO8601 | safeHTML }}" />
   {{- end -}}
   <meta itemprop="wordCount" content="{{ .WordCount }}">
   {{- with $.Param "images" -}}
