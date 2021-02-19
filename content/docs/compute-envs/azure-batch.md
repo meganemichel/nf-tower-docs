@@ -38,6 +38,52 @@ Follow these instructions if you have not pre-configured an Azure Batch environm
 
 Tower Forge automates the configuration of an [Azure Batch](https://azure.microsoft.com/en-us/services/batch/) compute environment and queues required for the deployment of Nextflow pipelines.
 
+## Forge Azure Resources
+
+### Resource group
+
+To create the necessary Azure Batch and Azure Storage accounts, we must first create a **Resource Group** in the region of your choice.
+
+When you open [this link](https://portal.azure.com/#create/Microsoft.ResourceGroup) you'll notice the "Create new Resource Group" dialog, as shown below.
+
+{{% pretty_screenshot img="/uploads/2021/02/azure_new_resource_group.png" %}}
+
+<br>
+
+1. Add the name for the resource group (for e.g. `towerrg`). 
+2. Select the preferred region for this resource group. 
+3. Click **Review and Create** to proceed to the review screen.
+4. Click **Create** to create the resources.
+
+
+### Storage account
+
+The next step is to create the necessary Azure Storage. When you open [this link](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Storage%2FStorageAccounts) you'll notice the "Create new Storage Account" dialog, as shown below.
+
+{{% pretty_screenshot img="/uploads/2021/02/azure_create_storage_account.png" %}}
+
+<br>
+
+1. Add the name for the storage account (for e.g. `towerrgstorage`).
+2. Select the preferred region for this resource group.
+3. Click **Review and Create** to proceed to the review screen.
+4. Click **Create** to create the resources.
+5. TODO: Store the access keys
+
+### Batch account
+
+The next step is to create the necessary Azure Storage. When you open [this link](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Batch%2FbatchAccounts) you'll notice the "Create new Storage Account" dialog, as shown below.
+
+{{% pretty_screenshot img="/uploads/2021/02/azure_new_batch_account.png" %}}
+
+<br>
+
+1. Add the name for the storage account (for e.g. `towerrgbatch`).
+2. Select the preferred region for this resource group.
+3. Click **Review and Create** to proceed to the review screen.
+4. Click **Create** to create the resources.
+5. TODO: Store the access keys
+
 
 ## Forge compute environment
 
