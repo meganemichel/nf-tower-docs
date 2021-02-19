@@ -44,7 +44,7 @@ Tower Forge automates the configuration of an [Azure Batch](https://azure.micros
 
 To create the necessary Azure Batch and Azure Storage accounts, we must first create a **Resource Group** in the region of your choice.
 
-When you open [this link](https://portal.azure.com/#create/Microsoft.ResourceGroup) you'll notice the "Create new Resource Group" dialog, as shown below.
+When you open [this link](https://portal.azure.com/#create/Microsoft.ResourceGroup) you'll notice the "Create new resource group" dialog, as shown below.
 
 {{% pretty_screenshot img="/uploads/2021/02/azure_new_resource_group.png" %}}
 
@@ -58,7 +58,7 @@ When you open [this link](https://portal.azure.com/#create/Microsoft.ResourceGro
 
 ### Storage account
 
-The next step is to create the necessary Azure Storage. When you open [this link](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Storage%2FStorageAccounts) you'll notice the "Create new Storage Account" dialog, as shown below.
+The next step is to create the necessary Azure Storage. When you open [this link](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Storage%2FStorageAccounts) you'll notice the "Create a storage account" dialog, as shown below.
 
 {{% pretty_screenshot img="/uploads/2021/02/azure_create_storage_account.png" %}}
 
@@ -68,11 +68,14 @@ The next step is to create the necessary Azure Storage. When you open [this link
 2. Select the preferred region for this resource group.
 3. Click **Review and Create** to proceed to the review screen.
 4. Click **Create** to create the resources.
-5. TODO: Store the access keys
+5. Store the access keys for the newly created Azure Storage account as shown below.
+
+
+{{% pretty_screenshot img="/uploads/2021/02/azure_storage_keys.png" %}}
 
 ### Batch account
 
-The next step is to create the necessary Azure Storage. When you open [this link](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Batch%2FbatchAccounts) you'll notice the "Create new Storage Account" dialog, as shown below.
+The next step is to create the necessary Azure Storage. When you open [this link](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Batch%2FbatchAccounts) you'll notice the "Create a batch account" dialog, as shown below.
 
 {{% pretty_screenshot img="/uploads/2021/02/azure_new_batch_account.png" %}}
 
@@ -82,7 +85,11 @@ The next step is to create the necessary Azure Storage. When you open [this link
 2. Select the preferred region for this resource group.
 3. Click **Review and Create** to proceed to the review screen.
 4. Click **Create** to create the resources.
-5. TODO: Store the access keys
+5. Store the access keys for the newly created Azure Batch account as shown below.
+
+
+{{% pretty_screenshot img="/uploads/2021/02/azure_batch_keys.png" %}}
+
 
 
 ## Forge compute environment
